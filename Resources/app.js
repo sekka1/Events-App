@@ -9,7 +9,8 @@ Ti.include('welcome.js');
 
 //
 // Data values for various pages.  We dont want to keep on
-// reloading data
+// reloading data.  
+// These will be the un-evaluated data.  Pure json text data.
 //
 var event_info_results = '';
 var arbitrary_page_results = '';

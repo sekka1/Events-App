@@ -96,12 +96,38 @@ var btnArbitraryTwo = Titanium.UI.createButton({
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
 
-function insertIcons(){
+//
+// Puts the Arbitrary Icons into the Home Page depending if the user
+// choose to add any.  This function is here so that when the user
+// revisits this page.  It does not have to go back to the server
+// to re-fetch the data then display it.
+//
+// hasData: boolean
+// dataSet: the json array with the Arbitrary Page Data
+//
+function addData( hasData, dataSet ){
 
-        var results = eval('('+this.responseText+')');
+    var results = '';
+    
+        if( ! hasData ){
+            // This is the first time it fetch the data
+            
+            Ti.API.info( "First Fetch: Arbitrary Data" );
+        
+            results = eval('('+dataSet+')');
+        
+            // Set global var with this new data
+            win.arbitrary_page_results = dataSet;
+        } else {
+          // The data is already been fetch from a previous run
+          
+          Ti.API.info( "Second Fetch: Arbitrary Data" );
+          
+          results = eval('('+dataSet+')');
+        }
         
         Ti.API.info( "Arbitrary Info Result Length: " + results.length );
-        Ti.API.info( "Arbitrary Info Data: " + this.responseText );
+        Ti.API.info( "Arbitrary Info Data: " + win.arbitrary_page_results );
     
         // For each arbitrary Info pages.  Create an icon on the 
         // Home page for it
@@ -131,25 +157,36 @@ function insertIcons(){
 
 function loadHomePage()
 {
+    var hasData = false;
 
-    // Show Activity indicator
-    actInd.show();
+    if( win.arbitrary_page_results == '' ){
 
-    // Create our HTTP Client and name it "loader"
-	var loader = Titanium.Network.createHTTPClient();
+        // Show Activity indicator
+        actInd.show();
+
+        // Create our HTTP Client and name it "loader"
+        var loader = Titanium.Network.createHTTPClient();
+        
+        Ti.API.info( "Fetching Arbitrary Data" );
     
-    // Sets the HTTP request method, and the URL to get data from
-	loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey )
+        // Sets the HTTP request method, and the URL to get data from
+        loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey )
 
-    // Runs the function when the data is ready for us to process
-	loader.onload = function() 
-	{
-        insertIcons();
-    };
+        // Runs the function when the data is ready for us to process
+        loader.onload = function() 
+        {
+            addData( hasData, this.responseText );
+        };
 
+        // Send the HTTP request
+        loader.send();
+        
+    } else {
+        // Data is already there
+        hasData = true;
 
-    // Send the HTTP request
-	loader.send();
+        addData( hasData, win.arbitrary_page_results );
+    }
 
 }
 
@@ -163,8 +200,11 @@ loadHomePage();
 
 btnEventInfo.addEventListener('click',function(e)  
 {     
+    Ti.API.info( "From home.js - win.event_info_results: " + win.event_info_results );
+
     eventInfo.idKey = win.idKey;
     eventInfo.site_url = win.site_url;
+    eventInfo.event_info_results  = win.event_info_results;
     
     tabGroupActivity.addTab( eventInfoTab );
     tabGroupActivity.open();
