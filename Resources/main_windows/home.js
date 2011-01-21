@@ -96,22 +96,8 @@ var btnArbitraryTwo = Titanium.UI.createButton({
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
 
+function insertIcons(){
 
-function loadHomePage()
-{
-
-    // Show Activity indicator
-    actInd.show();
-    
-    // Create our HTTP Client and name it "loader"
-	var loader = Titanium.Network.createHTTPClient();
-    
-    // Sets the HTTP request method, and the URL to get data from
-	loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey )
-
-    // Runs the function when the data is ready for us to process
-	loader.onload = function() 
-	{
         var results = eval('('+this.responseText+')');
         
         Ti.API.info( "Arbitrary Info Result Length: " + results.length );
@@ -141,6 +127,24 @@ function loadHomePage()
         
         // Hide Activity indicator
         actInd.hide();
+}
+
+function loadHomePage()
+{
+
+    // Show Activity indicator
+    actInd.show();
+
+    // Create our HTTP Client and name it "loader"
+	var loader = Titanium.Network.createHTTPClient();
+    
+    // Sets the HTTP request method, and the URL to get data from
+	loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey )
+
+    // Runs the function when the data is ready for us to process
+	loader.onload = function() 
+	{
+        insertIcons();
     };
 
 

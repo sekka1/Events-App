@@ -10,9 +10,6 @@ var site_url = 'http://smurf.grep-r.com/';
 var event_info_results = '';
 var arbitrary_page_results = '';
 
-// testing adding something new
-
-
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)  
 Titanium.UI.setBackgroundColor('#fff');  
 
