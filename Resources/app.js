@@ -3,6 +3,10 @@
 //
 var site_url = 'http://smurf.grep-r.com/';
 
+// to include extra files you can do this
+Ti.include('welcome.js');
+
+
 //
 // Data values for various pages.  We dont want to keep on
 // reloading data
