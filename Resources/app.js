@@ -1,64 +1,64 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#000');
-
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
-
+//
+// Setup Variables
+//
+var site_url = 'http://smurf.grep-r.com/';
 
 //
-// create base UI tab and root window
+// Data values for various pages.  We dont want to keep on
+// reloading data
 //
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
-    backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
-});
-
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
-
-win1.add(label1);
-
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
-});
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
-});
-
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
-
-win2.add(label2);
+var event_info_results = '';
+var arbitrary_page_results = '';
 
 
+// this sets the background color of the master UIView (when there are no windows/tab groups on it)  
+Titanium.UI.setBackgroundColor('#fff');  
 
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
+var tabGroup = Titanium.UI.createTabGroup();// Login window
+var tabGroup2 = Titanium.UI.createTabGroup(); // Post login windows
 
+var login = Titanium.UI.createWindow({  
+    title:'User Authentication',
+    url:'main_windows/login.js',
+    exitOnClose: true  
+});  
 
-// open tab group
+var loginTab = Titanium.UI.createTab({  
+    title:"Login",  
+    window:login  
+});  
+var home = Titanium.UI.createWindow({  
+    title:'Home Page',
+    url:'main_windows/home.js',
+    backgroundColor:'red',
+    exitOnClose: true  
+});  
+
+var homeTab = Titanium.UI.createTab({  
+    title:"Home Page",  
+    window:home  
+});  
+
+tabGroup.addTab(loginTab);
 tabGroup.open();
+
+// GrantEntrance function which will close out the login window and
+// open up the iVMS windows/tabs
+Ti.App.addEventListener('grantEntrance', function(event)  
+{  
+    
+    home.site_url = site_url;
+    home.idKey = event.idKey;
+    home.event_info_results  = event_info_results;
+    home.arbitrary_page_results = arbitrary_page_results;
+     
+    // Closing the tabGroup that is holding the login tab
+    tabGroup.close();
+    
+    // Open up the tabGroup that has the main windows/tabs
+    tabGroup2.addTab(homeTab);
+    //tabGroup2.addTab(availabilityTab);
+    tabGroup2.open();
+     
+}); 
+
