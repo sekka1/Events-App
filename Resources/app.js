@@ -12,8 +12,8 @@ Ti.include('welcome.js');
 // reloading data.  
 // These will be the un-evaluated data.  Pure json text data.
 //
-var event_info_results = '';
-var arbitrary_page_results = '';
+//var event_info_results = 'XXXXXX';
+//var arbitrary_page_results = '';
 
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)  
 Titanium.UI.setBackgroundColor('#fff');  
@@ -53,8 +53,8 @@ Ti.App.addEventListener('grantEntrance', function(event)
     
     home.site_url = site_url;
     home.idKey = event.idKey;
-    home.event_info_results  = event_info_results;
-    home.arbitrary_page_results = arbitrary_page_results;
+    //home.event_info_results  = event_info_results;
+    //home.arbitrary_page_results = arbitrary_page_results;
      
     // Closing the tabGroup that is holding the login tab
     tabGroup.close();

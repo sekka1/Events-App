@@ -18,7 +18,7 @@ function addData( hasData, dataSet ){
 
     var results = '';
         
-    Ti.API.info( "Data: " + dataSet );
+    //Ti.API.info( "Data: " + dataSet );
     
     if( ! hasData ){
         // This is the first time it fetch the data
@@ -29,8 +29,6 @@ function addData( hasData, dataSet ){
         
         // Set global var with this new data
         win.event_info_results = dataSet;
-        
-        Ti.API.info( "From eventInfo.js - win.event_info_results: " + win.event_info_results );
         
     } else {
         // The data is already been fetch from a previous run
@@ -67,7 +65,7 @@ function addData( hasData, dataSet ){
 function loadEventInfo()
 {
     var hasData = false;
-
+    
     if( win.event_info_results == '' ){
 
         // Show Activity indicator
