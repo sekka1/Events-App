@@ -361,6 +361,8 @@ btnLocation.addEventListener('click',function(e)
     location.mapview = mapview;    // Trying to setup the mapview here so it just use this
                                     // instead of opening another which crashes on android.  
                                     // can only have one map view per app on android
+                                    // Might want to just move all the locations.js code
+                                    // into this file.
     
     tabGroupLocation.addTab( locationTab );
     tabGroupLocation.open();

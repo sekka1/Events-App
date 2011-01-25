@@ -3,8 +3,9 @@
 //
 var site_url = 'http://smurf.grep-r.com/';
 
+
 // to include extra files you can do this
-Ti.include('welcome.js');
+Ti.include('main_windows/welcome.js');
 
 
 //
@@ -16,7 +17,7 @@ Ti.include('welcome.js');
 //var arbitrary_page_results = '';
 
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)  
-Titanium.UI.setBackgroundColor('#fff');  
+//Titanium.UI.setBackgroundColor('#fff');  
 
 var tabGroup = Titanium.UI.createTabGroup();// Login window
 var tabGroup2 = Titanium.UI.createTabGroup(); // Post login windows
