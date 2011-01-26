@@ -28,7 +28,7 @@ public final class SmurfAppInfo implements ITiAppInfo
 	}
 	
 	public String getVersion() {
-		return "1.0.1011";
+		return "1.0.1095";
 	}
 	
 	public String getPublisher() {
