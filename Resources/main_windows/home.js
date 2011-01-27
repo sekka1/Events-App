@@ -35,7 +35,7 @@ var view1 = Ti.UI.createView({
 
 
 var av_image1 = Titanium.UI.createImageView({
-    image:'/main_windows/Home_Icons/temp-photo-1.png', // the image for the image view
+    image:'Home_Icons/temp-photo-1.png', // the image for the image view
     top:10,
     left:10,
     height:82,
@@ -46,7 +46,7 @@ view1.add(av_image1);
 //
 // Add images to the bottom scrolling area
 var av_image2 = Titanium.UI.createImageView({
-    image:'/main_windows/Home_Icons/temp-photo-1.png', // the image for the image view
+    image:'Home_Icons/temp-photo-1.png', // the image for the image view
     top:10,
     left:100,
     height:82,
@@ -55,7 +55,7 @@ var av_image2 = Titanium.UI.createImageView({
 view1.add(av_image2);
 
 var av_image3 = Titanium.UI.createImageView({
-    image:'/main_windows/Home_Icons/temp-photo-1.png', // the image for the image view
+    image:'Home_Icons/temp-photo-1.png', // the image for the image view
     top:10,
     left:200,
     height:82,
@@ -64,7 +64,7 @@ var av_image3 = Titanium.UI.createImageView({
 view1.add(av_image3);
 
 var av_image4 = Titanium.UI.createImageView({
-    image:'/main_windows/Home_Icons/temp-photo-1.png', // the image for the image view
+    image:'Home_Icons/temp-photo-1.png', // the image for the image view
     top:10,
     left:300,
     height:82,
@@ -73,7 +73,7 @@ var av_image4 = Titanium.UI.createImageView({
 view1.add(av_image4);
 
 var av_image5 = Titanium.UI.createImageView({
-    image:'/main_windows/Home_Icons/temp-photo-1.png', // the image for the image view
+    image:'Home_Icons/temp-photo-1.png', // the image for the image view
     top:10,
     left:400,
     height:82,
@@ -82,7 +82,7 @@ var av_image5 = Titanium.UI.createImageView({
 view1.add(av_image5);
 
 var av_image6 = Titanium.UI.createImageView({
-    image:'/main_windows/Home_Icons/temp-photo-1.png', // the image for the image view
+    image:'Home_Icons/temp-photo-1.png', // the image for the image view
     top:10,
     left:500,
     height:82,
@@ -179,7 +179,8 @@ var btnEventInfo = Titanium.UI.createButton({
     left:20,
     width:82,  
     height:80,
-    backgroundImage: '/main_windows/Home_Icons/event1.png',  
+    backgroundImage: 'Home_Icons/event1.png',
+    //backgroundImage: '/main_windows/Home_Icons/event1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -191,7 +192,8 @@ var btnLocation = Titanium.UI.createButton({
     left:130,
     width:82,  
     height:80,
-    backgroundImage: '/main_windows/Home_Icons/maps1.png',  
+    backgroundImage: 'Home_Icons/maps1.png',
+    //backgroundImage: '/main_windows/Home_Icons/maps1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -203,7 +205,8 @@ var btnOwnersPhotos = Titanium.UI.createButton({
     left:225,
     width:82,  
     height:80,
-    backgroundImage: '/main_windows/Home_Icons/photos1.png',  
+    backgroundImage: 'Home_Icons/photos1.png',
+    //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -215,7 +218,8 @@ var btnArbitraryOne = Titanium.UI.createButton({
     left:20,
     width:82,  
     height:80,
-    backgroundImage: '/main_windows/Home_Icons/photos1.png',  
+    backgroundImage: 'Home_Icons/photos1.png',
+    //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
@@ -225,7 +229,8 @@ var btnArbitraryTwo = Titanium.UI.createButton({
     left:130,
     width:82,  
     height:80,
-    backgroundImage: '/main_windows/Home_Icons/photos1.png',  
+    backgroundImage: 'Home_Icons/photos1.png', 
+    //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
