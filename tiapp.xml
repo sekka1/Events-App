@@ -2,11 +2,11 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
 <id>smurf.grepr.iv</id>
 <name>smurf</name>
-<version>1.0.1098</version>
-<publisher>gakan</publisher>
-<url>http://smurf.grep-r.com</url>
+<version>1.1111112</version>
+<publisher>lacerta</publisher>
+<url>www.wedvite.com</url>
 <description>No description provided</description>
-<copyright>2011 by gakan</copyright>
+<copyright>2011 by lacerta</copyright>
 <icon>default_app_logo.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
