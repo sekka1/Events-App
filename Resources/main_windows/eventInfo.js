@@ -43,7 +43,8 @@ function addData( hasData, dataSet ){
         top:10,  
         left:10,  
         width:300,  
-        height:'auto'  
+        height:'auto',
+        backgroundColor:'#336699'  
     });  
     win.add(eventName);  
         
@@ -52,7 +53,8 @@ function addData( hasData, dataSet ){
         top:30,  
         left:10,  
         width:300,  
-        height:'auto'  
+        height:'auto',
+        backgroundColor:'#336699'  
     });  
     win.add(eventDescription);  
         

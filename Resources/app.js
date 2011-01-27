@@ -44,8 +44,9 @@ var homeTab = Titanium.UI.createTab({
     window:home  
 });  
 
-tabGroup.addTab(loginTab);
-tabGroup.open();
+//tabGroup.addTab(loginTab);
+//tabGroup.open();
+login.open();
 
 // GrantEntrance function which will close out the login window and
 // open up the iVMS windows/tabs
@@ -54,6 +55,7 @@ Ti.App.addEventListener('grantEntrance', function(event)
     
     home.site_url = site_url;
     home.idKey = event.idKey;
+    home.tabGroup2 = tabGroup2;
     //home.event_info_results  = event_info_results;
     //home.arbitrary_page_results = arbitrary_page_results;
      
