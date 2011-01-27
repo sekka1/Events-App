@@ -1,11 +1,5 @@
 var win = Titanium.UI.currentWindow;  
 
-var actInd = Titanium.UI.createActivityIndicator({
-    height:50,
-    width:10,
-    message:'Logging In'
-});
-
 var idKey = Titanium.UI.createTextField({  
     color:'#336699',  
     top:10,  
@@ -30,20 +24,18 @@ var loginBtn = Titanium.UI.createButton({
 });  
 win.add(loginBtn);  
 
-
 loginBtn.addEventListener('click',function(e)  
 {  
     if ( idKey.value != '' )  
     {  
-        // Show Activity indicator
-        //actInd.show();
-        
-        Ti.App.fireEvent('grantEntrance', {  
-            idKey:idKey.value
-        });           
+        win.idKey = idKey.value;
+        win.windowHome.idKey = idKey.value;
+        win.windowHome.open();
+        win.close();
     }  
     else  
     {  
         alert("The ID is required");  
     }  
 });  
+

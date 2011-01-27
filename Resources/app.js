@@ -1,71 +1,50 @@
-//
-// Setup Variables
-//
+// this sets the background color of the master UIView (when there are no windows/tab groups on it)
+Titanium.UI.setBackgroundColor('#000');
+
+/////////////////////////////////////////////
+// Global Variables
+/////////////////////////////////////////////
 var site_url = 'http://smurf.grep-r.com/';
+var idKey = '';
 
-
-// to include extra files you can do this
-Ti.include('main_windows/welcome.js');
-
-
-//
-// Data values for various pages.  We dont want to keep on
-// reloading data.  
-// These will be the un-evaluated data.  Pure json text data.
-//
-//var event_info_results = 'XXXXXX';
-//var arbitrary_page_results = '';
-
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)  
-//Titanium.UI.setBackgroundColor('#fff');  
-
-var tabGroup = Titanium.UI.createTabGroup();// Login window
-var tabGroup2 = Titanium.UI.createTabGroup(); // Post login windows
-
-var login = Titanium.UI.createWindow({  
+/////////////////////////////////////////////
+// Creating All Windows
+/////////////////////////////////////////////
+var windowLogin = Titanium.UI.createWindow({  
     title:'User Authentication',
     url:'main_windows/login.js',
     exitOnClose: true  
 });  
 
-var loginTab = Titanium.UI.createTab({  
-    title:"Login",  
-    window:login  
-});  
-var home = Titanium.UI.createWindow({  
+var windowHome = Titanium.UI.createWindow({  
     title:'Home Page',
-    url:'main_windows/home.js',
-    backgroundColor:'red',
-    exitOnClose: true  
+    url:'main_windows/home.js'
 });  
 
-var homeTab = Titanium.UI.createTab({  
-    title:"Home Page",  
-    window:home  
-});  
+var windowEventInfo = Titanium.UI.createWindow({  
+    title:'Event Info',
+    url:'main_windows/eventInfo.js'
+});
 
-//tabGroup.addTab(loginTab);
-//tabGroup.open();
-login.open();
+/////////////////////////////////////////////
+// Passing Variables to Each Window
+/////////////////////////////////////////////
 
-// GrantEntrance function which will close out the login window and
-// open up the iVMS windows/tabs
-Ti.App.addEventListener('grantEntrance', function(event)  
-{  
-    
-    home.site_url = site_url;
-    home.idKey = event.idKey;
-    home.tabGroup2 = tabGroup2;
-    //home.event_info_results  = event_info_results;
-    //home.arbitrary_page_results = arbitrary_page_results;
-     
-    // Closing the tabGroup that is holding the login tab
-    tabGroup.close();
-    
-    // Open up the tabGroup that has the main windows/tabs
-    tabGroup2.addTab(homeTab);
-    //tabGroup2.addTab(availabilityTab);
-    tabGroup2.open();
-     
-}); 
+// Login Window
+windowLogin.windowHome = windowHome;
+windowLogin.idkey = idKey;
 
+// Home Screen Window
+windowHome.windowEventInfo = windowEventInfo;
+windowHome.idKey = idKey;
+windowHome.site_url = site_url;
+
+// Event Info Window
+windowEventInfo.windowHome = windowHome;
+windowEventInfo.idKey = idKey;
+windowEventInfo.site_url = site_url;
+
+/////////////////////////////////////////////
+// Open First Window
+/////////////////////////////////////////////
+windowLogin.open();
