@@ -107,7 +107,7 @@ var tabGroupArbitrary = Titanium.UI.createTabGroup();// Arbitrary  window
 
 var eventInfo = Titanium.UI.createWindow({  
     title:'',  
-    url:'main_windows/eventInfo.js'
+    url:'eventInfo.js'
 });  
 
 var eventInfoTab = Titanium.UI.createTab({  
@@ -117,7 +117,7 @@ var eventInfoTab = Titanium.UI.createTab({
 
 var location = Titanium.UI.createWindow({  
     title:'',  
-    url:'main_windows/location.js'  
+    url:'location.js'  
 });  
 
 var locationTab = Titanium.UI.createTab({  
@@ -143,7 +143,7 @@ var mapview = Titanium.Map.createView({
 // 
 var arbitrary = Titanium.UI.createWindow({  
     title:'',  
-    url:'main_windows/arbitrary.js'  
+    url:'arbitrary.js'  
 });  
 
 var arbitraryTab = Titanium.UI.createTab({  
@@ -344,7 +344,9 @@ loadHomePage();
 //
 
 btnEventInfo.addEventListener('click',function(e)  
-{     
+{   
+    // Close the home page tab.  On the iPhone it writes on top of this
+    win.tabGroup2.close();
 
     Ti.API.info( "event_info_results: " + eventInfo.event_info_results );
 
@@ -421,6 +423,5 @@ win.addEventListener('focus',function(e)
 {  
     Ti.API.info( "home.js win.addEventListener - focus new" );
     
-    // Close the arbitrary tabs
-    //tabGroupArbitrary.close( arbitraryTab );
+    win.tabGroup2.open();
 });
