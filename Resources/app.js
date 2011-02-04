@@ -10,18 +10,18 @@ var idKey = '';
 /////////////////////////////////////////////
 // Creating All Windows
 /////////////////////////////////////////////
-var windowLogin = Titanium.UI.createWindow({  
+var windowLogin = Titanium.UI.createWindow({
     title:'User Authentication',
     url:'main_windows/login.js',
-    exitOnClose: true  
-});  
+    exitOnClose: true
+});
 
-var windowHome = Titanium.UI.createWindow({  
+var windowHome = Titanium.UI.createWindow({
     title:'Home Page',
     url:'main_windows/home.js'
-});  
+});
 
-var windowEventInfo = Titanium.UI.createWindow({  
+var windowEventInfo = Titanium.UI.createWindow({
     title:'Event Info',
     url:'main_windows/eventInfo.js'
 });

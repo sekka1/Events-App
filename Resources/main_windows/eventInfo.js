@@ -29,7 +29,7 @@ loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo
 
 loader.onload = function() 
 {
-    //Ti.API.info( "Event Info: " + this.responseText );
+    Ti.API.info( "Event Info: " + this.responseText );
 
     results = eval('('+this.responseText+')');
     
