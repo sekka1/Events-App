@@ -41,18 +41,28 @@ loader.onload = function()
     for( var i = 0; i < results.length; i++ )
         {
             if( i == 0 ){
-                Ti.API.info( "Arbitrary Info One: " + results[i]['name'] );
+                // This is the About Us info
             
-                btnArbitraryOne.title = results[i]['name'];
+                Ti.API.info( "Arbitrary Info One: " + results[i].name );
+            
+                btnArbitraryOne.title = results[i].name;
                 //btnArbitraryOne.backgroundImage = something;
+                
+                // Save Results
+                win.textAboutUs = results[i].description;
                 
                 win.add(btnArbitraryOne);
             }
             if( i == 1 ){
-                Ti.API.info( "Arbitrary Info Two: " + results[i]['name'] );
+                // This is the Wedding Party info
             
-                btnArbitraryTwo.title = results[i]['name'];
+                Ti.API.info( "Arbitrary Info Two: " + results[i].name );
+            
+                btnArbitraryTwo.title = results[i].name;
                 //btnArbitraryTwo.backgroundImage = something;
+                
+                // Save Results
+                win.textWeddingParty = results[i].description;
                 
                 win.add(btnArbitraryTwo);
             }

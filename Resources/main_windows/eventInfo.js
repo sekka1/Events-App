@@ -47,7 +47,7 @@ loader.onload = function()
     });
     
     var eventName = Titanium.UI.createLabel({  
-        text:results[0]['name'],  
+        text:results[0].name,  
         top:10,  
         left:10,  
         width:300,  
@@ -57,7 +57,7 @@ loader.onload = function()
     scrollView1.add(eventName);  
         
     var eventDescription = Titanium.UI.createLabel({  
-        text:results[0]['description'],  
+        text:results[0].description,  
         top:30,  
         left:10,  
         width:300,  
@@ -67,8 +67,7 @@ loader.onload = function()
     scrollView1.add(eventDescription); 
     
     win.add( scrollView1 );
-
-}
+};
 
 // Send the HTTP request
 loader.send();
