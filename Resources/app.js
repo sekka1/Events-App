@@ -50,6 +50,11 @@ var windowArbitrary = Titanium.UI.createWindow({
     url:'main_windows/arbitrary.js'
 });
 
+var windowFullPhoto = Titanium.UI.createWindow({
+    title:'Full PHoto',
+    url:'main_windows/fullphoto.js'
+});
+
 /////////////////////////////////////////////
 // Passing Variables to Each Window
 /////////////////////////////////////////////
@@ -65,8 +70,7 @@ windowHome.mapview = mapview;
 windowHome.idKey = idKey;
 windowHome.site_url = site_url;
 windowHome.windowArbitrary = windowArbitrary;
-//windowHome.textAboutUs = textAboutUs;
-//windowHome.textWeddingParty = textWeddingParty;
+windowHome.windowFullPhoto = windowFullPhoto;
 
 // Event Info Window
 windowEventInfo.windowHome = windowHome;
@@ -81,6 +85,9 @@ windowMap.site_url = site_url;
 
 // Arbitrary Window
 windowArbitrary.windowHome = windowHome;
+
+// Full Photo Window
+windowFullPhoto.windowHome = windowHome;
 
 /////////////////////////////////////////////
 // Open First Window
