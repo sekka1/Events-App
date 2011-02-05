@@ -17,7 +17,6 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
-
     // Create our HTTP Client and name it "loader"
 	var loader = Titanium.Network.createHTTPClient();
     
@@ -39,8 +38,19 @@ btnBack.addEventListener('click', function()
             subtitle:results[0].location,
             pincolor:Titanium.Map.ANNOTATION_RED,
             animate:true,
-            leftButton: '../images/appcelerator_small.png',
+            //leftButton: '../images/png/Bouquet.png',
+            //rightView:btnAnnotationRight,
             myid:1 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
+        });
+        
+        // Pass to event listener
+        eventLocation.location = results[0].location;
+        
+        eventLocation.addEventListener('click',function(e)  
+        {   
+            Ti.API.info( "Map button clicked" );
+            Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
+    
         });
 
         if( Titanium.Platform.name == 'iPhone OS' ){
