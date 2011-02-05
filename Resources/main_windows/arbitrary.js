@@ -44,11 +44,11 @@ if( win.arbitraryWinID == 1 ){
         contentWidth:'auto',
         contentHeight:'auto',
         top:40,
-        left:10,
+        left:0,
         //width:300,
         //height:600,
-        borderRadius:10,
-        backgroundColor:'#ff99000',
+        borderRadius:0,
+        backgroundColor:'red',
         showVerticalScrollIndicator:true,
         showHorizontalScrollIndicator:false
     });
@@ -56,8 +56,8 @@ if( win.arbitraryWinID == 1 ){
     var eventName = Titanium.UI.createLabel({  
         text:textName,  
         top:10,  
-        left:10,  
-        width:300,  
+        left:0,  
+        //width:300,  
         height:'auto',
         backgroundColor:'#336699'  
     });  
@@ -66,8 +66,8 @@ if( win.arbitraryWinID == 1 ){
     var eventDescription = Titanium.UI.createLabel({  
         text:textDescription,  
         top:30,  
-        left:10,  
-        width:300,  
+        left:0,  
+        //width:300,  
         height:'auto',
         backgroundColor:'#336699'  
     });  

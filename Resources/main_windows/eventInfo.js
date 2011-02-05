@@ -37,11 +37,11 @@ loader.onload = function()
         contentWidth:'auto',
         contentHeight:'auto',
         top:40,
-        left:10,
+        left:0,
         //width:300,
         //height:600,
-        borderRadius:10,
-        backgroundColor:'#ff99000',
+        borderRadius:0,
+        backgroundColor:'red',
         showVerticalScrollIndicator:true,
         showHorizontalScrollIndicator:false
     });
@@ -49,18 +49,19 @@ loader.onload = function()
     var eventName = Titanium.UI.createLabel({  
         text:results[0].name,  
         top:10,  
-        left:10,  
-        width:300,  
+        left:0,  
+        //width:300,
+        borderRadius:0,  
         height:'auto',
-        backgroundColor:'#336699'  
+        //backgroundColor:'#336699'  
     });  
     scrollView1.add(eventName);  
         
     var eventDescription = Titanium.UI.createLabel({  
         text:results[0].description,  
         top:30,  
-        left:10,  
-        width:300,  
+        left:0,  
+        //width:300,  
         height:'auto',
         backgroundColor:'#336699'  
     });  

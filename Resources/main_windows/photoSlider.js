@@ -10,19 +10,21 @@ var scrollView1 = Titanium.UI.createScrollView({
 	left:10,
 	width:300,
 	height:150,
-	borderRadius:10,
-	backgroundColor:'#ff99000',
+	borderRadius:0,
+	//backgroundColor:'blue',
+    backgroundImage:'../images/png/corkboard.jpg',
 	showVerticalScrollIndicator:false,
 	showHorizontalScrollIndicator:true
 });
 
 
 var view1 = Ti.UI.createView({
-	backgroundColor:'#336699',
-	borderRadius:10,
+    //backgroundImage:'../images/png/corkboard.jpg',
+	//backgroundColor:'green',
+	borderRadius:0,
 	width:700,
-	height:200,
-	top:10
+	height:150,
+	top:0
 });
 
 //
