@@ -22,6 +22,15 @@ btnBack.addEventListener('click', function()
         win.windowHome.open();
         win.close();
     }
+    
+    if( win.back_location == 'ownersPhotos' ){
+        win.windowOwnersPhoto.open();
+        win.close();
+    }
+    if( win.back_location == 'guestsPhotos' ){
+        win.windowGuestsPhoto.open();
+        win.close();
+    }
    
 });
 

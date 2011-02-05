@@ -50,9 +50,20 @@ var windowArbitrary = Titanium.UI.createWindow({
     url:'main_windows/arbitrary.js'
 });
 
+// This window just displays a picture
 var windowFullPhoto = Titanium.UI.createWindow({
     title:'Full PHoto',
-    url:'main_windows/fullphoto.js'
+    url:'main_windows/photoFullScreen.js'
+});
+
+var windowOwnersPhoto = Titanium.UI.createWindow({
+    title:'Full PHoto',
+    url:'main_windows/photoOwner.js'
+});
+
+var windowGuestsPhoto = Titanium.UI.createWindow({
+    title:'Full PHoto',
+    url:'main_windows/photoGuests.js'
 });
 
 /////////////////////////////////////////////
@@ -71,6 +82,8 @@ windowHome.idKey = idKey;
 windowHome.site_url = site_url;
 windowHome.windowArbitrary = windowArbitrary;
 windowHome.windowFullPhoto = windowFullPhoto;
+windowHome.windowOwnersPhoto = windowOwnersPhoto;
+windowHome.windowGuestsPhoto = windowGuestsPhoto;
 
 // Event Info Window
 windowEventInfo.windowHome = windowHome;
@@ -88,6 +101,18 @@ windowArbitrary.windowHome = windowHome;
 
 // Full Photo Window
 windowFullPhoto.windowHome = windowHome;
+windowFullPhoto.windowOwnersPhoto = windowOwnersPhoto;
+windowFullPhoto.windowGuestsPhoto = windowGuestsPhoto;
+
+// Owners Photos
+windowOwnersPhoto.windowHome = windowHome;
+windowOwnersPhoto.windowFullPhoto = windowFullPhoto;
+windowOwnersPhoto.site_url = site_url;
+
+// Owners Photos
+windowGuestsPhoto.windowHome = windowHome;
+windowGuestsPhoto.windowFullPhoto = windowFullPhoto;
+windowGuestsPhoto.site_url = site_url;
 
 /////////////////////////////////////////////
 // Open First Window
