@@ -16,6 +16,42 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
+
+var uploadButton = Titanium.UI.createButton({
+    title:'Add Photo',
+    top:10,
+    left:100,
+    width:75,
+    height:20,
+    borderRadius:1,
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
+});
+
+uploadButton.addEventListener('click', function()
+{
+	Titanium.Media.openPhotoGallery({
+		success: function(event) { 
+			var image = event.media;
+			var tempFile = Titanium.Filesystem.createTempFile();
+			tempFile.write(image);
+			var contents = tempFile.read();
+			 
+			var upload = Titanium.Network.createHttpClient();
+			upload.onload = function() {
+			    Ti.API.info("success");
+			};
+			 
+			upload.open("POST","http://garlandURL.com");
+			upload.send({ dataLength: tempFile.size, fileData: contents });
+		},
+		error: function() { alert('error'); },
+		cancel: function() { alert('cancel');}
+
+	});	
+
+});
+
+
 //
 // Setup Scrollable view.  Want to make the bottom portion of the
 // screen that fits thumbnails to be horizontally scrollable.
@@ -121,6 +157,7 @@ loader.onload = function()
     win.add(view);
     
     win.add(btnBack);
+    win.add(uploadButton);
     
 };
 
