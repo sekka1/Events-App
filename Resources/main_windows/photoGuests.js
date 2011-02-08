@@ -44,7 +44,7 @@ uploadButton.addEventListener('click', function()
 			upload.open("POST","http://garlandURL.com");
 			upload.send({ dataLength: tempFile.size, fileData: contents });
 		},
-		error: function() { alert('error'); },
+		error: function() { Ti.API.info("Error Occured during upload process." + event); alert('An error occured during upload please try again!'); },
 		cancel: function() { alert('cancel');}
 
 	});	
