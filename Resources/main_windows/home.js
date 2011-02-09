@@ -8,6 +8,8 @@ win.addEventListener('focus',function(e)
     Ti.API.info( "idKey: " + win.idKey );
 });
 
+Ti.include('properties.js');
+
 // Gets how many Arbitrary data pages the user has created and
 // makes an icon for it.
 Ti.include( 'getArbitraryButtons.js' );
