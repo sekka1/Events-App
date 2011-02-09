@@ -44,7 +44,7 @@ loader.onload = function()
 
     results = eval('('+this.responseText+')');
     
-    var widthCounter = 10;
+    var widthCounter = 5;
     
     // Only show 7 images here
     for(var i=0; i<results.length || i<7; i++){
@@ -54,7 +54,10 @@ loader.onload = function()
             top:10,
             left:widthCounter,
             height:82,
-            width:80
+	    borderColor: "#FF0000",
+	    borderWidth: 1,
+	    borderRadius: 3,
+            width:70
         });
         
         // Pass the url to the event listener
@@ -79,7 +82,7 @@ loader.onload = function()
         
         view1.add(av_image);
     
-        widthCounter = widthCounter + 90;
+        widthCounter = widthCounter + 80;
     }
 };
 
@@ -90,3 +93,17 @@ loader.send();
 scrollView1.add(view1);
 
 win.add(scrollView1);
+
+var flexSpace = Titanium.UI.createButton({
+systemButton:Titanium.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+});
+
+var toolbar = Titanium.UI.createToolbar({
+    items: [flexSpace],
+    top: 420
+});
+
+win.add(toolbar);
+
+
+

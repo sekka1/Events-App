@@ -21,7 +21,7 @@ var uploadButton = Titanium.UI.createButton({
     title:'Add Photo',
     top:10,
     left:100,
-    width:75,
+    width:100,
     height:20,
     borderRadius:1,
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
@@ -40,8 +40,7 @@ uploadButton.addEventListener('click', function()
 			upload.onload = function() {
 			    Ti.API.info("success");
 			};
-			 
-			upload.open("POST","http://garlandURL.com");
+			upload.open("POST",Titanium.App.Properties.getString(("postPhotoURL"));
 			upload.send({ dataLength: tempFile.size, fileData: contents });
 		},
 		error: function() { Ti.API.info("Error Occured during upload process." + event); alert('An error occured during upload please try again!'); },
@@ -50,7 +49,6 @@ uploadButton.addEventListener('click', function()
 	});	
 
 });
-
 
 //
 // Setup Scrollable view.  Want to make the bottom portion of the
@@ -99,10 +97,11 @@ loader.onload = function()
     {
         var item = Titanium.UI.createImageView({
 		image:results[c].photo_url,
-		width: 75,
+		width: 70,
 		height: 80,
-		borderWidth:0,
-		borderRadius:0,
+		borderWidth:1,
+		borderColor: "#AAAAAA",
+		borderRadius:3,
 		visibile: true
 		//title:labels[c]
         });
@@ -142,9 +141,9 @@ loader.onload = function()
                 //Ti.API.info('i=' + itemNum);
                 //Ti.API.info('dashboardList=' + dashboardList[itemNum].title);
                 dashboardList[itemNum].top = rowTop;
-                dashboardList[itemNum].left = (x==0)? 5 : prevLeft + 75;
+                dashboardList[itemNum].left = (x==0)? 3 : prevLeft + 75;
                 //Ti.API.info('dashboardItemTop: X:' + x + "ITEM_NUM:" + itemNum + "TOP:" + dashboardList[itemNum].top + " LEFT:" + dashboardList[itemNum].left);
-                prevLeft = dashboardList[itemNum].left + 5;
+                prevLeft = dashboardList[itemNum].left + 3;
                 view.add(dashboardList[itemNum]);
             }
         }
