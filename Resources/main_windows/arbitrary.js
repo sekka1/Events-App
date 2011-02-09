@@ -17,6 +17,10 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
+var actInd = Titanium.UI.createActivityIndicator({
+    height:50,
+    width:10
+});
 
 Ti.API.info( "arbitraryWinID: " + win.arbitraryWinID  );
 

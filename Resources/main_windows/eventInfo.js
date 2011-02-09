@@ -1,6 +1,5 @@
 var win = Titanium.UI.currentWindow;  
 
-
 var btnBack = Titanium.UI.createButton({  
     title:'Back',  
     top:10,  
@@ -18,6 +17,10 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
+var actInd = Titanium.UI.createActivityIndicator({
+    height:50,
+    width:10
+});
 
 // Create our HTTP Client
 var loader = Titanium.Network.createHTTPClient();

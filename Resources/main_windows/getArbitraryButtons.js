@@ -29,9 +29,9 @@ Ti.API.info( "Fetching Arbitrary Data" );
 // Sets the HTTP request method, and the URL to get data from
 loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey );
 
-
 loader.onload = function() 
 {
+
     results = eval('('+this.responseText+')');
 
     Ti.API.info( "Arbitrary Data length: " + results.length );
@@ -67,7 +67,6 @@ loader.onload = function()
                 win.add(btnArbitraryTwo);
             }
         }
-
 
 };
 

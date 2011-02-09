@@ -39,6 +39,7 @@ loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getPhotoDu
 
 loader.onload = function() 
 {
+    
     //Ti.API.info( "Event Info: " + this.responseText );
 
     results = eval('('+this.responseText+')');
