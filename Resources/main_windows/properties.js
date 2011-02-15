@@ -1,5 +1,5 @@
 
 var baseURL = "http://www.myapp.com/";
-var setPostPhotoURL = "/path/to/photo/app";
+var setPostPhotoURL = "http://smurf.grep-r.com/photos/upload";
 Titanium.App.Properties.setString("baseURL",baseURL);
 Titanium.App.Properties.setString("postPhotoURL",setPostPhotoURL);

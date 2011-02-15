@@ -40,8 +40,8 @@ uploadButton.addEventListener('click', function()
 			upload.onload = function() {
 			    Ti.API.info("success");
 			};
-			upload.open("POST",Titanium.App.Properties.getString(("postPhotoURL"));
-			upload.send({ dataLength: tempFile.size, fileData: contents });
+			upload.open("POST",Titanium.App.Properties.getString("postPhotoURL"));
+			upload.send({ dataLength: tempFile.size, fileData: contents, id: win.idKey });
 		},
 		error: function() { Ti.API.info("Error Occured during upload process." + event); alert('An error occured during upload please try again!'); },
 		cancel: function() { alert('cancel');}

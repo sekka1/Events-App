@@ -113,6 +113,7 @@ windowOwnersPhoto.site_url = site_url;
 windowGuestsPhoto.windowHome = windowHome;
 windowGuestsPhoto.windowFullPhoto = windowFullPhoto;
 windowGuestsPhoto.site_url = site_url;
+windowGuestsPhoto.idKey = idKey;
 
 /////////////////////////////////////////////
 // Open First Window
