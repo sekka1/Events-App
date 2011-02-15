@@ -76,3 +76,14 @@ btnGuestPhotos.addEventListener('click',function(e)
     win.close();
     
 });
+
+// Gift Registry
+btnRegistry.addEventListener('click',function(e)  
+{   
+    // Set this new window's variables
+    win.windowGiftRegistry.idKey = win.idKey;
+
+    win.windowGiftRegistry.open();
+    win.close();
+    
+});

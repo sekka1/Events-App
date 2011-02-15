@@ -66,6 +66,11 @@ var windowGuestsPhoto = Titanium.UI.createWindow({
     url:'main_windows/photoGuests.js'
 });
 
+var windowGiftRegistry = Titanium.UI.createWindow({
+    title:'Full PHoto',
+    url:'main_windows/giftRegistry.js'
+});
+
 /////////////////////////////////////////////
 // Passing Variables to Each Window
 /////////////////////////////////////////////
@@ -84,6 +89,7 @@ windowHome.windowArbitrary = windowArbitrary;
 windowHome.windowFullPhoto = windowFullPhoto;
 windowHome.windowOwnersPhoto = windowOwnersPhoto;
 windowHome.windowGuestsPhoto = windowGuestsPhoto;
+windowHome.windowGiftRegistry = windowGiftRegistry;
 
 // Event Info Window
 windowEventInfo.windowHome = windowHome;
@@ -114,6 +120,11 @@ windowGuestsPhoto.windowHome = windowHome;
 windowGuestsPhoto.windowFullPhoto = windowFullPhoto;
 windowGuestsPhoto.site_url = site_url;
 windowGuestsPhoto.idKey = idKey;
+
+// Gift Registry
+windowGiftRegistry.windowHome = windowHome;
+windowGiftRegistry.idKey = idKey;
+
 
 /////////////////////////////////////////////
 // Open First Window
