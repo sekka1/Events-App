@@ -57,18 +57,23 @@ var windowFullPhoto = Titanium.UI.createWindow({
 });
 
 var windowOwnersPhoto = Titanium.UI.createWindow({
-    title:'Full PHoto',
+    title:'Owners Photos',
     url:'main_windows/photoOwner.js'
 });
 
 var windowGuestsPhoto = Titanium.UI.createWindow({
-    title:'Full PHoto',
+    title:'Guests Photos',
     url:'main_windows/photoGuests.js'
 });
 
 var windowGiftRegistry = Titanium.UI.createWindow({
-    title:'Full PHoto',
+    title:'Gift Registry',
     url:'main_windows/giftRegistry.js'
+});
+
+var windowLBS = Titanium.UI.createWindow({
+    title:'Location Based Search',
+    url:'main_windows/lbs.js'
 });
 
 /////////////////////////////////////////////
@@ -90,6 +95,7 @@ windowHome.windowFullPhoto = windowFullPhoto;
 windowHome.windowOwnersPhoto = windowOwnersPhoto;
 windowHome.windowGuestsPhoto = windowGuestsPhoto;
 windowHome.windowGiftRegistry = windowGiftRegistry;
+windowHome.windowLBS = windowLBS;
 
 // Event Info Window
 windowEventInfo.windowHome = windowHome;
@@ -125,6 +131,8 @@ windowGuestsPhoto.idKey = idKey;
 windowGiftRegistry.windowHome = windowHome;
 windowGiftRegistry.idKey = idKey;
 
+// LBS 
+windowLBS.windowHome = windowHome;
 
 /////////////////////////////////////////////
 // Open First Window

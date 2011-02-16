@@ -87,3 +87,15 @@ var btnRegistry = Titanium.UI.createButton({
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
 win.add(btnRegistry);
+
+var btnLBS = Titanium.UI.createButton({  
+    title:'',  
+    top:200,  
+    left:225,
+    width:82,  
+    height:80,
+    backgroundImage: '../images/png/Champagne.png',
+    borderRadius:1,  
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+});  
+win.add(btnLBS);

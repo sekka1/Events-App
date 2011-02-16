@@ -87,3 +87,12 @@ btnRegistry.addEventListener('click',function(e)
     win.close();
     
 });
+
+
+// LBS
+btnLBS.addEventListener('click',function(e)  
+{   
+    win.windowLBS.open();
+    win.close();
+    
+});
