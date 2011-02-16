@@ -16,8 +16,6 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
-<<<<<<< HEAD
-=======
 Titanium.Geolocation.accuracy = Titanium.Geolocation.ACCURACY_BEST;
 Titanium.Geolocation.distanceFilter = 0.1;
 // GET CURRENT POSITION - THIS FIRES ONCE
@@ -40,17 +38,14 @@ Titanium.Geolocation.getCurrentPosition(function(e)
 
 
 /*
->>>>>>> 10b20a88136e6aad50d48afe8beffdb0f644b2ff
 var webview = Titanium.UI.createWebView({url:'http://www1.macys.com/registry/wedding/registryhome?cm_mmc=Google_Bridal-_-Coremetrics+Bridal+Exact_gift+registry-_-4181574038_Exact-_-gift+registry_mkwid_s100000000000236374430_4181574038|-|100000000000236374430&cm_guid=1-_-100000000000236374430-_-4181574038'});
 
 win.add(webview);
 
 win.add(btnBack);
 
+*/
 
-<<<<<<< HEAD
-
-=======
 //
 // SimpleGeo Example working with Appcelerator
 //
@@ -114,4 +109,3 @@ xhr.onload = function(e){
 xhr.open('GET', finalUrl);
 xhr.send();
 }
->>>>>>> 10b20a88136e6aad50d48afe8beffdb0f644b2ff
