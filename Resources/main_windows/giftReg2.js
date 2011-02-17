@@ -36,16 +36,6 @@ Titanium.Geolocation.getCurrentPosition(function(e)
 	runIT();
 });
 
-
-/*
-var webview = Titanium.UI.createWebView({url:'http://www1.macys.com/registry/wedding/registryhome?cm_mmc=Google_Bridal-_-Coremetrics+Bridal+Exact_gift+registry-_-4181574038_Exact-_-gift+registry_mkwid_s100000000000236374430_4181574038|-|100000000000236374430&cm_guid=1-_-100000000000236374430-_-4181574038'});
-
-win.add(webview);
-
-win.add(btnBack);
-
-*/
-
 //
 // SimpleGeo Example working with Appcelerator
 //
