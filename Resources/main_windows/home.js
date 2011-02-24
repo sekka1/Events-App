@@ -21,3 +21,4 @@ Ti.include( 'homeButtonsEventListeners.js' );
 // Puts in the bottom slider with photos
 Ti.include( 'photoSlider.js' );
 
+Ti.include('countDown.js');
