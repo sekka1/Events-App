@@ -25,7 +25,7 @@ var windowLogin = Titanium.UI.createWindow({
 
 var windowHome = Titanium.UI.createWindow({
     title:'Home Page',
-    url:'main_windows/home.js',
+    url:'main_windows/home.js'
 });
 
 var windowEventInfo = Titanium.UI.createWindow({

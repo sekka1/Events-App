@@ -94,16 +94,4 @@ scrollView1.add(view1);
 
 win.add(scrollView1);
 
-var flexSpace = Titanium.UI.createButton({
-systemButton:Titanium.UI.iPhone.SystemButton.FLEXIBLE_SPACE
-});
-
-var toolbar = Titanium.UI.createToolbar({
-    items: [flexSpace],
-    top: 420
-});
-
-win.add(toolbar);
-
-
 
