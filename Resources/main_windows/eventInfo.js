@@ -1,5 +1,16 @@
 var win = Titanium.UI.currentWindow;  
 
+var nav_bar = Titanium.UI.createImageView({
+        image:'../images/navigation/nav-bar-3.png',
+        top:0,
+        left:0,
+        height:40,
+        //width:330,
+	    borderWidth: 0,
+	    borderRadius: 0
+});
+win.add(nav_bar);
+
 var btnBack = Titanium.UI.createButton({  
     title:'Back',  
     top:10,  
@@ -44,25 +55,26 @@ loader.onload = function()
         //width:300,
         //height:600,
         borderRadius:0,
-        backgroundColor:'red',
+        backgroundColor:'#336699',
         showVerticalScrollIndicator:true,
         showHorizontalScrollIndicator:false
     });
-    
+
     var eventName = Titanium.UI.createLabel({  
         text:results[0].name,  
         top:10,  
-        left:0,  
+        left:125,  
         //width:300,
         borderRadius:0,  
         height:'auto',
         //backgroundColor:'#336699'  
     });  
-    scrollView1.add(eventName);  
+    //scrollView1.add(eventName);  
+    win.add(eventName);
         
     var eventDescription = Titanium.UI.createLabel({  
         text:results[0].description,  
-        top:30,  
+        top:10,  
         left:0,  
         //width:300,  
         height:'auto',

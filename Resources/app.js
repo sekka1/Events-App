@@ -25,7 +25,7 @@ var windowLogin = Titanium.UI.createWindow({
 
 var windowHome = Titanium.UI.createWindow({
     title:'Home Page',
-    url:'main_windows/home.js'
+    url:'main_windows/home.js',
 });
 
 var windowEventInfo = Titanium.UI.createWindow({
@@ -39,10 +39,11 @@ var windowMap = Titanium.UI.createWindow({
 });
 
 var mapview = Titanium.Map.createView({
-            mapType: Titanium.Map.STANDARD_TYPE,
-            animate:true,
-            regionFit:true,
-            userLocation:false
+        top:40,
+        mapType: Titanium.Map.STANDARD_TYPE,
+        animate:true,
+        regionFit:true,
+        userLocation:false
 });
 
 var windowArbitrary = Titanium.UI.createWindow({

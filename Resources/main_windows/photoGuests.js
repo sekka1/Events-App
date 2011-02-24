@@ -1,5 +1,25 @@
 var win = Titanium.UI.currentWindow;  
 
+var nav_bar = Titanium.UI.createImageView({
+        image:'../images/navigation/nav-bar-3.png',
+        top:0,
+        left:0,
+        height:40,
+        //width:330,
+	    borderWidth: 0,
+	    borderRadius: 0
+});
+win.add(nav_bar);
+
+var titleName = Titanium.UI.createLabel({  
+        text:'Guests Photos',  
+        top:10,  
+        left:150,  
+        borderRadius:0,  
+        height:'auto',
+}); 
+win.add(titleName);
+
 var btnBack = Titanium.UI.createButton({  
     title:'Back',  
     top:10,  
@@ -58,6 +78,7 @@ uploadButton.addEventListener('click', function()
 var view = Titanium.UI.createScrollView({
 	contentWidth:'auto',
 	contentHeight:'auto',
+    top:40,
 	bottom:10,
 	left:10,
 	//width:300,

@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
 <id>com.grepr.iv</id>
 <name>smurf</name>
-<version>1.0.1101</version>
+<version>1.0.1102</version>
 <publisher>gakan</publisher>
 <url>http://smurf.grep-r.com</url>
 <description>No description provided</description>

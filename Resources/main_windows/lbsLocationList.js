@@ -1,5 +1,26 @@
 var win = Titanium.UI.currentWindow;  
 
+var nav_bar = Titanium.UI.createImageView({
+        image:'../images/navigation/nav-bar-3.png',
+        top:0,
+        left:0,
+        height:40,
+        //width:330,
+	    borderWidth: 0,
+	    borderRadius: 0
+});
+win.add(nav_bar);
+
+var titleName = Titanium.UI.createLabel({  
+        text:'Store List',  
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+}); 
+win.add(titleName);
+
+
 var btnBack = Titanium.UI.createButton({  
     title:'Back',  
     top:10,  
@@ -26,9 +47,11 @@ var windowLocationDetail = Titanium.UI.createWindow({
 //
 // GET CURRENT POSITION - THIS FIRES ONCE
 //
-Ti.Geolocation.purpose = "Using location list to produce shops the user might be interested in at this location";
-Titanium.Geolocation.accuracy = Titanium.Geolocation.ACCURACY_BEST;
-Titanium.Geolocation.distanceFilter = 0.1;
+if (Titanium.Platform.name == 'iPhone OS'){
+    Ti.Geolocation.purpose = "Using location list to produce shops the user might be interested in at this location";
+    Titanium.Geolocation.accuracy = Titanium.Geolocation.ACCURACY_BEST;
+    Titanium.Geolocation.distanceFilter = 0.1;
+}
 
 var longitude;
 var latitude;
@@ -124,6 +147,7 @@ function runIT() {
     });
     // create table view
     var tableview = Titanium.UI.createTableView({
+        top:40,
         //data:data,
         search:search,
         filterAttribute:'title'

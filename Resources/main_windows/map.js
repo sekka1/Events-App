@@ -1,5 +1,25 @@
 var win = Titanium.UI.currentWindow;
 
+var nav_bar = Titanium.UI.createImageView({
+        image:'../images/navigation/nav-bar-3.png',
+        top:0,
+        left:0,
+        height:40,
+        //width:330,
+	    borderWidth: 0,
+	    borderRadius: 0
+});
+win.add(nav_bar);
+
+var titleName = Titanium.UI.createLabel({  
+        text:'Map',  
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+}); 
+win.add(titleName);
+
 var btnBack = Titanium.UI.createButton({  
     title:'Back',  
     top:10,  
