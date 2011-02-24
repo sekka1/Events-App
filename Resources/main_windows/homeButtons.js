@@ -47,19 +47,8 @@ win.add(btnOwnersPhotos);
 //
 // Row 2 - there are 2 other arbitrary window button in this row
 //
-/*
-var btnMap = Titanium.UI.createButton({  
-    title:'',  
-    top:105,  
-    left:225,
-    width:82,  
-    height:80,
-    backgroundImage: '../images/map-pin.png', 
-    borderRadius:1,  
-    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
-});  
-win.add(btnMap);
-*/
+
+
 
 //
 // Row 3
