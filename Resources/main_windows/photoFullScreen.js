@@ -1,5 +1,15 @@
 var win = Titanium.UI.currentWindow;  
 
+var nav_bar = Titanium.UI.createImageView({
+        image:'../images/navigation/nav-bar-3.png',
+        top:0,
+        left:0,
+        height:40,
+        //width:330,
+	    borderWidth: 0,
+	    borderRadius: 0
+});
+win.add(nav_bar);
 
 var btnBack = Titanium.UI.createButton({  
     title:'Back',  
@@ -10,6 +20,8 @@ var btnBack = Titanium.UI.createButton({
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
+win.add(btnBack);
+
 
 
 btnBack.addEventListener('click', function()
@@ -36,7 +48,7 @@ btnBack.addEventListener('click', function()
 
 var av_image = Titanium.UI.createImageView({
         image:win.photo_url, // the image for the image view
-        top:0,
+        top:40,
         left:0,
         //height:82,
         //width:80
