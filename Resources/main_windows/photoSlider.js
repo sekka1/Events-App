@@ -35,7 +35,8 @@ var loader = Titanium.Network.createHTTPClient();
 
 Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getPhotoDummyOwners/id/" + win.idKey );
 
-loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getPhotoDummyOwners/id/" + win.idKey );
+//loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getPhotoDummyOwners/id/" + win.idKey );
+loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllOwnersPhotos/id/" + win.idKey );
 
 loader.onload = function() 
 {
@@ -50,7 +51,7 @@ loader.onload = function()
     for(var i=0; i<results.length || i<7; i++){
     
         var av_image = Titanium.UI.createImageView({
-            image:results[i].photo_url, // the image for the image view
+            image:'http://'+results[i].server_location+results[i].image_url, // the image for the image view
             top:10,
             left:widthCounter,
             height:82,
@@ -61,7 +62,7 @@ loader.onload = function()
         });
         
         // Pass the url to the event listener
-        av_image.photo_url = results[i].photo_url;
+        av_image.photo_url = 'http://'+results[i].server_location+results[i].image_url;
         av_image.back_location = 'home';
         
         // Event listener when the user clicks on the photo in the slider
