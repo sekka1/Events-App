@@ -11,14 +11,16 @@ var nav_bar = Titanium.UI.createImageView({
 });
 win.add(nav_bar);
 
-var btnBack = Titanium.UI.createButton({  
-    title:'Back',  
+//var btnBack = Titanium.UI.createButton({  
+var btnBack = Titanium.UI.createImageView({
+    //title:'Back',  
+    image:'../images/icon_arrow_left.png',
     top:10,  
     left:20,
     width:75,  
     height:20,
-    borderRadius:1,  
-    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+    borderRadius:1
+    //font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
 win.add(btnBack);
 

@@ -20,9 +20,17 @@ var btnBack = Titanium.UI.createButton({
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
-win.add(btnBack);
+//win.add(btnBack);
 
-
+var btnComment = Titanium.UI.createButton({  
+    title:'Comment',  
+    top:30,  
+    left:20,
+    width:75,  
+    height:20,
+    borderRadius:1,  
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+});  
 
 btnBack.addEventListener('click', function()
 {
@@ -46,6 +54,22 @@ btnBack.addEventListener('click', function()
    
 });
 
+btnComment.addEventListener('click', function()
+{
+    var windowComments = Titanium.UI.createWindow({
+        title:'Home Page',
+        url:'comments.js'
+    });
+    
+    windowComments.back_location = win.back_location;
+    windowComments.photo_url = win.photo_url;
+    windowComments.image_url = win.image_url;
+    windowComments.server_location = win.server_location;
+    windowComments.lastWindow = win;
+    windowComments.open();
+
+});
+
 var av_image = Titanium.UI.createImageView({
         image:win.photo_url, // the image for the image view
         top:40,
@@ -57,3 +81,4 @@ win.add( av_image );
 
 // Add button on top of the image
 win.add(btnBack);
+win.add(btnComment);
