@@ -41,23 +41,32 @@ loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllOwne
 loader.onload = function() 
 {
     
-    //Ti.API.info( "Event Info: " + this.responseText );
+//    Ti.API.info( "Event Info: " + this.responseText );
 
     results = eval('('+this.responseText+')');
     
     var widthCounter = 5;
     
+    // Set max number of photos in slider
+    var maxPhotos = 7;
+    
+    if( results.length < maxPhotos ){
+        maxPhotos = results.length
+    }
+    
     // Only show 7 images here
-    for(var i=0; i<results.length || i<7; i++){
+    for(var i=0; i<maxPhotos; i++){
+    
+        Ti.API.info( "i: " + i );
     
         var av_image = Titanium.UI.createImageView({
             image:'http://'+results[i].server_location+results[i].image_url, // the image for the image view
             top:10,
             left:widthCounter,
             height:82,
-	    borderColor: "#FF0000",
-	    borderWidth: 1,
-	    borderRadius: 3,
+            borderColor: "#FF0000",
+            borderWidth: 1,
+            borderRadius: 3,
             width:70
         });
         

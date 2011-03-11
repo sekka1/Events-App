@@ -43,8 +43,8 @@ var new_image_url = win.image_url.replace( /\//g, "__" );
 
 var webview = Titanium.UI.createWebView({
         url:'http://smurf.grep-r.com/photos/commentonly/width/800/location/'+win.server_location+'/url/' + new_image_url,
-    top:40,
-    scalesPageToFit:false
+    top:40
+    //scalesPageToFit:false
 });
 
 win.add(webview);
