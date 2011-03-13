@@ -25,7 +25,7 @@ var btnMap = Titanium.UI.createButton({
     left:130,
     width:82,  
     height:84,
-    backgroundImage: '../images/map_new_small.png', 
+    backgroundImage: '../images/png/map_new_small.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  

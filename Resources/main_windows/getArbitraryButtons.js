@@ -4,7 +4,7 @@ var btnArbitraryOne = Titanium.UI.createButton({
     left:20,
     width:82,  
     height:80,
-    backgroundImage: '../images/png/Cake.png',
+    backgroundImage: '../images/png/our_new_family_small.png',
     //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
@@ -15,7 +15,7 @@ var btnArbitraryTwo = Titanium.UI.createButton({
     left:130,
     width:82,  
     height:80,
-    backgroundImage: '../images/png/Cake.png', 
+    backgroundImage: '../images/png/our_story_new_small.png', 
     //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
