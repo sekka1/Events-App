@@ -45,8 +45,22 @@ loader.onload = function()
             
                 Ti.API.info( "Arbitrary Info One: " + results[i].name );
             
-                btnArbitraryOne.title = results[i].name;
+                //btnArbitraryOne.title = results[i].name;
                 //btnArbitraryOne.backgroundImage = something;
+                
+                var lblArbitrary1 = Titanium.UI.createLabel({
+                    text:results[i].name,
+                    width:'auto',
+                    height:'auto',
+                    font:{fontFamily:'Courier',fontSize:14},
+                    left:40,
+                    top:165,
+                    color:'white',
+                    shadowColor:'#aaa',
+                    shadowOffset:{x:1,y:1},
+                    zIndex:99
+                });
+                win.add(lblArbitrary1);
                 
                 // Save Results
                 win.textAboutUs = results[i].description;
@@ -58,8 +72,22 @@ loader.onload = function()
             
                 Ti.API.info( "Arbitrary Info Two: " + results[i].name );
             
-                btnArbitraryTwo.title = results[i].name;
+                //btnArbitraryTwo.title = results[i].name;
                 //btnArbitraryTwo.backgroundImage = something;
+                
+                var lblArbitrary2 = Titanium.UI.createLabel({
+                    text:results[i].name,
+                    width:'auto',
+                    height:'auto',
+                    font:{fontFamily:'Courier',fontSize:14},
+                    left:130,
+                    top:165,
+                    color:'white',
+                    shadowColor:'#aaa',
+                    shadowOffset:{x:1,y:1},
+                    zIndex:99
+                });
+                win.add(lblArbitrary2);
                 
                 // Save Results
                 win.textWeddingParty = results[i].description;
