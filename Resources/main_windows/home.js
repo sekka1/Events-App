@@ -1,5 +1,5 @@
 var win = Titanium.UI.currentWindow;  
-win.setBackgroundImage('../images/chip.jpg');
+win.setBackgroundImage('../images/background.jpg');
 
 win.addEventListener('focus',function(e)  
 {  
