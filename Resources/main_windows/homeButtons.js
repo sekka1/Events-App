@@ -13,7 +13,7 @@ var btnEventInfo = Titanium.UI.createButton({
     left:20,
     width:82,  
     height:84,
-    backgroundImage: '../images/png/event_info_new.png',
+    backgroundImage: '../images/png/event_info_new_small.png',
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -25,7 +25,7 @@ var btnMap = Titanium.UI.createButton({
     left:130,
     width:82,  
     height:84,
-    backgroundImage: '../images/map_new.png', 
+    backgroundImage: '../images/map_new_small.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -37,7 +37,7 @@ var btnOwnersPhotos = Titanium.UI.createButton({
     left:225,
     width:82,  
     height:84,
-    backgroundImage: '../images/png/photos_new.png',
+    backgroundImage: '../images/png/photos_new_small.png',
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -58,7 +58,7 @@ var btnGuestPhotos = Titanium.UI.createButton({
     left:20,
     width:82,  
     height:84,
-    backgroundImage: '../images/png/photos_new.png', 
+    backgroundImage: '../images/png/photos_new_small.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -70,7 +70,7 @@ var btnRegistry = Titanium.UI.createButton({
     left:130,
     width:82,  
     height:84,
-    backgroundImage: '../images/png/registry_new.png', 
+    backgroundImage: '../images/png/registry_new_small.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
