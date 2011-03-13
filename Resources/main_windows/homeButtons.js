@@ -19,6 +19,22 @@ var btnEventInfo = Titanium.UI.createButton({
 });  
 win.add(btnEventInfo);
 
+var lblEventInfo = Titanium.UI.createLabel({
+	text:'Event Info',
+	width:'auto',
+	height:'auto',
+	font:{fontFamily:'Courier',fontSize:14},
+	left:20,
+	top:88,
+	color:'#000',
+	shadowColor:'#aaa',
+	shadowOffset:{x:1,y:1},
+	zIndex:99
+});
+win.add(lblEventInfo);
+	
+	
+
 var btnMap = Titanium.UI.createButton({  
     title:'',  
     top:10,  
@@ -47,6 +63,7 @@ win.add(btnOwnersPhotos);
 //
 // Row 2 - there are 2 other arbitrary window button in this row
 //
+//See arbitraryButtons.js 
 
 
 //
