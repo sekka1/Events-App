@@ -56,9 +56,7 @@ loader.onload = function()
     
     // Only show 7 images here
     for(var i=0; i<maxPhotos; i++){
-    
-        Ti.API.info( "i: " + i );
-    
+
         var av_image = Titanium.UI.createImageView({
             image:'http://'+results[i].server_location+results[i].image_url, // the image for the image view
             top:10,
