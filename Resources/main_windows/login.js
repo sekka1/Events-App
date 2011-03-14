@@ -3,7 +3,7 @@ win.setBackgroundImage('../images/background.jpg');
 
 var idKey = Titanium.UI.createTextField({  
     color:'#336699',  
-    top:10,  
+    bottom:60,  
     left:10,  
     width:300,  
     height:40,  
@@ -17,7 +17,7 @@ win.add(idKey);
   
 var loginBtn = Titanium.UI.createButton({  
     title:'Login',  
-    top:60,  
+    bottom:10,  
     width:90,  
     height:35,  
     borderRadius:1,  
