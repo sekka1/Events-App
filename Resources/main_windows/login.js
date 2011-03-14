@@ -1,4 +1,5 @@
-var win = Titanium.UI.currentWindow;  
+var win = Titanium.UI.currentWindow;
+win.setBackgroundImage('../images/background.jpg');
 
 var idKey = Titanium.UI.createTextField({  
     color:'#336699',  
