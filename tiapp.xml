@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-<id>com.grepr.iv</id>
+<id>smurf.grepr.iv</id>
 <name>smurf</name>
-<version>1.0.1102</version>
+<version>1.0.1103</version>
 <publisher>gakan</publisher>
 <url>http://smurf.grep-r.com</url>
 <description>No description provided</description>

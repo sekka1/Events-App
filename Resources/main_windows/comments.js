@@ -45,10 +45,10 @@ var new_image_url = win.image_url.replace( /\//g, "__" );
 // iPHone - Width of 500 only covers half the screen
 
 var webview = Titanium.UI.createWebView({
-    url:'http://'+win.server_location+'/photos/fb/width/500/location/'+win.server_location+'/url/' + new_image_url,
+    url:'http://'+win.server_location+'/photos/fb/width/300/location/'+win.server_location+'/url/' + new_image_url,
     //url:'http://zend3.grep-r.com/gkan/gar-comment-2.php',
     top:40,
-    scalesPageToFit:true
+    scalesPageToFit:false
 });
 
 win.add(webview);
