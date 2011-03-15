@@ -4,12 +4,27 @@
 
 Ti.API.info( "homeButtons.js - focus" );
 
+
+var nav_bar = Titanium.UI.createImageView({
+        image:'../images/navigation/nav-bar-3.png',
+        top:0,
+        left:0,
+        height:39,
+        //width:330,
+            borderWidth: 0,
+            borderRadius: 0
+});
+win.add(nav_bar);
+
+
+
+
 //
 // Row 1
 //
 var btnEventInfo = Titanium.UI.createButton({  
     title:'',  
-    top:10,  
+    top:49,  
     left:35,
     width:60,  
     height:62,
@@ -25,7 +40,7 @@ var lblEventInfo = Titanium.UI.createLabel({
 	height:'auto',
 	font:{fontFamily:'Courier',fontSize:14},
 	left:20,
-	top:75,
+	top:85,
 	color:'white',
 	shadowColor:'#aaa',
 	shadowOffset:{x:1,y:1},
@@ -35,7 +50,7 @@ win.add(lblEventInfo);
 
 var btnMap = Titanium.UI.createButton({  
     title:'',  
-    top:10,  
+    top:49,  
     left:130,
     width:60,  
     height:62,
@@ -51,7 +66,7 @@ var lblMap = Titanium.UI.createLabel({
 	height:'auto',
 	font:{fontFamily:'Courier',fontSize:14},
 	left:145,
-	top:75,
+	top:85,
 	color:'white',
 	shadowColor:'#aaa',
 	shadowOffset:{x:1,y:1},
@@ -61,7 +76,7 @@ win.add(lblMap);
 
 var btnOwnersPhotos = Titanium.UI.createButton({  
     title:'',  
-    top:10,  
+    top:49,  
     left:225,
     width:60,  
     height:62,
@@ -77,7 +92,7 @@ var lblOwnersPhotos = Titanium.UI.createLabel({
 	height:'auto',
 	font:{fontFamily:'Courier',fontSize:14},
 	left:235,
-	top:75,
+	top:85,
 	color:'white',
 	shadowColor:'#aaa',
 	shadowOffset:{x:1,y:1},
@@ -96,7 +111,7 @@ win.add(lblOwnersPhotos);
 //
 var btnGuestPhotos = Titanium.UI.createButton({  
     title:'',  
-    top:200,  
+    top:220,  
     left:35,
     width:60,  
     height:62,
@@ -112,7 +127,7 @@ var lblGuestPhotos = Titanium.UI.createLabel({
 	height:'auto',
 	font:{fontFamily:'Courier',fontSize:14},
 	left:40,
-	top:265,
+	top:285,
 	color:'white',
 	shadowColor:'#aaa',
 	shadowOffset:{x:1,y:1},
@@ -122,7 +137,7 @@ win.add(lblGuestPhotos);
 
 var btnRegistry = Titanium.UI.createButton({  
     title:'',  
-    top:200,  
+    top:210,  
     left:130,
     width:60,  
     height:62,
@@ -148,7 +163,7 @@ win.add(lblRegistry);
 
 var btnLBS = Titanium.UI.createButton({  
     title:'',  
-    top:200,  
+    top:210,  
     left:225,
     width:60,  
     height:62,

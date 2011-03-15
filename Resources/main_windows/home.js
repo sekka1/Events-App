@@ -14,6 +14,7 @@ Ti.include('properties.js');
 // makes an icon for it.
 Ti.include( 'getArbitraryButtons.js' );
 
+
 // Put in the Common buttons on the home page
 Ti.include( 'homeButtons.js' );
 Ti.include( 'homeButtonsEventListeners.js' );
