@@ -63,7 +63,7 @@ loader.onload = function()
             left:widthCounter,
             height:82,
             borderColor: "#3F5696",
-            borderWidth: 1,
+            borderWidth: 0,
             borderRadius: 3,
             width:70
         });
