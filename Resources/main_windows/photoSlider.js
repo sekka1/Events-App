@@ -6,10 +6,10 @@
 var scrollView1 = Titanium.UI.createScrollView({
 	contentWidth:'auto',
 	contentHeight:'auto',
-	bottom:3,
+	bottom:0,
 	left:10,
 	width:300,
-	height:150,
+	height:125,
 	borderRadius:0,
 	//backgroundColor:'blue',
     backgroundImage:'../images/png/corkboard.jpg',

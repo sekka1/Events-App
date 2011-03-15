@@ -96,3 +96,11 @@ btnLBS.addEventListener('click',function(e)
     win.close();
     
 });
+
+// Wedding Comments
+btnWeddingComment.addEventListener('click',function(e)  
+{   
+    win.windowWeddingComments.open();
+    win.close();
+    
+});
