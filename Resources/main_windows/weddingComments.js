@@ -23,24 +23,9 @@ var btnBack = Titanium.UI.createButton({
 
 btnBack.addEventListener('click', function()
 {
-    // This page is used multiple times.  Call this window you
-    // need to set the back_location to tell it where to go
-    // when the back button is hit
-    
-    if( win.back_location == 'home' ){
-        win.windowHome.open();
-        win.close();
-    }
-    
-    if( win.back_location == 'ownersPhotos' ){
-        win.windowOwnersPhoto.open();
-        win.close();
-    }
-    if( win.back_location == 'guestsPhotos' ){
-        win.windowGuestsPhoto.open();
-        win.close();
-    }
-   
+    win.windowHome.open();
+    win.close();
+
 });
 
 
