@@ -11,7 +11,8 @@ var nav_bar = Titanium.UI.createImageView({
         left:0,
         height:39,
         //width:330,
-            borderWidth: 0,
+	    borderColor: "#3F5696",
+            borderWidth: 1,
             borderRadius: 0
 });
 win.add(nav_bar);
