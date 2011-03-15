@@ -118,7 +118,7 @@ view1.add(av_image2);
 var new_image_url = win.image_url.replace( /\//g, "__" );
 
 var webview = Titanium.UI.createWebView({
-    url:'http://'+win.server_location+'/photos/fb/width/500/location/'+win.server_location+'/url/' + new_image_url,
+    url:'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url,
     top:40,
     scalesPageToFit:false
 });
