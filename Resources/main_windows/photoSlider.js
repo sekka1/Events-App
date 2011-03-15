@@ -62,7 +62,7 @@ loader.onload = function()
             top:10,
             left:widthCounter,
             height:82,
-            borderColor: "#FF0000",
+            borderColor: "#3F5696",
             borderWidth: 1,
             borderRadius: 3,
             width:70
