@@ -69,42 +69,65 @@ btnComment.addEventListener('click', function()
     windowComments.open();
 
 });
-
+/*
 var scrollView1 = Titanium.UI.createScrollView({
-        contentWidth:'auto',
-        contentHeight:'auto',
-        top:40,
-        left:0,
-        //width:300,
-        //height:600,
-        borderRadius:0,
-        backgroundColor:'#336699',
-        showVerticalScrollIndicator:true,
-        showHorizontalScrollIndicator:false
+	contentWidth:'auto',
+	contentHeight:'auto',
+	bottom:0,
+    top:40,
+	left:0,
+	//width:300,
+	//height:150,
+	borderRadius:0,
+	//backgroundColor:'blue',
+    backgroundImage:'../images/png/corkboard.jpg',
+	showVerticalScrollIndicator:true,
+	showHorizontalScrollIndicator:false
 });
 
 
+var view1 = Ti.UI.createView({
+    //backgroundImage:'../images/png/corkboard.jpg',
+	//backgroundColor:'green',
+	borderRadius:0,
+	//width:700,
+	height:1000,
+	top:0
+});
+
 var av_image = Titanium.UI.createImageView({
         image:win.photo_url, // the image for the image view
-        top:40,
+        top:0,
         left:0,
         //height:82,
         //width:80
 });
-scrollView1.add(av_image);
+view1.add(av_image);
+
+var av_image2 = Titanium.UI.createImageView({
+        image:win.photo_url, // the image for the image view
+        top:100,
+        left:0,
+        //height:82,
+        //width:80
+});
+view1.add(av_image2);
+*/
+
+// Replacing the / with __ so that it can be passed into the FB photo comment generator
+var new_image_url = win.image_url.replace( /\//g, "__" );
 
 var webview = Titanium.UI.createWebView({
-    //url:'http://'+win.server_location+'/photos/fb/width/500/location/'+win.server_location+'/url/' + new_image_url,
-    url:'http://smurf.grep-r.com/photos/fb/width/450/location/smurf.grep-r.com/url/__pictures__14-phpRxT0MO.png',
-    //url:'http://zend3.grep-r.com/gkan/gar-comment-2.php',
-    top:140,
+    url:'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url,
+    top:40,
     scalesPageToFit:false
 });
-scrollView1.add(webview);
+win.add(webview);
 
+//scrollView1.add(view1);
 
-win.add(scrollView1);
+//win.add(scrollView1);
 
 // Add button on top of the image
 win.add(btnBack);
-win.add(btnComment);
+//win.add(btnComment);

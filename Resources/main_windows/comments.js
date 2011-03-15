@@ -39,6 +39,7 @@ btnBack.addEventListener('click', function()
 Ti.API.info( win.photo_url + ' ---- ' + win.image_url + ' ----- '  + win.server_location );
 Ti.API.info( win.image_url.replace( /\//g, '__' ) );
 
+// Replacing the / with __ so that it can be passed into the FB photo comment generator
 var new_image_url = win.image_url.replace( /\//g, "__" );
 
 // Evo - Width of 300 is perfect for the Evo, still cant hit the comment button to open the login
