@@ -1,6 +1,6 @@
 var btnArbitraryOne = Titanium.UI.createButton({  
     title:'',  
-    top:105,  
+    top:140,  
     left:35,
     width:60,  
     height:62,
@@ -11,7 +11,7 @@ var btnArbitraryOne = Titanium.UI.createButton({
 });
 var btnArbitraryTwo = Titanium.UI.createButton({  
     title:'',  
-    top:105,  
+    top:140,  
     left:130,
     width:60,  
     height:62,
@@ -54,7 +54,7 @@ loader.onload = function()
                     height:'auto',
                     font:{fontFamily:'Courier',fontSize:14},
                     left:40,
-                    top:175,
+                    top:205,
                     color:'white',
                     shadowColor:'#aaa',
                     shadowOffset:{x:1,y:1},
@@ -81,7 +81,7 @@ loader.onload = function()
                     height:'auto',
                     font:{fontFamily:'Courier',fontSize:14},
                     left:130,
-                    top:175,
+                    top:205,
                     color:'white',
                     shadowColor:'#aaa',
                     shadowOffset:{x:1,y:1},

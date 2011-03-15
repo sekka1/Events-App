@@ -77,6 +77,11 @@ var windowLBS = Titanium.UI.createWindow({
     url:'main_windows/lbs.js'
 });
 
+var windowWeddingComments = Titanium.UI.createWindow({
+    title:'Wedding Comments',
+    url:'main_windows/weddingComments.js'
+});
+
 /////////////////////////////////////////////
 // Passing Variables to Each Window
 /////////////////////////////////////////////
@@ -97,6 +102,7 @@ windowHome.windowOwnersPhoto = windowOwnersPhoto;
 windowHome.windowGuestsPhoto = windowGuestsPhoto;
 windowHome.windowGiftRegistry = windowGiftRegistry;
 windowHome.windowLBS = windowLBS;
+windowHome.windowWeddingComments = windowWeddingComments;
 
 // Event Info Window
 windowEventInfo.windowHome = windowHome;
@@ -134,6 +140,9 @@ windowGiftRegistry.idKey = idKey;
 
 // LBS 
 windowLBS.windowHome = windowHome;
+
+// Wedding Comments
+windowWeddingComments.windowHome = windowHome;
 
 /////////////////////////////////////////////
 // Open First Window
