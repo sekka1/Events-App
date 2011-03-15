@@ -95,6 +95,8 @@ loader.onload = function()
         
         // Pass the url to the event listener
         item.photo_url = 'http://'+results[c].server_location+results[c].image_url;
+        item.server_location = results[c].server_location;
+        item.image_url = results[c].image_url;
         item.back_location = 'ownersPhotos';
         
         // Event listener when the user clicks on the photo in the slider
@@ -106,6 +108,8 @@ loader.onload = function()
             // Variables passed into this event listener
             win.windowFullPhoto.back_location = e.source.back_location;
             win.windowFullPhoto.photo_url = e.source.photo_url;
+            win.windowFullPhoto.image_url = e.source.image_url;
+            win.windowFullPhoto.server_location = e.source.server_location;
             
             win.windowFullPhoto.open();
             win.close();

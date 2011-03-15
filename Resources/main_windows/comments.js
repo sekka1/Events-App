@@ -37,7 +37,7 @@ btnBack.addEventListener('click', function()
 });
 
 Ti.API.info( win.photo_url + ' ---- ' + win.image_url + ' ----- '  + win.server_location );
-Ti.API.info( win.image_url.replace( /\//g, "__" ) );
+Ti.API.info( win.image_url.replace( /\//g, '__' ) );
 
 var new_image_url = win.image_url.replace( /\//g, "__" );
 
