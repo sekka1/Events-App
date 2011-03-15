@@ -23,24 +23,9 @@ var btnBack = Titanium.UI.createButton({
 
 btnBack.addEventListener('click', function()
 {
-    // This page is used multiple times.  Call this window you
-    // need to set the back_location to tell it where to go
-    // when the back button is hit
-    
-    if( win.back_location == 'home' ){
-        win.windowHome.open();
-        win.close();
-    }
-    
-    if( win.back_location == 'ownersPhotos' ){
-        win.windowOwnersPhoto.open();
-        win.close();
-    }
-    if( win.back_location == 'guestsPhotos' ){
-        win.windowGuestsPhoto.open();
-        win.close();
-    }
-   
+    win.windowHome.open();
+    win.close();
+
 });
 
 
@@ -48,14 +33,12 @@ btnBack.addEventListener('click', function()
 //var new_image_url = win.image_url.replace( /\//g, "__" );
 
 var webview = Titanium.UI.createWebView({
-    //url:'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url,
-    url:'http://smurf.grep-r.com/photos/fb/width/450/location/smurf.grep-r.com/url/__pictures__14-phpRxT0MO.png',
+    url:'http://smurf.grep-r.com/photos/commentonly/width/325/location/smurf.grep-r.com/url/__' + win.idKey + 'comment',
+    //url:'http://smurf.grep-r.com/photos/fb/width/450/location/smurf.grep-r.com/url/__pictures__14-phpRxT0MO.png',
     top:40,
     scalesPageToFit:false
 });
 win.add(webview);
-
-
 
 // Add button on top of the image
 win.add(btnBack);

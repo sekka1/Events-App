@@ -143,6 +143,7 @@ windowLBS.windowHome = windowHome;
 
 // Wedding Comments
 windowWeddingComments.windowHome = windowHome;
+windowWeddingComments.idKey = idKey;
 
 /////////////////////////////////////////////
 // Open First Window

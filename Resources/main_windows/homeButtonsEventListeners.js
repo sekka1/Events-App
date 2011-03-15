@@ -100,6 +100,7 @@ btnLBS.addEventListener('click',function(e)
 // Wedding Comments
 btnWeddingComment.addEventListener('click',function(e)  
 {   
+    win.windowWeddingComments.idKey = win.idKey;
     win.windowWeddingComments.open();
     win.close();
     

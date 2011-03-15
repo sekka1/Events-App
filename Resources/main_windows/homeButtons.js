@@ -17,9 +17,6 @@ var nav_bar = Titanium.UI.createImageView({
 });
 win.add(nav_bar);
 
-
-
-
 //
 // Row 1
 //
