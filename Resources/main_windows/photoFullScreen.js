@@ -70,6 +70,20 @@ btnComment.addEventListener('click', function()
 
 });
 
+var scrollView1 = Titanium.UI.createScrollView({
+        contentWidth:'auto',
+        contentHeight:'auto',
+        top:40,
+        left:0,
+        //width:300,
+        //height:600,
+        borderRadius:0,
+        backgroundColor:'#336699',
+        showVerticalScrollIndicator:true,
+        showHorizontalScrollIndicator:false
+});
+
+
 var av_image = Titanium.UI.createImageView({
         image:win.photo_url, // the image for the image view
         top:40,
@@ -77,7 +91,19 @@ var av_image = Titanium.UI.createImageView({
         //height:82,
         //width:80
 });
-win.add( av_image );
+scrollView1.add(av_image);
+
+var webview = Titanium.UI.createWebView({
+    //url:'http://'+win.server_location+'/photos/fb/width/500/location/'+win.server_location+'/url/' + new_image_url,
+    url:'http://smurf.grep-r.com/photos/fb/width/450/location/smurf.grep-r.com/url/__pictures__14-phpRxT0MO.png',
+    //url:'http://zend3.grep-r.com/gkan/gar-comment-2.php',
+    top:140,
+    scalesPageToFit:false
+});
+scrollView1.add(webview);
+
+
+win.add(scrollView1);
 
 // Add button on top of the image
 win.add(btnBack);
