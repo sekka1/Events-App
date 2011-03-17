@@ -64,7 +64,7 @@ loader.onload = function()
             height:82,
 	    backgroundColor: "#FFFFFF",
             borderColor: "#3F5696",
-            borderWidth: 1,
+            borderWidth: 0,
             borderRadius: 3,
             width:70
         });
