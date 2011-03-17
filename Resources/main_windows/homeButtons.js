@@ -25,8 +25,9 @@ var btnEventInfo = Titanium.UI.createButton({
     top:49,  
     left:35,
     width:60,  
-    height:62,
+    height:61,
     backgroundImage: '../images/png/event_info_new_small.png',
+    backgroundSelectedImage: '../images/png/event_info_new_small_down.png',
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -51,8 +52,9 @@ var btnMap = Titanium.UI.createButton({
     top:49,  
     left:130,
     width:60,  
-    height:62,
+    height:61,
     backgroundImage: '../images/png/map_new_small.png', 
+    backgroundSelectedImage: '../images/png/map_new_small_down.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -77,8 +79,9 @@ var btnOwnersPhotos = Titanium.UI.createButton({
     top:49,  
     left:225,
     width:60,  
-    height:62,
+    height:61,
     backgroundImage: '../images/png/photos_new_small.png',
+    backgroundSelectedImage: '../images/png/photos_new_small_down.png',
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -146,8 +149,9 @@ var btnGuestPhotos = Titanium.UI.createButton({
     top:235,  
     left:35,
     width:60,  
-    height:62,
+    height:61,
     backgroundImage: '../images/png/photos_new_small.png', 
+    backgroundSelectedImage: '../images/png/photos_new_small_down.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -172,8 +176,9 @@ var btnRegistry = Titanium.UI.createButton({
     top:235,  
     left:130,
     width:60,  
-    height:62,
+    height:61,
     backgroundImage: '../images/png/registry_new.png', 
+    backgroundSelectedImage: '../images/png/registry_new_down.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
