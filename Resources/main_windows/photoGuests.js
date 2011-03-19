@@ -1,7 +1,7 @@
 var win = Titanium.UI.currentWindow;  
 
 var nav_bar = Titanium.UI.createImageView({
-        image:'../images/navigation/nav-bar-3.png',
+        image:'../images/navigation/nav-bar-blank.png',
         top:0,
         left:0,
         height:40,
@@ -49,8 +49,12 @@ var uploadButton = Titanium.UI.createButton({
 
 uploadButton.addEventListener('click', function()
 {
+
+Ti.API.info( Titanium.App.Properties.getString("postPhotoURL") );
+
 	Titanium.Media.openPhotoGallery({
 		success: function(event) { 
+            alert('upload success');
 			var image = event.media;
 			var tempFile = Titanium.Filesystem.createTempFile();
 			tempFile.write(image);
@@ -100,9 +104,9 @@ var photoList = [];
 // Create our HTTP Client
 var loader = Titanium.Network.createHTTPClient();
 
-Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getPhotoDummyOwners/id/" + win.idKey );
+Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
 
-loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllGuestsPhotos/id/" + win.idKey );
+loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
 
 loader.onload = function() 
 {
