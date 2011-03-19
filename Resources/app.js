@@ -57,14 +57,9 @@ var windowFullPhoto = Titanium.UI.createWindow({
     url:'main_windows/photoFullScreen.js'
 });
 
-var windowOwnersPhoto = Titanium.UI.createWindow({
-    title:'Owners Photos',
-    url:'main_windows/photoOwner.js'
-});
-
-var windowGuestsPhoto = Titanium.UI.createWindow({
+var windowPhotos = Titanium.UI.createWindow({
     title:'Guests Photos',
-    url:'main_windows/photoGuests.js'
+    url:'main_windows/photos.js'
 });
 
 var windowGiftRegistry = Titanium.UI.createWindow({
@@ -98,8 +93,7 @@ windowHome.idKey = idKey;
 windowHome.site_url = site_url;
 windowHome.windowArbitrary = windowArbitrary;
 windowHome.windowFullPhoto = windowFullPhoto;
-windowHome.windowOwnersPhoto = windowOwnersPhoto;
-windowHome.windowGuestsPhoto = windowGuestsPhoto;
+windowHome.windowPhotos = windowPhotos;
 windowHome.windowGiftRegistry = windowGiftRegistry;
 windowHome.windowLBS = windowLBS;
 windowHome.windowWeddingComments = windowWeddingComments;
@@ -120,19 +114,13 @@ windowArbitrary.windowHome = windowHome;
 
 // Full Photo Window
 windowFullPhoto.windowHome = windowHome;
-windowFullPhoto.windowOwnersPhoto = windowOwnersPhoto;
-windowFullPhoto.windowGuestsPhoto = windowGuestsPhoto;
+windowFullPhoto.windowPhotos = windowPhotos;
 
-// Owners Photos
-windowOwnersPhoto.windowHome = windowHome;
-windowOwnersPhoto.windowFullPhoto = windowFullPhoto;
-windowOwnersPhoto.site_url = site_url;
-
-// Owners Photos
-windowGuestsPhoto.windowHome = windowHome;
-windowGuestsPhoto.windowFullPhoto = windowFullPhoto;
-windowGuestsPhoto.site_url = site_url;
-windowGuestsPhoto.idKey = idKey;
+// Photos
+windowPhotos.windowHome = windowHome;
+windowPhotos.windowFullPhoto = windowFullPhoto;
+windowPhotos.site_url = site_url;
+windowPhotos.idKey = idKey;
 
 // Gift Registry
 windowGiftRegistry.windowHome = windowHome;

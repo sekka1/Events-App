@@ -55,24 +55,13 @@ btnArbitraryTwo.addEventListener('click',function(e)
     
 });
 
-// Owners Photos
-btnOwnersPhotos.addEventListener('click',function(e)  
-{   
-    // Set this new window's variables
-    win.windowOwnersPhoto.idKey = win.idKey;
-
-    win.windowOwnersPhoto.open();
-    win.close();
-    
-});
-
 // Guests Photos
 btnGuestPhotos.addEventListener('click',function(e)  
 {   
     // Set this new window's variables
-    win.windowGuestsPhoto.idKey = win.idKey;
+    win.windowPhotos.idKey = win.idKey;
 
-    win.windowGuestsPhoto.open();
+    win.windowPhotos.open();
     win.close();
     
 });

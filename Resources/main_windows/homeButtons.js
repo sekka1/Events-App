@@ -74,6 +74,7 @@ var lblMap = Titanium.UI.createLabel({
 });
 win.add(lblMap);
 
+/*
 var btnOwnersPhotos = Titanium.UI.createButton({  
     title:'',  
     top:49,  
@@ -85,7 +86,7 @@ var btnOwnersPhotos = Titanium.UI.createButton({
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
-//win.add(btnOwnersPhotos);
+win.add(btnOwnersPhotos);
 
 var lblOwnersPhotos = Titanium.UI.createLabel({
 	text:'Photos',
@@ -99,7 +100,8 @@ var lblOwnersPhotos = Titanium.UI.createLabel({
 	shadowOffset:{x:1,y:1},
 	zIndex:99
 });
-//win.add(lblOwnersPhotos);
+win.add(lblOwnersPhotos);
+*/
 
 //
 // Row 2 - there are 2 other arbitrary window button in this row
