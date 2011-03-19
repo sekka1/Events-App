@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-<id>com.grepr.iv</id>
-<name>smurf</name>
-<version>1.0.1104</version>
+<id>us.wedvite</id>
+<name>Wedvite</name>
+<version>1.0</version>
 <publisher>gakan</publisher>
-<url>http://smurf.grep-r.com</url>
+<url>http://wedvite.us</url>
 <description>No description provided</description>
 <copyright>2011 by gakan</copyright>
-<icon>appicon.png</icon>
+<icon>wedvite_icon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>
