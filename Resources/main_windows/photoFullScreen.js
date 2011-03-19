@@ -43,12 +43,8 @@ btnBack.addEventListener('click', function()
         win.close();
     }
     
-    if( win.back_location == 'ownersPhotos' ){
-        win.windowOwnersPhoto.open();
-        win.close();
-    }
-    if( win.back_location == 'guestsPhotos' ){
-        win.windowGuestsPhoto.open();
+    if( win.back_location == 'photos' ){
+        win.windowPhotos.open();
         win.close();
     }
    
