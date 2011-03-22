@@ -33,8 +33,7 @@ btnBack.addEventListener('click', function()
 //var new_image_url = win.image_url.replace( /\//g, "__" );
 
 var webview = Titanium.UI.createWebView({
-    url:'http://smurf.grep-r.com/photos/commentonly/width/325/location/smurf.grep-r.com/url/__' + win.idKey + 'comment',
-    //url:'http://smurf.grep-r.com/photos/fb/width/450/location/smurf.grep-r.com/url/__pictures__14-phpRxT0MO.png',
+    url:'http://wedvite.us/photos/commentonly/width/325/location/wedvite.us/url/__comments__' + win.idKey + 'comment',
     top:40,
     scalesPageToFit:false
 });
