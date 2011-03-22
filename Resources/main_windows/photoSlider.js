@@ -58,7 +58,7 @@ loader.onload = function()
     for(var i=0; i<maxPhotos; i++){
 
         var av_image = Titanium.UI.createImageView({
-            image:'http://'+results[i].server_location+results[i].image_url, // the image for the image view
+            image:'http://'+results[i].server_location+results[i].thumb_url, // the image for the image view
             top:10,
             left:widthCounter,
             height:82,

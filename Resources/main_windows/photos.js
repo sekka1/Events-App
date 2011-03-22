@@ -124,7 +124,7 @@ loader.onload = function()
     for (var c=0;c<results.length;c++)
     {
         var item = Titanium.UI.createImageView({
-		image:'http://'+results[c].server_location+results[c].image_url,
+		image:'http://'+results[c].server_location+results[c].thumb_url,
 		width: 70,
 		height: 80,
 		borderWidth:1,
