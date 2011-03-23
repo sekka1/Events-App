@@ -6,7 +6,7 @@ Ti.API.info( "Platform: " + Titanium.Platform.name );
 /////////////////////////////////////////////
 // Global Variables
 /////////////////////////////////////////////
-var site_url = 'http://smurf.grep-r.com/';
+var site_url = 'http://wedvite.us/';
 var idKey = '';
 
 // Arbitrary Windows
@@ -84,8 +84,10 @@ var windowWeddingComments = Titanium.UI.createWindow({
 // Login Window
 windowLogin.windowHome = windowHome;
 windowLogin.idkey = idKey;
+windowLogin.site_url = site_url;
 
 // Home Screen Window
+windowHome.windowLogin = windowLogin;
 windowHome.windowEventInfo = windowEventInfo;
 windowHome.windowMap = windowMap;
 windowHome.mapview = mapview;
