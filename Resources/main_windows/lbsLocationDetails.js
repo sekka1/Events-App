@@ -16,7 +16,7 @@ var titleName = Titanium.UI.createLabel({
         top:10,  
         left:125,  
         borderRadius:0,  
-        height:'auto',
+        height:'auto'
 }); 
 win.add(titleName);
 
@@ -120,7 +120,7 @@ xhr.onload = function(e){
         left:0,  
         //width:300,
         borderRadius:0,  
-        height:'auto',
+        height:'auto'
         //backgroundColor:'#336699'  
     });  
     scrollView1.add(locName);  

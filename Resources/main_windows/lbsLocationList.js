@@ -16,7 +16,7 @@ var titleName = Titanium.UI.createLabel({
         top:10,  
         left:125,  
         borderRadius:0,  
-        height:'auto',
+        height:'auto'
 }); 
 win.add(titleName);
 

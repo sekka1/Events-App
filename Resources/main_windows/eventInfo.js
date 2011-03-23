@@ -68,7 +68,7 @@ loader.onload = function()
         left:125,  
         //width:300,
         borderRadius:0,  
-        height:'auto',
+        height:'auto'
         //backgroundColor:'#336699'  
     });  
     //scrollView1.add(eventName);  

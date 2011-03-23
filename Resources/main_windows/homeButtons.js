@@ -126,7 +126,7 @@ var btnWeddingComment = Titanium.UI.createButton({
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
-win.add(btnWeddingComment)
+win.add(btnWeddingComment);
 
 var lblWeddingComment = Titanium.UI.createLabel({
 	text:'Comments',

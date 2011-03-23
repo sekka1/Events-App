@@ -51,7 +51,7 @@ loader.onload = function()
     var maxPhotos = 7;
     
     if( results.length < maxPhotos ){
-        maxPhotos = results.length
+        maxPhotos = results.length;
     }
     
     // Only show 7 images here
