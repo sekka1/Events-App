@@ -204,7 +204,7 @@ win.add(lblRegistry);
 var btnLBS = Titanium.UI.createButton({  
     title:'',  
     top:235,  
-    left:235,
+    left:225,
     width:60,  
     height:61,
     backgroundImage: '../images/png/lbs_search_up.png',
