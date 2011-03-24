@@ -122,6 +122,7 @@ var btnWeddingComment = Titanium.UI.createButton({
     width:60,  
     height:62,
     backgroundImage: '../images/png/comment.png', 
+    backgroundSelectedImage: '../images/png/comment_down.png',
     //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
