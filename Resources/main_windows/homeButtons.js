@@ -206,8 +206,9 @@ var btnLBS = Titanium.UI.createButton({
     top:235,  
     left:235,
     width:60,  
-    height:62,
-    backgroundImage: '../images/png/Champagne.png',
+    height:61,
+    backgroundImage: '../images/png/lbs_search_up.png',
+    backgroundSelectedImage: '../images/png/lbs_search_down.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
