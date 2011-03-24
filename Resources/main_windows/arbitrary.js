@@ -14,8 +14,8 @@ win.add(nav_bar);
 var btnBack = Titanium.UI.createButton({  
     title:'',  
     backgroundImage:'../images/navigation/back.png',
-    top:10,  
-    left:20,
+    top:5,  
+    left:2,
     width:50,  
     height:28,
     borderRadius:1,  
