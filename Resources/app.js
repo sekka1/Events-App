@@ -125,6 +125,7 @@ windowPhotos.site_url = site_url;
 windowPhotos.idKey = idKey;
 
 // Gift Registry
+windowGiftRegistry.site_url = site_url;
 windowGiftRegistry.windowHome = windowHome;
 windowGiftRegistry.idKey = idKey;
 
