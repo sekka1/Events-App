@@ -11,15 +11,7 @@ var nav_bar = Titanium.UI.createImageView({
 });
 win.add(nav_bar);
 
-var titleName = Titanium.UI.createLabel({  
-        text:'Gift Registry',  
-        top:10,  
-        left:125,  
-        borderRadius:0,  
-        height:'auto'
-}); 
-win.add(titleName);
-
+//var btnBack = Titanium.UI.createButton({  
 var btnBack = Titanium.UI.createButton({  
     title:'',  
     backgroundImage:'../images/navigation/back.png',
@@ -38,14 +30,68 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
-
-var webview = Titanium.UI.createWebView({
-    url:'http://www1.macys.com/registry/wedding/registryhome?cm_mmc=Google_Bridal-_-Coremetrics+Bridal+Exact_gift+registry-_-4181574038_Exact-_-gift+registry_mkwid_s100000000000236374430_4181574038|-|100000000000236374430&cm_guid=1-_-100000000000236374430-_-4181574038',
-    //url:'http://zend3.grep-r.com/gkan/gar-comment-2.php',
-    //url:'http://smurf.grep-r.com/photos/fb/width/450/location/smurf.grep-r.com/url/__pictures__14-phpRxT0MO.png',
-    top:40
+var actInd = Titanium.UI.createActivityIndicator({
+    height:50,
+    width:10
 });
 
-win.add(webview);
+// Create Sub window
+var windowRegistryView = Titanium.UI.createWindow({
+    title:'Viewing Gift',    url:'lbsLocationList.js'
+});
+function dynTable(rowData) { 
+	
+	// create table view data object
+	var data = [];
+	for(var i=0; i < rowData.length; i++) {
+		// use data passed into function 
+		data.push({title:rowData[i].name, hasChild:true, url:rowData[i].url} );	
+	}
 
-win.add(btnBack);
+	// create table view
+	var tableview = Titanium.UI.createTableView({
+    		top:40,
+        	data:data,
+        	filterAttribute:'title'
+	});
+
+	tableview.addEventListener('click', function(e)
+	{   
+        	// event data 
+        	var index = e.index;
+        	var section = e.section;
+        	var row = e.row;
+        	var rowdata = e.rowData;
+        
+        	//e.section.headerTitle = e.section.headerTitle + ' section has been clicked';
+        	//Titanium.UI.createAlertDialog({title:'Table View',message:'row ' + row + ' index ' + index + ' section ' + section  + ' row data ' + rowdata + ' type ' + row.type + ' searchTerm ' + row.searchTerm }).show();
+        
+    		windowLocationList.previousWin = win;
+    		windowLocationList.url = row.url;
+    		windowLocationList.open();
+        
+	});     
+	win.add(tableview);
+}
+
+
+// Create our HTTP Client
+var loader = Titanium.Network.createHTTPClient();
+
+Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetGiftRegistry/method/getInfo/id/" + win.idKey );
+
+// Sets the HTTP request method, and the URL to get data from
+loader.open( "GET", win.site_url + "data/index/class/GetGiftRegistry/method/getInfo/id/" + win.idKey );
+
+loader.onload = function() 
+{
+    Ti.API.info( "Gift Registry Data: " + this.responseText );
+
+    results = eval('('+this.responseText+')');
+    
+	dynTable(results);
+    
+};
+        
+// Send the HTTP request
+loader.send();
