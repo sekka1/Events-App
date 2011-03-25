@@ -1,6 +1,16 @@
 var win = Titanium.UI.currentWindow;
 win.setBackgroundImage('../images/background.jpg');
 
+var titlebar_logo = Titanium.UI.createImageView({
+        image:'../images/wedvite_titlebar_logo.png',
+        top:0,
+        left:0,
+        height:40,
+	    borderWidth: 0,
+	    borderRadius: 0
+});
+win.add(titlebar_logo);
+
 var idKey = Titanium.UI.createTextField({  
     color:'#336699',  
     bottom:60,  

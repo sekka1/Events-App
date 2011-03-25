@@ -4,19 +4,6 @@
 
 Ti.API.info( "homeButtons.js - focus" );
 
-
-var nav_bar = Titanium.UI.createImageView({
-        image:'../images/navigation/nav-bar-3.png',
-        top:0,
-        left:0,
-        height:39,
-        //width:330,
-	    borderColor: "#3F5696",
-            borderWidth: 1,
-            borderRadius: 0
-});
-win.add(nav_bar);
-
 //
 // Row 1
 //
