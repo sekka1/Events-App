@@ -2,25 +2,25 @@ var win = Titanium.UI.currentWindow;
 win.setBackgroundImage('../images/background.jpg');
 
 var nav_bar = Titanium.UI.createImageView({
-        image:'../images/navigation/nav-bar-blank.png',
+        image:'../images/navigation/nav-bar-1.png',
         top:0,
         left:0,
-        height:40,
-        //width:330,
+        height:39,
+        width:315,
 	    borderWidth: 0,
 	    borderRadius: 0
 });
 win.add(nav_bar);
 
-var titlebar_logo = Titanium.UI.createImageView({
-        image:'../images/wedvite_titlebar_logo.png',
-        top:0,
-        left:0,
-        height:40,
-	    borderWidth: 0,
-	    borderRadius: 0
-});
-win.add(titlebar_logo);
+//var titlebar_logo = Titanium.UI.createImageView({
+//        image:'../images/wedvite_titlebar_logo.png',
+//        top:0,
+//        left:0,
+//        height:40,
+//	    borderWidth: 0,
+//	    borderRadius: 0
+//});
+//win.add(titlebar_logo);
 
 win.addEventListener('focus',function(e)  
 {  

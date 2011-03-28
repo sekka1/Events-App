@@ -2,10 +2,11 @@ var win = Titanium.UI.currentWindow;
 win.setBackgroundImage('../images/background.jpg');
 
 var titlebar_logo = Titanium.UI.createImageView({
-        image:'../images/wedvite_titlebar_logo.png',
-        top:0,
-        left:0,
-        height:40,
+        image:'../images/wedvite_logo.png',
+        top:160,
+        left:72,
+        width: 176,
+        height:60,
 	    borderWidth: 0,
 	    borderRadius: 0
 });
