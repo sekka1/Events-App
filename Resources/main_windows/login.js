@@ -19,7 +19,7 @@ var idKey = Titanium.UI.createTextField({
     width:300,  
     height:40,  
     hintText:'ID',
-    value: '20',  
+    value: '27',  
     keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
     returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
     borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  

@@ -13,8 +13,8 @@ var btnEventInfo = Titanium.UI.createButton({
     left:35,
     width:60,  
     height:61,
-    backgroundImage: '../images/png/event_info_new_small.png',
-    backgroundSelectedImage: '../images/png/event_info_new_small_down.png',
+    backgroundImage: '../images/templates/multi-color/event.png',
+    backgroundSelectedImage: '../images/templates/multi-color/event.png',
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -40,8 +40,8 @@ var btnMap = Titanium.UI.createButton({
     left:130,
     width:60,  
     height:61,
-    backgroundImage: '../images/png/map_new_small.png', 
-    backgroundSelectedImage: '../images/png/map_new_small_down.png', 
+    backgroundImage: '../images/templates/multi-color/map.png', 
+    backgroundSelectedImage: '../images/templates/multi-color/map.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -107,9 +107,9 @@ var btnWeddingComment = Titanium.UI.createButton({
     top:140,  
     left:225,
     width:60,  
-    height:62,
-    backgroundImage: '../images/png/comment.png', 
-    backgroundSelectedImage: '../images/png/comment_down.png',
+    height:61,
+    backgroundImage: '../images/templates/multi-color/comments.png', 
+    backgroundSelectedImage: '../images/templates/multi-color/comments.png',
     //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
@@ -140,8 +140,8 @@ var btnGuestPhotos = Titanium.UI.createButton({
     left:35,
     width:60,  
     height:61,
-    backgroundImage: '../images/png/photos_new_small.png', 
-    backgroundSelectedImage: '../images/png/photos_new_small_down.png', 
+    backgroundImage: '../images/templates/multi-color/photo.png', 
+    backgroundSelectedImage: '../images/templates/multi-color/photo.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -167,8 +167,8 @@ var btnRegistry = Titanium.UI.createButton({
     left:130,
     width:60,  
     height:61,
-    backgroundImage: '../images/png/registry_new.png', 
-    backgroundSelectedImage: '../images/png/registry_new_down.png', 
+    backgroundImage: '../images/templates/multi-color/registry.png', 
+    backgroundSelectedImage: '../images/templates/multi-color/registry.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -194,8 +194,8 @@ var btnLBS = Titanium.UI.createButton({
     left:225,
     width:60,  
     height:61,
-    backgroundImage: '../images/png/lbs_search_up.png',
-    backgroundSelectedImage: '../images/png/lbs_search_down.png', 
+    backgroundImage: '../images/templates/multi-color/location.png',
+    backgroundSelectedImage: '../images/templates/multi-color/location.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  

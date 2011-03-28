@@ -4,8 +4,8 @@ var btnArbitraryOne = Titanium.UI.createButton({
     left:35,
     width:60,  
     height:62,
-    backgroundImage: '../images/png/our_new_family_small.png',
-    //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
+    backgroundImage: '../images/templates/multi-color/aboutus.png',
+    backgroundSelectedImage: '../images/templates/multi-color/aboutus.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
@@ -15,8 +15,8 @@ var btnArbitraryTwo = Titanium.UI.createButton({
     left:130,
     width:60,  
     height:62,
-    backgroundImage: '../images/png/our_story_new_small.png', 
-    //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
+    backgroundImage: '../images/templates/multi-color/family.png',
+    backgroundSelectedImage: '../images/templates/multi-color/family.png',    
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
