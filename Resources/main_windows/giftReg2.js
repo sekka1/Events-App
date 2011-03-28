@@ -1,3 +1,4 @@
+/*
 var win = Titanium.UI.currentWindow;  
 
 var btnBack = Titanium.UI.createButton({  
@@ -99,3 +100,4 @@ xhr.onload = function(e){
 xhr.open('GET', finalUrl);
 xhr.send();
 }
+*/

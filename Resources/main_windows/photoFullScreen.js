@@ -12,15 +12,16 @@ var nav_bar = Titanium.UI.createImageView({
 win.add(nav_bar);
 
 var btnBack = Titanium.UI.createButton({  
-    title:'Back',  
-    top:10,  
-    left:20,
-    width:75,  
-    height:20,
+    title:'',  
+    backgroundImage:'../images/navigation/back.png',
+    top:5,  
+    left:2,
+    width:50,  
+    height:28,
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
-//win.add(btnBack);
+win.add(btnBack);
 
 var btnComment = Titanium.UI.createButton({  
     title:'Comment',  
