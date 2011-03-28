@@ -1,4 +1,4 @@
-var btnArbitraryOne = Titanium.UI.createButton({  
+/*var btnArbitraryOne = Titanium.UI.createButton({  
     title:'',  
     top:140,  
     left:35,
@@ -20,7 +20,7 @@ var btnArbitraryTwo = Titanium.UI.createButton({
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
-
+*/
 // Create our HTTP Client and name it "loader"
 var loader = Titanium.Network.createHTTPClient();
 
@@ -65,7 +65,7 @@ loader.onload = function()
                 // Save Results
                 win.textAboutUs = results[i].description;
                 
-                win.add(btnArbitraryOne);
+                //win.add(btnArbitraryOne);
             }
             if( i == 1 ){
                 // This is the Wedding Party info
@@ -92,7 +92,7 @@ loader.onload = function()
                 // Save Results
                 win.textWeddingParty = results[i].description;
                 
-                win.add(btnArbitraryTwo);
+                //win.add(btnArbitraryTwo);
             }
         }
 

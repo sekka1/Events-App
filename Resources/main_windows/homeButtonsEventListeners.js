@@ -33,14 +33,14 @@ btnArbitraryOne.addEventListener('click',function(e)
     
     // Pass result to windowArbitrary
     win.windowArbitrary.arbitraryWinID = 0;
-    win.windowArbitrary.textAboutUs = win.textAboutUs;
+    //win.windowArbitrary.textAboutUs = win.textAboutUs;
 
     win.windowArbitrary.open();
     win.close();
     
 });
 
-// Wedding Party
+// Family
 btnArbitraryTwo.addEventListener('click',function(e)  
 {   
     // Set this new window's variables
@@ -48,7 +48,7 @@ btnArbitraryTwo.addEventListener('click',function(e)
     
     // Pass result to windowArbitrary
     win.windowArbitrary.arbitraryWinID = 1;
-    win.windowArbitrary.textWeddingParty = win.textWeddingParty;
+    //win.windowArbitrary.textWeddingParty = win.textWeddingParty;
 
     win.windowArbitrary.open();
     win.close();

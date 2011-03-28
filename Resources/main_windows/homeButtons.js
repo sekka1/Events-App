@@ -97,9 +97,33 @@ win.add(lblOwnersPhotos);
 
 // There are 2 arbitrary buttons
 
-// 1 - Family
+// 1 - About Us
+var btnArbitraryOne = Titanium.UI.createButton({  
+    title:'',  
+    top:140,  
+    left:35,
+    width:60,  
+    height:62,
+    backgroundImage: '../images/templates/multi-color/aboutus.png',
+    backgroundSelectedImage: '../images/templates/multi-color/aboutus.png',  
+    borderRadius:1,  
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+});
+win.add(btnArbitraryOne);
 
-// 2 - About Us
+// 2 - Family
+var btnArbitraryTwo = Titanium.UI.createButton({  
+    title:'',  
+    top:140,  
+    left:130,
+    width:60,  
+    height:62,
+    backgroundImage: '../images/templates/multi-color/family.png',
+    backgroundSelectedImage: '../images/templates/multi-color/family.png',    
+    borderRadius:1,  
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+});
+win.add(btnArbitraryTwo)
 
 // 3 - Wedding Comment Page
 var btnWeddingComment = Titanium.UI.createButton({  

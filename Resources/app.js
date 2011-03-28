@@ -38,21 +38,6 @@ var windowMap = Titanium.UI.createWindow({
     url:'main_windows/map.js'
 });
 
-// Can only have one map view.  Creating it here and passing it around
-var mapview = Titanium.Map.createView({
-        top:40,
-        mapType: Titanium.Map.STANDARD_TYPE,
-        animate:true,
-        regionFit:true,
-        userLocation:false
-});
-
-// Having problems with webviews.  Trying to create one and pass it around
-var webview = Titanium.UI.createWebView({
-    top:40,
-    scalesPageToFit:false
-});
-
 var windowArbitrary = Titanium.UI.createWindow({
     title:'Arbitrary',
     url:'main_windows/arbitrary.js'
@@ -85,6 +70,28 @@ var windowWeddingComments = Titanium.UI.createWindow({
 });
 
 /////////////////////////////////////////////
+// Creating App Objects
+/////////////////////////////////////////////
+
+// Can only have one map view.  Creating it here and passing it around
+var mapview = Titanium.Map.createView({
+        top:40,
+        mapType: Titanium.Map.STANDARD_TYPE,
+        animate:true,
+        regionFit:true,
+        userLocation:false
+});
+
+// Having problems with webviews.  Trying to create one and pass it around
+var webview = Titanium.UI.createWebView({
+    top:40,
+    scalesPageToFit:false
+});
+
+// Create our HTTP Client and name it "loader"
+var loader = Titanium.Network.createHTTPClient();
+
+/////////////////////////////////////////////
 // Passing Variables to Each Window
 /////////////////////////////////////////////
 
@@ -111,15 +118,19 @@ windowHome.windowWeddingComments = windowWeddingComments;
 windowEventInfo.windowHome = windowHome;
 windowEventInfo.idKey = idKey;
 windowEventInfo.site_url = site_url;
+windowEventInfo.loader = loader;
 
 // Map Window
 windowMap.windowHome = windowHome;
 windowMap.mapview = mapview;
 windowMap.idKey = idKey;
 windowMap.site_url = site_url;
+windowMap.loader = loader;
 
 // Arbitrary Window
 windowArbitrary.windowHome = windowHome;
+windowArbitrary.site_url = site_url;
+windowArbitrary.loader = loader;
 
 // Full Photo Window
 windowFullPhoto.windowHome = windowHome;
@@ -131,6 +142,8 @@ windowPhotos.windowHome = windowHome;
 windowPhotos.windowFullPhoto = windowFullPhoto;
 windowPhotos.site_url = site_url;
 windowPhotos.idKey = idKey;
+windowPhotos.loader = loader;
+
 
 // Gift Registry
 windowGiftRegistry.site_url = site_url;

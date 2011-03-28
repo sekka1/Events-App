@@ -40,14 +40,14 @@ btnBack.addEventListener('click', function()
 });
 
     // Create our HTTP Client and name it "loader"
-	var loader = Titanium.Network.createHTTPClient();
+	//var loader = Titanium.Network.createHTTPClient();
     
     Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
 
 	// Sets the HTTP request method, and the URL to get data from
-	loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
+	win.loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
     
-    loader.onload = function() 
+    win.loader.onload = function() 
 	{
         Ti.API.info( "Data: " + this.responseText );
         
@@ -89,4 +89,4 @@ btnBack.addEventListener('click', function()
     };
     
     // Send the HTTP request
-	loader.send();
+	win.loader.send();
