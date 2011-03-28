@@ -38,12 +38,19 @@ var windowMap = Titanium.UI.createWindow({
     url:'main_windows/map.js'
 });
 
+// Can only have one map view.  Creating it here and passing it around
 var mapview = Titanium.Map.createView({
         top:40,
         mapType: Titanium.Map.STANDARD_TYPE,
         animate:true,
         regionFit:true,
         userLocation:false
+});
+
+// Having problems with webviews.  Trying to create one and pass it around
+var webview = Titanium.UI.createWebView({
+    top:40,
+    scalesPageToFit:false
 });
 
 var windowArbitrary = Titanium.UI.createWindow({
@@ -117,6 +124,7 @@ windowArbitrary.windowHome = windowHome;
 // Full Photo Window
 windowFullPhoto.windowHome = windowHome;
 windowFullPhoto.windowPhotos = windowPhotos;
+windowFullPhoto.webview = webview;
 
 // Photos
 windowPhotos.windowHome = windowHome;

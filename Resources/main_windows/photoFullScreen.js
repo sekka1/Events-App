@@ -1,3 +1,6 @@
+/////////////////////////////////////////////////////
+//  Standard Window and Nav layout
+/////////////////////////////////////////////////////
 var win = Titanium.UI.currentWindow;  
 
 var nav_bar = Titanium.UI.createImageView({
@@ -51,80 +54,21 @@ btnBack.addEventListener('click', function()
    
 });
 
-btnComment.addEventListener('click', function()
-{
-    var windowComments = Titanium.UI.createWindow({
-        title:'Home Page',
-        url:'comments.js'
-    });
-    
-    windowComments.back_location = win.back_location;
-    windowComments.photo_url = win.photo_url;
-    windowComments.image_url = win.image_url;
-    windowComments.server_location = win.server_location;
-    windowComments.lastWindow = win;
-    windowComments.open();
-
-});
-/*
-var scrollView1 = Titanium.UI.createScrollView({
-	contentWidth:'auto',
-	contentHeight:'auto',
-	bottom:0,
-    top:40,
-	left:0,
-	//width:300,
-	//height:150,
-	borderRadius:0,
-	//backgroundColor:'blue',
-    backgroundImage:'../images/png/corkboard.jpg',
-	showVerticalScrollIndicator:true,
-	showHorizontalScrollIndicator:false
-});
-
-
-var view1 = Ti.UI.createView({
-    //backgroundImage:'../images/png/corkboard.jpg',
-	//backgroundColor:'green',
-	borderRadius:0,
-	//width:700,
-	height:1000,
-	top:0
-});
-
-var av_image = Titanium.UI.createImageView({
-        image:win.photo_url, // the image for the image view
-        top:0,
-        left:0,
-        //height:82,
-        //width:80
-});
-view1.add(av_image);
-
-var av_image2 = Titanium.UI.createImageView({
-        image:win.photo_url, // the image for the image view
-        top:100,
-        left:0,
-        //height:82,
-        //width:80
-});
-view1.add(av_image2);
-*/
+/////////////////////////////////////////////////////
+//  Start of page content
+/////////////////////////////////////////////////////
 
 // Replacing the / with __ so that it can be passed into the FB photo comment generator
 var new_image_url = win.image_url.replace( /\//g, "__" );
 
-var webview = Titanium.UI.createWebView({
+/*var webview = Titanium.UI.createWebView({
     url:'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url,
     top:40,
     scalesPageToFit:false
-});
-win.add(webview);
-
-//scrollView1.add(view1);
-
-//win.add(scrollView1);
+});*/
+win.webview.url = 'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url;
+win.webview.scalesPageToFit = 'false';
+win.add(win.webview);
 
 // Add button on top of the image
 win.add(btnBack);
-//win.add(btnComment);
