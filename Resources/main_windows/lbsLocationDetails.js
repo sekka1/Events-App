@@ -98,6 +98,7 @@ xhr.onload = function(e){
     
     results = eval('('+xhr.responseText+')');
     
+    Ti.API.info(JSON.parse(xhr.responseText));
     Ti.API.info( "Business Name: " + results.properties.name );
     Ti.API.info( "Business Phone: " + results.properties.phone );
     
@@ -144,7 +145,41 @@ xhr.onload = function(e){
         backgroundColor:'#336699'  
     });  
     scrollView1.add(locAddress); 
-    
+    var eventLocation = Titanium.Map.createAnnotation({
+            latitude:results.geometry.coordinates[1],
+            longitude:results.geometry.coordinates[0],
+            title:results.properties.name,
+            subtitle:results.properties.address,
+            pincolor:Titanium.Map.ANNOTATION_RED,
+            animate:true,
+            //leftButton: '../images/png/Bouquet.png',
+            //rightView:btnAnnotationRight,
+            myid:1 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS        	
+    });
+
+        // Pass to event listener
+        eventLocation.location = results.properties.address + " " + results.properties.city + " " + results.properties.country;
+        eventLocation.addEventListener('click',function(e)
+        {
+            Ti.API.info( "Map button clicked" );
+            Ti.Platform.openURL('http://maps.google.com/maps?daddr='+e.source.location+'&ie=UTF8&t=h&z=16');
+
+        });
+ 
+   	win.mapview.top="100"; 
+	if( Titanium.Platform.name == 'iPhone OS' ){
+            win.mapview.setRegion({latitude:results.geometry.coordinates[1],
+			longitude:results.geometry.coordinates[0],animate:true,latitudeDelta:0.01, longitudeDelta:0.01});
+        }
+        if( Titanium.Platform.name == 'android' ){
+            win.mapview.setLocation({latitude:results.geometry.coordinates[1],
+			longitude:results.geometry.coordinates[0],animate:true,latitudeDelta:0.01, longitudeDelta:0.01});
+        }
+
+        win.mapview.addAnnotation( eventLocation );
+
+        scrollView1.add(win.mapview);
+	
     win.add( scrollView1 );
     
     win.add( btnBack );

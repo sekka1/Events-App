@@ -100,7 +100,8 @@ tableview.addEventListener('click', function(e)
 	
 	//e.section.headerTitle = e.section.headerTitle + ' section has been clicked';
 	//Titanium.UI.createAlertDialog({title:'Table View',message:'row ' + row + ' index ' + index + ' section ' + section  + ' row data ' + rowdata + ' type ' + row.type + ' searchTerm ' + row.searchTerm }).show();
-    
+   
+    windowLocationList.mapview = win.mapview; 
     windowLocationList.previousWin = win;
     windowLocationList.type = row.type;
     windowLocationList.searchTerm = row.searchTerm;
