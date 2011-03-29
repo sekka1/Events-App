@@ -39,59 +39,72 @@ Ti.API.info( "arbitraryWinID: " + win.arbitraryWinID  );
 var textName = '';
 var textDescription = '';
 
+// Create our HTTP Client and name it "loader"
+//var loader = Titanium.Network.createHTTPClient();
 
-if( win.arbitraryWinID == 0 ){
-  
-    //Ti.API.info( "textAboutUs: " + win.textAboutUs  );
-    
-    textName = 'About Us';
-    textDescription = win.textAboutUs;
+Ti.API.info( "Fetching Arbitrary Data from: " + win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey);
+
+// Sets the HTTP request method, and the URL to get data from
+win.loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey );
+
+win.loader.onload = function() 
+{
+	results = eval('('+this.responseText+')');
+
+	if( win.arbitraryWinID == 0 ){
+	  
+		//Ti.API.info( "textAboutUs: " + win.textAboutUs  );
+		
+		textName = 'About Us';
+		textDescription = results[0].description;
+	
+	}
+	if( win.arbitraryWinID == 1 ){
+		//Ti.API.info( "textWeddingParty: " + win.textWeddingParty  );
+	
+		textName = 'Family';
+		textDescription = results[1].description;;
+	}
+	
+	
+		var scrollView1 = Titanium.UI.createScrollView({
+			contentWidth:'auto',
+			contentHeight:'auto',
+			top:40,
+			left:0,
+			//width:300,
+			//height:600,
+			borderRadius:0,
+			backgroundColor:'#336699',
+			showVerticalScrollIndicator:true,
+			showHorizontalScrollIndicator:false
+		});
+		
+		var eventName = Titanium.UI.createLabel({  
+			text:textName,  
+			top:10,  
+			left:125,  
+			//width:300,  
+			height:'auto' 
+		});  
+		win.add(eventName);  
+			
+		var eventDescription = Titanium.UI.createLabel({  
+			text:textDescription,  
+			top:30,  
+			left:0,  
+			//width:300,  
+			height:'auto',
+			backgroundColor:'#336699'  
+		});  
+		scrollView1.add(eventDescription); 
+		
+		win.add( scrollView1 );
 
 }
-if( win.arbitraryWinID == 1 ){
-    //Ti.API.info( "textWeddingParty: " + win.textWeddingParty  );
 
-    textName = 'Wedding Party';
-    textDescription = win.textWeddingParty;
-}
-
-
-    var scrollView1 = Titanium.UI.createScrollView({
-        contentWidth:'auto',
-        contentHeight:'auto',
-        top:40,
-        left:0,
-        //width:300,
-        //height:600,
-        borderRadius:0,
-        backgroundColor:'#336699',
-        showVerticalScrollIndicator:true,
-        showHorizontalScrollIndicator:false
-    });
-    
-    var eventName = Titanium.UI.createLabel({  
-        text:textName,  
-        top:10,  
-        left:125,  
-        //width:300,  
-        height:'auto' 
-    });  
-    win.add(eventName);  
-        
-    var eventDescription = Titanium.UI.createLabel({  
-        text:textDescription,  
-        top:30,  
-        left:0,  
-        //width:300,  
-        height:'auto',
-        backgroundColor:'#336699'  
-    });  
-    scrollView1.add(eventDescription); 
-    
-    win.add( scrollView1 );
-
-
-
+// Send the HTTP request
+win.loader.send();
 
 
 

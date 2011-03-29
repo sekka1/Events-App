@@ -19,7 +19,7 @@ var idKey = Titanium.UI.createTextField({
     width:300,  
     height:40,  
     hintText:'ID',
-    value: '20',  
+    value: '27',  
     keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
     returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
     borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -92,6 +92,7 @@ function displayInvitedToWeddingList(){
         // Create our HTTP Client
         var loader = Titanium.Network.createHTTPClient();
         
+        Ti.API.info( "Titanium.Facebook.accessToken: " + Titanium.Facebook.accessToken );
         Ti.API.info( "Invited list URL: " + win.site_url + "data/index/class/InvitedList/method/getFacebookInvitedList/uid/" + Titanium.Facebook.uid );
         
         // Sets the HTTP request method, and the URL to get data from

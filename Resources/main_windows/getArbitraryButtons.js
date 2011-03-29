@@ -1,11 +1,11 @@
-var btnArbitraryOne = Titanium.UI.createButton({  
+/*var btnArbitraryOne = Titanium.UI.createButton({  
     title:'',  
     top:140,  
     left:35,
     width:60,  
     height:62,
-    backgroundImage: '../images/png/our_new_family_small.png',
-    //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
+    backgroundImage: '../images/templates/multi-color/aboutus.png',
+    backgroundSelectedImage: '../images/templates/multi-color/aboutus.png',  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
@@ -15,12 +15,12 @@ var btnArbitraryTwo = Titanium.UI.createButton({
     left:130,
     width:60,  
     height:62,
-    backgroundImage: '../images/png/our_story_new_small.png', 
-    //backgroundImage: '/main_windows/Home_Icons/photos1.png',  
+    backgroundImage: '../images/templates/multi-color/family.png',
+    backgroundSelectedImage: '../images/templates/multi-color/family.png',    
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
-
+*/
 // Create our HTTP Client and name it "loader"
 var loader = Titanium.Network.createHTTPClient();
 
@@ -65,7 +65,7 @@ loader.onload = function()
                 // Save Results
                 win.textAboutUs = results[i].description;
                 
-                win.add(btnArbitraryOne);
+                //win.add(btnArbitraryOne);
             }
             if( i == 1 ){
                 // This is the Wedding Party info
@@ -92,7 +92,7 @@ loader.onload = function()
                 // Save Results
                 win.textWeddingParty = results[i].description;
                 
-                win.add(btnArbitraryTwo);
+                //win.add(btnArbitraryTwo);
             }
         }
 

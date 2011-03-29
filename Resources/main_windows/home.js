@@ -1,6 +1,8 @@
 var win = Titanium.UI.currentWindow;  
 win.setBackgroundImage('../images/background.jpg');
 
+Ti.API.info( "Home window loading..." );
+
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/navigation/nav-bar-1.png',
         top:0,
@@ -31,14 +33,16 @@ win.addEventListener('focus',function(e)
 
 // Back button to the login screen
 var btnBack = Titanium.UI.createButton({  
-    title:'Back',  
-    top:10,  
-    left:20,
-    width:75,  
-    height:20,
+    title:'',  
+    backgroundImage:'../images/navigation/back.png',
+    top:5,  
+    left:2,
+    width:50,  
+    height:28,
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
+win.add(btnBack);
 
 btnBack.addEventListener('click', function()
 {
@@ -51,7 +55,7 @@ Ti.include('properties.js');
 
 // Gets how many Arbitrary data pages the user has created and
 // makes an icon for it.
-Ti.include( 'getArbitraryButtons.js' );
+//Ti.include( 'getArbitraryButtons.js' );
 
 
 // Put in the Common buttons on the home page
@@ -59,7 +63,7 @@ Ti.include( 'homeButtons.js' );
 Ti.include( 'homeButtonsEventListeners.js' );
 
 // Puts in the bottom slider with photos
-Ti.include( 'photoSlider.js' );
+//Ti.include( 'photoSlider.js' );
 
 //Ti.include('countDown.js');
 
