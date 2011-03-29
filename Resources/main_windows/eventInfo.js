@@ -48,7 +48,6 @@ loader.onload = function()
     Ti.API.info( "Event Info: " + this.responseText );
 
     results = eval('('+this.responseText+')');
-    
     var scrollView1 = Titanium.UI.createScrollView({
         contentWidth:'auto',
         contentHeight:'auto',
@@ -63,7 +62,7 @@ loader.onload = function()
     });
 
     var eventName = Titanium.UI.createLabel({  
-        text:results[0].name,  
+        text:results[0].name, 
         top:10,  
         left:125,  
         //width:300,
@@ -76,14 +75,15 @@ loader.onload = function()
         
     var eventDescription = Titanium.UI.createLabel({  
         text:results[0].description,  
+    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
         top:10,  
-        left:0,  
-        //width:300,  
+        left:10,  
         height:'auto',
         backgroundColor:'#336699'  
     });  
     scrollView1.add(eventDescription); 
-    
+   
+ 
     win.add( scrollView1 );
 };
 
