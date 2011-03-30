@@ -154,7 +154,7 @@ windowGiftRegistry.idKey = idKey;
 
 // LBS 
 windowLBS.windowHome = windowHome;
-
+windowLBS.mapview = mapview;
 // Wedding Comments
 windowWeddingComments.windowHome = windowHome;
 windowWeddingComments.idKey = idKey;

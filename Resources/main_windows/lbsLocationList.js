@@ -166,7 +166,8 @@ function runIT() {
         //Titanium.UI.createAlertDialog({title:'Table View',message:'row ' + row + ' index ' + index + ' section ' + section  + ' row data ' + rowdata + ' type ' + row.type + ' searchTerm ' + row.searchTerm }).show();
         
         Ti.API.info( "row.simpleGeoID: " + row.simpleGeoID );
-        
+       	
+	windowLocationDetail.mapview = win.mapview; 
         windowLocationDetail.simpleGeoID = row.simpleGeoID;
         
         windowLocationDetail.previousWin = win;
