@@ -30,15 +30,13 @@ var view1 = Ti.UI.createView({
 //
 // Get image list from server
 //
-// Create our HTTP Client
-var loader = Titanium.Network.createHTTPClient();
 
 Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getAllOwnersPhotos/id/" + win.idKey );
 
 //loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getPhotoDummyOwners/id/" + win.idKey );
-loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllOwnersPhotos/id/" + win.idKey );
+win.loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllOwnersPhotos/id/" + win.idKey );
 
-loader.onload = function() 
+win.loader.onload = function() 
 {
     
 //    Ti.API.info( "Event Info: " + this.responseText );
@@ -101,7 +99,7 @@ loader.onload = function()
 
 
 // Send the HTTP request
-loader.send();
+win.loader.send();
 
 scrollView1.add(view1);
 

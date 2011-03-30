@@ -99,6 +99,7 @@ var loader = Titanium.Network.createHTTPClient();
 windowLogin.windowHome = windowHome;
 windowLogin.idkey = idKey;
 windowLogin.site_url = site_url;
+windowLogin.loader = loader;
 
 // Home Screen Window
 windowHome.windowLogin = windowLogin;
@@ -113,6 +114,7 @@ windowHome.windowPhotos = windowPhotos;
 windowHome.windowGiftRegistry = windowGiftRegistry;
 windowHome.windowLBS = windowLBS;
 windowHome.windowWeddingComments = windowWeddingComments;
+windowHome.loader = loader;
 
 // Event Info Window
 windowEventInfo.windowHome = windowHome;

@@ -90,16 +90,15 @@ function displayInvitedToWeddingList(){
     
         // Perform Ajax call to get the list this user is invited to
         // Create our HTTP Client
-        var loader = Titanium.Network.createHTTPClient();
         
         Ti.API.info( "Titanium.Facebook.accessToken: " + Titanium.Facebook.accessToken );
         Ti.API.info( "Invited list URL: " + win.site_url + "data/index/class/InvitedList/method/getFacebookInvitedList/uid/" + Titanium.Facebook.uid );
         
         // Sets the HTTP request method, and the URL to get data from
-        loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getFacebookInvitedList/uid/" + Titanium.Facebook.uid );
+        win.loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getFacebookInvitedList/uid/" + Titanium.Facebook.uid );
         
         
-        loader.onload = function() 
+        win.loader.onload = function() 
         {
             // Display that list in a scroll view
         
@@ -162,7 +161,7 @@ function displayInvitedToWeddingList(){
         };
         
         // Send the HTTP request
-        loader.send();
+        win.loader.send();
 
     }
 }
