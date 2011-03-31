@@ -1,5 +1,6 @@
 var win = Titanium.UI.currentWindow;  
 
+
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/navigation/nav-bar-blank.png',
         top:0,
@@ -37,7 +38,7 @@ var actInd = Titanium.UI.createActivityIndicator({
 
 // Create Sub window
 var windowRegistryView = Titanium.UI.createWindow({
-    title:'Viewing Gift',    url:'lbsLocationList.js'
+    title:'Viewing Gift',    url:'giftRegistryViewer.js'
 });
 function dynTable(rowData) { 
 	
@@ -66,9 +67,12 @@ function dynTable(rowData) {
         	//e.section.headerTitle = e.section.headerTitle + ' section has been clicked';
         	//Titanium.UI.createAlertDialog({title:'Table View',message:'row ' + row + ' index ' + index + ' section ' + section  + ' row data ' + rowdata + ' type ' + row.type + ' searchTerm ' + row.searchTerm }).show();
         
-    		windowLocationList.previousWin = win;
-    		windowLocationList.url = row.url;
-    		windowLocationList.open();
+    		windowRegistryView.previousWin = win;
+    		windowRegistryView.myURL = row.url;
+		windowRegistryView.previousWin = win;
+
+
+    		windowRegistryView.open();
         
 	});     
 	win.add(tableview);
