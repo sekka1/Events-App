@@ -136,6 +136,14 @@ xhr.onload = function(e){
     });  
     scrollView1.add(locPhone); 
     
+    locPhone.phonenumber = results.properties.phone;
+    
+    locPhone.addEventListener('click', function(e)
+	{
+   		Ti.API.info( 'clicked on phone number: ' + e.source.phonenumber );
+   		Titanium.Platform.openURL( "tel:" + e.source.phonenumber );
+	});
+    
     var locAddress = Titanium.UI.createLabel({  
         text:'Address: ' + results.properties.address + ', ' + results.properties.city + ', ' + results.properties.province + ', ' + results.properties.postcode,  
         top:50,  
