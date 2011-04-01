@@ -63,7 +63,7 @@ Ti.include( 'homeButtons.js' );
 Ti.include( 'homeButtonsEventListeners.js' );
 
 // Puts in the bottom slider with photos
-//Ti.include( 'photoSlider.js' );
+Ti.include( 'photoSlider.js' );
 
 //Ti.include('countDown.js');
 

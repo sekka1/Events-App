@@ -31,10 +31,10 @@ var view1 = Ti.UI.createView({
 // Get image list from server
 //
 
-Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getAllOwnersPhotos/id/" + win.idKey );
+Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
 
 //loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getPhotoDummyOwners/id/" + win.idKey );
-win.loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllOwnersPhotos/id/" + win.idKey );
+win.loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
 
 win.loader.onload = function() 
 {
