@@ -84,7 +84,36 @@ win.loader.onload = function()
     });  
     scrollView1.add(eventDescription); 
    
+    var eventLocation = Titanium.UI.createLabel({  
+        text:results[0].location,  
+    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
+        top:20,  
+        left:10,  
+        height:'auto',
+        backgroundColor:'#336699'  
+    });  
+    scrollView1.add(eventLocation); 
+    
+    var eventWhen = Titanium.UI.createLabel({  
+        text:results[0].when,  
+    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
+        top:30,  
+        left:10,  
+        height:'auto',
+        backgroundColor:'#336699'  
+    });  
+    scrollView1.add(eventWhen); 
  
+    var eventMessage = Titanium.UI.createLabel({  
+        text:results[0].message,  
+    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
+        top:40,  
+        left:10,  
+        height:'auto',
+        backgroundColor:'#336699'  
+    });  
+    scrollView1.add(eventMessage); 
+    
     win.add( scrollView1 );
 };
 
