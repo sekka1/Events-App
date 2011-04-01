@@ -75,6 +75,7 @@ btnBack.addEventListener('click', function()
     
         });
 
+		win.mapview.top="40";
         if( Titanium.Platform.name == 'iPhone OS' ){
             win.mapview.setRegion({latitude:results[0].location_geo_lat,longitude:results[0].location_geo_long,animate:true,latitudeDelta:0.01, longitudeDelta:0.01});
         }
