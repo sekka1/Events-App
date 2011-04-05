@@ -95,7 +95,7 @@ function displayInvitedToWeddingList(){
         Ti.API.info( "Invited list URL: " + win.site_url + "data/index/class/InvitedList/method/getFacebookInvitedList/uid/" + Titanium.Facebook.uid );
         
         // Sets the HTTP request method, and the URL to get data from
-        win.loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getFacebookInvitedList/uid/" + Titanium.Facebook.uid );
+        win.loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getLoginEventList/uid/" + Titanium.Facebook.uid );
         
         
         win.loader.onload = function() 
@@ -124,6 +124,7 @@ function displayInvitedToWeddingList(){
             // Loop through and display a button for each wedding this user is invited to
             for( var i = 0; i < results.length; i++ ){
             
+            	// Create button that user can click and goto the event
                 var event = Titanium.UI.createButton({  
                     title:results[i].name,  
                     top:top_alignment,  
@@ -151,6 +152,49 @@ function displayInvitedToWeddingList(){
                     }  
 
                 }); 
+                
+                // Create edit button if the user owns this event
+                if( results[i].user_id_seq == Titanium.Facebook.uid ){
+                
+                	var event_edit = Titanium.UI.createButton({  
+						title:'Edit',  
+						top:top_alignment,  
+						left:260,
+						width:50,  
+						height:35,  
+						borderRadius:1,  
+						font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+                	});  
+                	scrollView1.add(event_edit);
+                	
+                	event_edit.event_name = results[i].name;
+					event_edit.idKey = results[i].event_id_seq;
+					
+					event_edit.addEventListener('click',function(e)  
+					{  
+					
+						Ti.API.info( "event listener: " + e.source.idKey );
+
+						if ( e.source.idKey != '' )  
+						{  
+							// Create the window here that will show options to edit this event
+							var windowEditEvent = Titanium.UI.createWindow({
+								title:'Edit Event',
+								url:'edit_event/main.js'
+							});
+
+							windowEditEvent.idKey = e.source.idKey;
+							windowEditEvent.site_url = win.site_url
+							windowEditEvent.backWindow = win;
+							windowEditEvent.loader = win.loader
+							windowEditEvent.open();
+							
+							//win.close();
+						}  
+	
+					});
+                	
+                }
                 
                 top_alignment += 40;
             
