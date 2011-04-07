@@ -92,6 +92,22 @@ tableview.addEventListener('click', function(e)
 		windowEditEventInfo.open();
 		
 	}
+	if( row.type == 'about_us' ){
+		Ti.API.info( "Editing About US Info: " + win.idKey );
+		var windowEditEventInfo = Titanium.UI.createWindow({
+			title:'Edit About US',
+			url:'AboutUs.js',
+			backgroundColor:'white'
+		});
+		//window variables 
+		windowEditEventInfo.loader = win.loader;
+		windowEditEventInfo.idKey = win.idKey;
+		windowEditEventInfo.site_url = win.site_url;
+		windowEditEventInfo.backWindow = win;
+		
+		windowEditEventInfo.open();
+		
+	}
 	
 	//e.section.headerTitle = e.section.headerTitle + ' section has been clicked';
 	//Titanium.UI.createAlertDialog({title:'Table View',message:'row ' + row + ' index ' + index + ' section ' + section  + ' row data ' + rowdata + ' type ' + row.type + ' searchTerm ' + row.searchTerm }).show();
