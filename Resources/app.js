@@ -7,7 +7,7 @@ Ti.API.info( "Platform: " + Titanium.Platform.name );
 // Global Variables
 /////////////////////////////////////////////
 var site_url = 'http://wedvite.us/';
-var idKey = '';
+var idKey = ''; // This is the event_id_seq
 
 // Arbitrary Windows
 var arbitraryWinID = '';

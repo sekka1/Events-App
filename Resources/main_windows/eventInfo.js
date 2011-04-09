@@ -2,9 +2,9 @@ var win = Titanium.UI.currentWindow;
 
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/navigation/nav-bar-blank.png',
-        top:0,
-        left:0,
-        height:40,
+        //top:0,
+        //left:0,
+        //height:50,
         //width:330,
 	    borderWidth: 0,
 	    borderRadius: 0

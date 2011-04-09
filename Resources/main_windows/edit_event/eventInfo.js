@@ -4,7 +4,7 @@ var nav_bar = Titanium.UI.createImageView({
         image:'../../images/navigation/nav-bar-blank.png',
         top:0,
         left:0,
-        height:40,
+        //height:40,
         //width:330,
 	    borderWidth: 0,
 	    borderRadius: 0
@@ -32,7 +32,7 @@ btnBack.addEventListener('click', function()
 });
 
 // Variable to set what onload section todo.  Setting the text field info or saving
-var onloadType = 'text_field';
+var onloadType = 'setting_text_field';
 
 //////////////////////////////////////////////////////////
 // Text input fields
@@ -318,7 +318,7 @@ win.loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/get
 
 win.loader.onload = function() 
 {
-	if( onloadType == 'text_field' ){
+	if( onloadType == 'setting_text_field' ){
 		Ti.API.info( "Event Info: " + this.responseText );
 	
 		results = eval('('+this.responseText+')');

@@ -4,7 +4,7 @@ var nav_bar = Titanium.UI.createImageView({
         image:'../../images/navigation/nav-bar-blank.png',
         top:0,
         left:0,
-        height:40,
+        //height:40,
         //width:330,
 	    borderWidth: 0,
 	    borderRadius: 0
@@ -32,7 +32,9 @@ btnBack.addEventListener('click', function()
 });
 
 // Variable to set what onload section todo.  Setting the text field info or saving
-var onloadType = 'text_field';
+var onloadType = 'setting_text_field';
+
+win.arbitrary_page_id_seq = '';
 
 //////////////////////////////////////////////////////////
 // Text input fields
@@ -112,11 +114,34 @@ var onloadType = 'text_field';
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
 	});
 
-
+    var questionFour = Titanium.UI.createTextField({  
+		color:'#336699',  
+		top:520,  
+		left:10,  
+		width:300,  
+		height:40,  
+		//hintText:'ID',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
+		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
+    });  
+    
+    var questionFourAnswer = Titanium.UI.createTextArea({  
+    	//font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
+        top:570,  
+        left:10,  
+        height:70,
+	width:300,
+        backgroundColor:'white',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
+		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
+	});
+	
 	// Save Button
 	var btnSave = Titanium.UI.createButton({  
 		title:'Save',  
-		top:550,  
+		top:660,  
 		left:10,
 		width:50,  
 		height:28,
@@ -137,6 +162,8 @@ Titanium.API.info("I'm here");
 
 win.loader.onload = function() 
 {
+	if( onloadType == 'setting_text_field' ){
+	
 		Ti.API.info( "About us Page: " + this.responseText );
 	
 		results = eval('('+this.responseText+')');
@@ -163,6 +190,8 @@ win.loader.onload = function()
 		scrollView1.add(questionTwoAnswer);
 		scrollView1.add(questionThree);
 		scrollView1.add(questionThreeAnswer);
+		scrollView1.add(questionFour);
+		scrollView1.add(questionFourAnswer);
 		scrollView1.add(btnSave);
 		questionOne.value = qa[0];
 		questionOneAnswer.value = qa[1];
@@ -170,10 +199,21 @@ win.loader.onload = function()
 		questionTwoAnswer.value = qa[3];
 		questionThree.value = qa[4];
 		questionThreeAnswer.value = qa[5];
+		questionFour.value = qa[6];
+		questionFourAnswer.value = qa[7];
 		win.add( scrollView1 );
+		
+		// Setting the arbitrary_id_seq
+		win.arbitrary_id_seq = results[0].arbitrary_page_id_seq;
+		
+		Ti.API.info( "arbitrary_id_seq: " + win.arbitrary_id_seq );
+	}
+	if( onloadType == 'save' ){
+		alert( 'Saved' );
+    }
 };
 
-btnSave.addEventListener('click', function()
+btnSave.addEventListener('click', function(e)
 {
 	Ti.API.info( "Saving...." );
 	
@@ -184,20 +224,29 @@ btnSave.addEventListener('click', function()
 
 
 	// Post Values
-	var descriptionString = questionOne.value + "+-+-+-+-+-+-" + questionOneAnswer.value + "+-+-+-+-+-+-" + questionTwo.value + "+-+-+-+-+-+-" + questionTwoAnswer.value + "+-+-+-+-+-+-" + questionThree.value + "+-+-+-+-+-+-" + questionThreeAnswer.value; 
-	var tempString = "About Us";
+	//var descriptionString = questionOne.value + "+-+-+-+-+-+-" + questionOneAnswer.value + "+-+-+-+-+-+-" + questionTwo.value + "+-+-+-+-+-+-" + questionTwoAnswer.value + "+-+-+-+-+-+-" + questionThree.value + "+-+-+-+-+-+-" + questionThreeAnswer.value; 
+	//var tempString = "About Us";
 	var params = {  
-	    id:win.idKey,
+	    event_id:win.idKey,
 	    user_id:Titanium.Facebook.uid,
-		name:tempString,
-		description:descriptionString,
+	    id:win.arbitrary_id_seq,
+		type:'aboutus',
+		q1:questionOne.value,
+		q2:questionTwo.value,
+		q3:questionThree.value,
+		q4:questionFour.value,
+		a1:questionOneAnswer.value,
+		a2:questionTwoAnswer.value,
+		a3:questionThreeAnswer.value,
+		a4:questionFourAnswer.value
 	};  
 	
+	// Changing onloadType so that the onload function does not run
+	onloadType = 'save';
+	
 	// Send the HTTP request
-	Titanium.API.info("Here is the parameters that I am going to send: " + params.id + " the userID: " + params.user_id + " the name: " + params.name + " the description: " + params.description);
-	var httpResponse = win.loader.send( params );
-	Ti.API.info( "Broken parsing: " + win.loader.responseText );
-	Titanium.API.info("Broken here");
+	win.loader.send( params );
+	
 });
 
 // Send the HTTP request
