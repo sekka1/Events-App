@@ -157,18 +157,16 @@ Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class
 
 // Sets the HTTP request method, and the URL to get data from
 win.loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey );
-Titanium.API.info("I'm here");
 
 win.loader.onload = function() 
 {
 	if( onloadType == 'setting_text_field' ){
 	
-		Ti.API.info( "About us Page: " + this.responseText );
+		//Ti.API.info( "About us Page: " + this.responseText );
 	
 		results = eval('('+this.responseText+')');
 		var questionsAnswers = results[0].description;
 		var qa = questionsAnswers.split("+-+-+-+-+-+-");
-		Titanium.API.info("Here is the qa split up: " + qa);
 		
 		var scrollView1 = Titanium.UI.createScrollView({
 			contentWidth:'auto',
