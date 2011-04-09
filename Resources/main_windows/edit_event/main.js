@@ -121,6 +121,21 @@ tableview.addEventListener('click', function(e)
 		
 		windowEdit.open();
 	}
+	if( row.type == 'photos' ){
+	
+		var windowEdit = Titanium.UI.createWindow({
+			title:'Edit Photos',
+			url:'photos.js',
+			backgroundColor:'white'
+		});
+		//window variables 
+		windowEdit.loader = win.loader;
+		windowEdit.idKey = win.idKey;
+		windowEdit.site_url = win.site_url;
+		windowEdit.backWindow = win;
+		
+		windowEdit.open();
+	}
 });
 
 win.add(tableview);
