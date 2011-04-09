@@ -78,36 +78,49 @@ tableview.addEventListener('click', function(e)
 		
 		Ti.API.info( "Event Edit Event Info: " + win.idKey );
 	
-		var windowEditEventInfo = Titanium.UI.createWindow({
+		var windowEdit = Titanium.UI.createWindow({
 			title:'Edit Event',
 			url:'eventInfo.js',
 			//backgroundColor:'white'
 		});
 		
-		windowEditEventInfo.loader = win.loader;
-		windowEditEventInfo.idKey = win.idKey;
-		windowEditEventInfo.site_url = win.site_url;
-		windowEditEventInfo.backWindow = win;
+		windowEdit.loader = win.loader;
+		windowEdit.idKey = win.idKey;
+		windowEdit.site_url = win.site_url;
+		windowEdit.backWindow = win;
 		
-		windowEditEventInfo.open();		
+		windowEdit.open();		
 	}
 	if( row.type == 'about_us' ){
-		Ti.API.info( "Editing About US Info: " + win.idKey );
-		var windowEditEventInfo = Titanium.UI.createWindow({
+
+		var windowEdit = Titanium.UI.createWindow({
 			title:'Edit About US',
 			url:'AboutUs.js',
 			backgroundColor:'white'
 		});
 		//window variables 
-		windowEditEventInfo.loader = win.loader;
-		windowEditEventInfo.idKey = win.idKey;
-		windowEditEventInfo.site_url = win.site_url;
-		windowEditEventInfo.backWindow = win;
+		windowEdit.loader = win.loader;
+		windowEdit.idKey = win.idKey;
+		windowEdit.site_url = win.site_url;
+		windowEdit.backWindow = win;
 		
-		windowEditEventInfo.open();
-		
+		windowEdit.open();
 	}
-    
+	if( row.type == 'family' ){
+	
+		var windowEdit = Titanium.UI.createWindow({
+			title:'Edit Family',
+			url:'family.js',
+			backgroundColor:'white'
+		});
+		//window variables 
+		windowEdit.loader = win.loader;
+		windowEdit.idKey = win.idKey;
+		windowEdit.site_url = win.site_url;
+		windowEdit.backWindow = win;
+		
+		windowEdit.open();
+	}
 });
 
 win.add(tableview);

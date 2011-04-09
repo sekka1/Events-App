@@ -45,7 +45,6 @@ win.arbitrary_page_id_seq = '';
 		top:50,  
 		left:10,  
 		width:300,  
-		value:"How we met",
 		height:40,  
 		//hintText:'ID',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
