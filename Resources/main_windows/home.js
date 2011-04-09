@@ -14,6 +14,17 @@ var nav_bar = Titanium.UI.createImageView({
 });
 win.add(nav_bar);
 
+var titlebar_logo = Titanium.UI.createImageView({
+        image:'../images/wedvite-logo-navbar.png',
+        top:3,
+        left:100,
+        width: 137,
+        height:39,
+	    borderWidth: 0,
+	    borderRadius: 0
+});
+win.add(titlebar_logo);
+
 win.addEventListener('focus',function(e)  
 {  
     Ti.API.info( "home.js win.addEventListener - focus" );
