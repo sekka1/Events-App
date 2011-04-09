@@ -12,11 +12,11 @@ var nav_bar = Titanium.UI.createImageView({
         top:0,
         left:0,
         height:40,
-        //width:330,
-borderWidth: 0,
-borderRadius: 0
-});
-win.add(nav_bar);
+        width:480,
+		borderWidth: 0,
+		borderRadius: 0
+		});
+		win.add(nav_bar);
 
 var titleName = Titanium.UI.createLabel({
         text:'Gift Registry',
@@ -32,8 +32,8 @@ var btnBack = Titanium.UI.createButton({
     backgroundImage:'../images/navigation/back.png',
     top:5,  
     left:2,
-    width:50,
-    height:28,
+    width:35,
+    height:35,
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  });  win.add(btnBack);
 
