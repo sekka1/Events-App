@@ -80,8 +80,8 @@ tableview.addEventListener('click', function(e)
 	
 		var windowEditEventInfo = Titanium.UI.createWindow({
 			title:'Edit Event',
-			url:'eventinfo.js',
-			backgroundColor:'white'
+			url:'eventInfo.js',
+			//backgroundColor:'white'
 		});
 		
 		windowEditEventInfo.loader = win.loader;
@@ -90,20 +90,8 @@ tableview.addEventListener('click', function(e)
 		windowEditEventInfo.backWindow = win;
 		
 		windowEditEventInfo.open();
-		
-	}
 	
-	//e.section.headerTitle = e.section.headerTitle + ' section has been clicked';
-	//Titanium.UI.createAlertDialog({title:'Table View',message:'row ' + row + ' index ' + index + ' section ' + section  + ' row data ' + rowdata + ' type ' + row.type + ' searchTerm ' + row.searchTerm }).show();
-   
-    //windowLocationList.mapview = win.mapview; 
-    //windowLocationList.previousWin = win;
-    //windowLocationList.type = row.type;
-    //windowLocationList.searchTerm = row.searchTerm;
-    
-    //windowLocationList.open();
-    
-    //win.close();
+	}
     
 });
 
