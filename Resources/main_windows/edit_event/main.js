@@ -136,6 +136,21 @@ tableview.addEventListener('click', function(e)
 		
 		windowEdit.open();
 	}
+	if( row.type == 'invite_facebook_friends' ){
+	
+		var windowEdit = Titanium.UI.createWindow({
+			title:'Edit Facebook Friends',
+			url:'facebook_friends.js',
+			backgroundColor:'white'
+		});
+		//window variables 
+		windowEdit.loader = win.loader;
+		windowEdit.idKey = win.idKey;
+		windowEdit.site_url = win.site_url;
+		windowEdit.backWindow = win;
+		
+		windowEdit.open();
+	}
 });
 
 win.add(tableview);
