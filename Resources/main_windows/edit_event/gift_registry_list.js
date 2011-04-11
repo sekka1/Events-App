@@ -62,7 +62,6 @@ btnAdd.addEventListener('click', function()
 
 win.addEventListener('focus',function(){
 
-    Ti.API.info('hey! I was focused!');
 	loadList();
 });
 

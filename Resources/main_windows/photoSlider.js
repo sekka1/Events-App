@@ -60,10 +60,10 @@ win.loader.onload = function()
             top:10,
             left:widthCounter,
             height:82,
-	    backgroundColor: "#FFFFFF",
-            borderColor: "#3F5696",
-            borderWidth: 0,
-            borderRadius: 3,
+	    	//backgroundColor: "#FFFFFF",
+            //borderColor: "#3F5696",
+            //borderWidth: 0,
+            //borderRadius: 3,
             width:70
         });
         

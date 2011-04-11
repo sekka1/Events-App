@@ -60,103 +60,111 @@ var view = Titanium.UI.createScrollView({
     verticalBounce:true
 });
 
-var photoList = [];
+win.addEventListener('focus',function(){
 
-// Variable to set what onload section todo.  Setting the text field info or saving
-var onloadType = 'setting';
+	loadPhotos();
+});
 
-//
-// Get image list from server
-//
-// Create our HTTP Client
-//var loader = Titanium.Network.createHTTPClient();
+function loadPhotos(){
 
-Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
-
-win.loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
-
-win.loader.onload = function() 
-{
-
-	if( onloadType == 'setting' ){
-
-		//Ti.API.info( "Event Info: " + this.responseText );
+	var photoList = [];
 	
-		results = eval('('+this.responseText+')');
-		
-		var data = [];
+	// Variable to set what onload section todo.  Setting the text field info or saving
+	var onloadType = 'setting';
 	
-		var dashboardList = [];
+	//
+	// Get image list from server
+	//
+	// Create our HTTP Client
+	//var loader = Titanium.Network.createHTTPClient();
+	
+	Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
+	
+	win.loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
+	
+	win.loader.onload = function() 
+	{
+	
+		if( onloadType == 'setting' ){
+	
+			//Ti.API.info( "Event Info: " + this.responseText );
 		
-		for (var c=0;c<results.length;c++)
-		{
-			var item = Titanium.UI.createImageView({
-			image:'http://'+results[c].server_location+results[c].thumb_url,
-			width: 70,
-			height: 80,
-			borderWidth:1,
-			borderColor: "#AAAAAA",
-			borderRadius:3,
-			visibile: true
-			//title:labels[c]
-			});
-			dashboardList.push(item);
+			results = eval('('+this.responseText+')');
 			
-			// Pass the url to the event listener
-			item.photo_url = 'http://'+results[c].server_location+results[c].image_url;
-			item.server_location = results[c].server_location;
-			item.image_url = results[c].image_url;
-			item.back_location = 'photos';
-			item.photos_id_seq = results[c].photos_id_seq;
-					
-			// Event listener when the user clicks on the photo in the slider
-			item.addEventListener('click',function(e)  
-			{   
-				Ti.API.info( "User deleted photo: " + e.source.photo_url );
-				
-				onloadType = 'deleting';
-						
-				win.loader.open( "GET", win.site_url + "data/index/class/Photos/method/delete/id/" + win.idKey + "/photo_id/" + e.source.photos_id_seq );
-	
-				win.loader.send();	
-			});
-		}
-	
-	
-		var colLength = 4; //Android dont support win.width // Math.round(win.width / 80);
-		Ti.API.info("ColLength" + colLength);
-	
-		var rowTop = 10;
-		for(var i=0; i<dashboardList.length; i++) {
-			var prevLeft = 0;
-			for(var x=0; x<=colLength-1; x++) {
-				var itemNum = i + x;
-				if(dashboardList[itemNum]) {
-					//Ti.API.info('i=' + itemNum);
-					//Ti.API.info('dashboardList=' + dashboardList[itemNum].title);
-					dashboardList[itemNum].top = rowTop;
-					dashboardList[itemNum].left = (x==0)? 3 : prevLeft + 75;
-					//Ti.API.info('dashboardItemTop: X:' + x + "ITEM_NUM:" + itemNum + "TOP:" + dashboardList[itemNum].top + " LEFT:" + dashboardList[itemNum].left);
-					prevLeft = dashboardList[itemNum].left + 3;
-					view.add(dashboardList[itemNum]);
-				}
-			}
-			//Ti.API.info("rowTop" + rowTop);	
-			rowTop += 85;
-			//Ti.API.info("rowTop" + rowTop);	
-			i += colLength-1;	
-		}
-	
-		win.add(view);
+			var data = [];
 		
-		win.add(btnBack);
-    }
-	if( onloadType == 'deleting' ){
-		alert( "Deleted" );
-	}
-};
+			var dashboardList = [];
+			
+			for (var c=0;c<results.length;c++)
+			{
+				var item = Titanium.UI.createImageView({
+				image:'http://'+results[c].server_location+results[c].thumb_url,
+				width: 70,
+				height: 80,
+				//borderWidth:1,
+				//borderColor: "#AAAAAA",
+				//borderRadius:3,
+				visibile: true
+				//title:labels[c]
+				});
+				dashboardList.push(item);
+				
+				// Pass the url to the event listener
+				item.photo_url = 'http://'+results[c].server_location+results[c].image_url;
+				item.server_location = results[c].server_location;
+				item.image_url = results[c].image_url;
+				item.back_location = 'photos';
+				item.photos_id_seq = results[c].photos_id_seq;
+						
+				// Event listener when the user clicks on the photo in the slider
+				item.addEventListener('click',function(e)  
+				{   
+					Ti.API.info( "User deleted photo: " + e.source.photo_url );
+					
+					onloadType = 'deleting';
+							
+					win.loader.open( "GET", win.site_url + "data/index/class/Photos/method/delete/id/" + win.idKey + "/photo_id/" + e.source.photos_id_seq );
+		
+					win.loader.send();	
+				});
+			}
+		
+		
+			var colLength = 4; //Android dont support win.width // Math.round(win.width / 80);
+			Ti.API.info("ColLength" + colLength);
+		
+			var rowTop = 10;
+			for(var i=0; i<dashboardList.length; i++) {
+				var prevLeft = 0;
+				for(var x=0; x<=colLength-1; x++) {
+					var itemNum = i + x;
+					if(dashboardList[itemNum]) {
+						//Ti.API.info('i=' + itemNum);
+						//Ti.API.info('dashboardList=' + dashboardList[itemNum].title);
+						dashboardList[itemNum].top = rowTop;
+						dashboardList[itemNum].left = (x==0)? 3 : prevLeft + 75;
+						//Ti.API.info('dashboardItemTop: X:' + x + "ITEM_NUM:" + itemNum + "TOP:" + dashboardList[itemNum].top + " LEFT:" + dashboardList[itemNum].left);
+						prevLeft = dashboardList[itemNum].left + 3;
+						view.add(dashboardList[itemNum]);
+					}
+				}
+				//Ti.API.info("rowTop" + rowTop);	
+				rowTop += 85;
+				//Ti.API.info("rowTop" + rowTop);	
+				i += colLength-1;	
+			}
+		
+			win.add(view);
+			
+			win.add(btnBack);
+		}
+		if( onloadType == 'deleting' ){
+			alert( "Deleted" );
+		}
+	};
+	
+	
+	// Send the HTTP request
+	win.loader.send();
 
-
-// Send the HTTP request
-win.loader.send();
-
+}

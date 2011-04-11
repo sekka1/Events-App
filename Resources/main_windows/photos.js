@@ -129,9 +129,9 @@ win.loader.onload = function()
 		image:'http://'+results[c].server_location+results[c].thumb_url,
 		width: 70,
 		height: 80,
-		borderWidth:1,
-		borderColor: "#AAAAAA",
-		borderRadius:3,
+		//borderWidth:1,
+		//borderColor: "#AAAAAA",
+		//borderRadius:3,
 		visibile: true
 		//title:labels[c]
         });
