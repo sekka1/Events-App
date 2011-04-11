@@ -106,6 +106,21 @@ tableview.addEventListener('click', function(e)
 		
 		windowEdit.open();
 	}
+	if( row.type == 'template' ){
+		Ti.API.info( "Template Edit: " + win.idKey );
+		var windowEditTemplate = Titanium.UI.createWindow({
+			title:'Edit Template',
+			url:'Template.js',
+			backgroundColor:'white'
+		});
+		//window variables 
+		windowEditTemplate.idKey = win.idKey;
+		windowEditTemplate.site_url = win.site_url;
+		windowEditTemplate.backWindow = win;
+		
+		windowEditTemplate.open();
+		
+	}
 	if( row.type == 'family' ){
 	
 		var windowEdit = Titanium.UI.createWindow({
