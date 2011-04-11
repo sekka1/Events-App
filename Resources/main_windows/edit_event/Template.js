@@ -83,6 +83,9 @@ var picker= Titanium.UI.createPicker();
 var selectedTemplate = -99
 
 
+/////////////////////////////////////////////
+// Since you can't make multiple GET requests with the same HTTPClient you gotta do this
+///////////////////////////////////////////
 for (var i in sites) {
     var inline_function = function(i) {
 	var returnString ="";
@@ -93,10 +96,13 @@ for (var i in sites) {
             var results = eval('('+this.responseText+')');
             Ti.API.info(results);
             for(var j=0;j< results.length;j++) { 
-		//we gotta stuff everthing into a return more than one onLoad() will be stuff
+		//we gotta stuff everthing into one return since more than one onLoad() will break stuff
 		passData.push({title:results[j].description,seq:results[j].template_available_page_id_seq,user_id:results[j].user_id_seq,template_used_id:results[j].template_available_page_id_seq});
             }
+		//parse the results
 	   receiver(passData);
+		//since the HTTPclient is the last VERY thing to execute 
+		// if you try to display data before you're DONE it breaks
 	   displayPicker();
         };// end onLoad function
         xhr.open("GET", sites[i]);
@@ -109,13 +115,16 @@ for (var i in sites) {
 
 
 function receiver(params) { 
+	//input will take the values from the HTTP client and make sense of them
 	for(var i = 0; i < params.length; i++) {
 		if(params[i].user_id > 0 ) { 
             		//picker.setSelectedRow(0,params[i].template_used_id,true);        
+			// The numbering for the templates started at 1 and the picker returns value from zero
 			pickerSelect = (params[i].template_used_id - 1);
 		}
 		var matchRegex = /undefined/;
 		var testMatch = matchRegex.test(params[i].title);
+		//when I first wrote this I would get "undefined" as a returned value from the httpCllient
 		if(!testMatch) { 
 			pickerData.push({title:params[i].title,templateValue:params[i].seq});
 			//Ti.API.warn("The title will be: " + params[i].title);	
@@ -128,6 +137,8 @@ function receiver(params) {
 
 Ti.API.info("The http request couner is: " + httprequestCounter);
 function displayPicker() { 
+	//since we make multiple HTTP requests we need to wait 
+	// until we have made the last request to do something with the results
 	if( httprequestCounter == sites.length ) {
 		picker.add(pickerData);
 		Ti.API.info("The value of Picker select is: " + pickerSelect);
@@ -162,7 +173,7 @@ function displayPicker() {
 		Ti.API.info("Parsing results " + xhr.send.responseText );
 	});
 
-}//end displaPicker function
+}//end displayPicker function
 
 
 
