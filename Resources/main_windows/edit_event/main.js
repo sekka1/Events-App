@@ -151,6 +151,21 @@ tableview.addEventListener('click', function(e)
 		
 		windowEdit.open();
 	}
+	if( row.type == 'gift_registry' ){
+	
+		var windowEdit = Titanium.UI.createWindow({
+			title:'Edit Gift Registry',
+			url:'gift_registry_list.js',
+			backgroundColor:'white'
+		});
+		//window variables 
+		windowEdit.loader = win.loader;
+		windowEdit.idKey = win.idKey;
+		windowEdit.site_url = win.site_url;
+		windowEdit.backWindow = win;
+		
+		windowEdit.open();
+	}
 });
 
 win.add(tableview);
