@@ -25,6 +25,17 @@ btnMap.addEventListener('click',function(e)
     
 });
 
+// RSVP
+btnRsvp.addEventListener('click',function(e)  
+{   
+    // Set this new window's variables
+    win.windowRsvp.idKey = win.idKey;
+
+    win.windowRsvp.open();
+    win.close();
+    
+});
+
 // About Us
 btnArbitraryOne.addEventListener('click',function(e)  
 {   

@@ -180,7 +180,10 @@ function displayInvitedToWeddingList(){
 							// Create the window here that will show options to edit this event
 							var windowEditEvent = Titanium.UI.createWindow({
 								title:'Edit Event',
+								//Android seems to want this path
+								//url:'main_windows/edit_event/main.js'
 								url:'edit_event/main.js'
+								
 							});
 
 							windowEditEvent.idKey = e.source.idKey;

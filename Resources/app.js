@@ -38,6 +38,11 @@ var windowMap = Titanium.UI.createWindow({
     url:'main_windows/map.js'
 });
 
+var windowRsvp = Titanium.UI.createWindow({
+    title:'RSVP',
+    url:'main_windows/rsvp.js'
+});
+
 var windowArbitrary = Titanium.UI.createWindow({
     title:'Arbitrary',
     url:'main_windows/arbitrary.js'
@@ -128,6 +133,11 @@ windowMap.mapview = mapview;
 windowMap.idKey = idKey;
 windowMap.site_url = site_url;
 windowMap.loader = loader;
+
+// Arbitrary Window
+windowRsvp.windowHome = windowHome;
+windowRsvp.site_url = site_url;
+windowRsvp.loader = loader;
 
 // Arbitrary Window
 windowArbitrary.windowHome = windowHome;

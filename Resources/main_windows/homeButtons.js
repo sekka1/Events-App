@@ -61,22 +61,22 @@ var lblMap = Titanium.UI.createLabel({
 });
 win.add(lblMap);
 
-/*
-var btnOwnersPhotos = Titanium.UI.createButton({  
+
+var btnRsvp = Titanium.UI.createButton({  
     title:'',  
     top:49,  
     left:225,
     width:60,  
     height:61,
-    backgroundImage: '../images/png/photos_new_small.png',
-    backgroundSelectedImage: '../images/png/photos_new_small_down.png',
+    backgroundImage: '../images/templates/multi-color/map.png', 
+    backgroundSelectedImage: '../images/templates/multi-color/map_dwn.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
-win.add(btnOwnersPhotos);
+win.add(btnRsvp);
 
-var lblOwnersPhotos = Titanium.UI.createLabel({
-	text:'Photos',
+var lblRsvp = Titanium.UI.createLabel({
+	text:'RSVP',
 	width:'auto',
 	height:'auto',
 	font:{fontFamily:'Arial',fontSize:14},
@@ -87,8 +87,8 @@ var lblOwnersPhotos = Titanium.UI.createLabel({
 	shadowOffset:{x:1,y:1},
 	zIndex:99
 });
-win.add(lblOwnersPhotos);
-*/
+win.add(lblRsvp);
+
 
 //
 // Row 2 - there are 2 other arbitrary window button in this row
@@ -111,6 +111,20 @@ var btnArbitraryOne = Titanium.UI.createButton({
 });
 win.add(btnArbitraryOne);
 
+var lblAboutUs = Titanium.UI.createLabel({
+	text:'About Us',
+	width:'auto',
+	height:'auto',
+	font:{fontFamily:'Arial',fontSize:14},
+	left:35,
+	top:205,
+	color:'white',
+	shadowColor:'#aaa',
+	shadowOffset:{x:1,y:1},
+	zIndex:99
+});
+win.add(lblAboutUs);
+
 // 2 - Family
 var btnArbitraryTwo = Titanium.UI.createButton({  
     title:'',  
@@ -123,7 +137,21 @@ var btnArbitraryTwo = Titanium.UI.createButton({
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });
-win.add(btnArbitraryTwo)
+win.add(btnArbitraryTwo);
+
+var lblFamily = Titanium.UI.createLabel({
+	text:'Family',
+	width:'auto',
+	height:'auto',
+	font:{fontFamily:'Arial',fontSize:14},
+	left:135,
+	top:205,
+	color:'white',
+	shadowColor:'#aaa',
+	shadowOffset:{x:1,y:1},
+	zIndex:99
+});
+win.add(lblFamily);
 
 // 3 - Wedding Comment Page
 var btnWeddingComment = Titanium.UI.createButton({  
