@@ -111,6 +111,7 @@ windowHome.windowLogin = windowLogin;
 windowHome.windowEventInfo = windowEventInfo;
 windowHome.windowMap = windowMap;
 windowHome.mapview = mapview;
+windowHome.windowRsvp = windowRsvp;
 windowHome.idKey = idKey;
 windowHome.site_url = site_url;
 windowHome.windowArbitrary = windowArbitrary;
@@ -134,7 +135,7 @@ windowMap.idKey = idKey;
 windowMap.site_url = site_url;
 windowMap.loader = loader;
 
-// Arbitrary Window
+// RSVP Window
 windowRsvp.windowHome = windowHome;
 windowRsvp.site_url = site_url;
 windowRsvp.loader = loader;
