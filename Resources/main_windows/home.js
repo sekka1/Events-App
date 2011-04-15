@@ -4,7 +4,7 @@ win.setBackgroundImage('../images/background.jpg');
 Ti.API.info( "Home window loading..." );
 
 var nav_bar = Titanium.UI.createImageView({
-        image:'../images/navigation/nav-bar-blank.png',
+        image:'../images/templates/multi-color/nav-bar-blank.png',
         top:0,
         left:0,
         height:40,

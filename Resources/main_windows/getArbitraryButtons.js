@@ -1,26 +1,3 @@
-/*var btnArbitraryOne = Titanium.UI.createButton({  
-    title:'',  
-    top:140,  
-    left:35,
-    width:60,  
-    height:62,
-    backgroundImage: '../images/templates/multi-color/aboutus.png',
-    backgroundSelectedImage: '../images/templates/multi-color/aboutus.png',  
-    borderRadius:1,  
-    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
-});
-var btnArbitraryTwo = Titanium.UI.createButton({  
-    title:'',  
-    top:140,  
-    left:130,
-    width:60,  
-    height:62,
-    backgroundImage: '../images/templates/multi-color/family.png',
-    backgroundSelectedImage: '../images/templates/multi-color/family.png',    
-    borderRadius:1,  
-    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
-});
-*/
 // Create our HTTP Client and name it "loader"
 var loader = Titanium.Network.createHTTPClient();
 

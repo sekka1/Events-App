@@ -1,7 +1,7 @@
 var win = Titanium.UI.currentWindow;  
 
 var nav_bar = Titanium.UI.createImageView({
-        image:'../../images/navigation/nav-bar-blank.png',
+        image:'../../images/templates/multi-color/nav-bar-blank.png',
         top:0,
         left:0,
         height:40,
@@ -13,7 +13,7 @@ win.add(nav_bar);
 
 var btnBack = Titanium.UI.createButton({  
     title:'',  
-    backgroundImage:'../../images/navigation/back.png',
+    backgroundImage:'../../templates/multi-color/navigation/back.png',
     top:5,  
     left:2,
     width:35,  
