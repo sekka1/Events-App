@@ -49,6 +49,7 @@ win.loader.onload = function()
     Ti.API.info( "Event Info: " + this.responseText );
 
     results = eval('('+this.responseText+')');
+    
     var scrollView1 = Titanium.UI.createScrollView({
         contentWidth:'auto',
         contentHeight:'auto',
@@ -57,7 +58,11 @@ win.loader.onload = function()
         //width:300,
         //height:600,
         borderRadius:0,
-        backgroundColor:'#336699',
+        //backgroundColor:'#336699',
+        	backgroundGradient:{
+		type:'linear',
+		colors:[{color:'#d4d4d4',position:0.0},{color:'#c4c4c4',position:0.50},{color:'#336699',position:1.0}]
+	},
         showVerticalScrollIndicator:true,
         showHorizontalScrollIndicator:false
     });
@@ -80,7 +85,11 @@ win.loader.onload = function()
         top:10,  
         left:10,  
         height:'auto',
-        backgroundColor:'#336699'  
+        //backgroundColor:'#336699'  
+                	backgroundGradient:{
+		type:'linear',
+		colors:[{color:'#d4d4d4',position:0.0},{color:'#c4c4c4',position:0.50},{color:'#b4b4b4',position:1.0}]
+	},
     });  
     scrollView1.add(eventDescription); 
    

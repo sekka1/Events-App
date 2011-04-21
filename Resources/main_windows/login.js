@@ -92,6 +92,8 @@ function displayInvitedToWeddingList(){
         // Create our HTTP Client
         
         Ti.API.info( "Titanium.Facebook.accessToken: " + Titanium.Facebook.accessToken );
+        Ti.API.info( "Titanium.Facebook.expirationDate: " + Titanium.Facebook.expirationDate );
+        Ti.API.info( "Titanium.Facebook: " + Titanium.Facebook );
         Ti.API.info( "Invited list URL: " + win.site_url + "data/index/class/InvitedList/method/getLoginEventList/uid/" + Titanium.Facebook.uid );
         
         // Sets the HTTP request method, and the URL to get data from

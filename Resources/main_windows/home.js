@@ -35,7 +35,7 @@ win.addEventListener('focus',function(e)
 // Back button to the login screen
 var btnBack = Titanium.UI.createButton({  
     title:'',  
-    backgroundImage:'../images/navigation/back.png',
+    backgroundImage:'../images/templates/multi-color/back.png',
     top:5,  
     left:2,
     width:35,  
