@@ -79,14 +79,19 @@ win.add(Titanium.Facebook.createLoginButton({ top: 325, 'style': 'wide' }));
 ////////////////////////////////////////////
 
 
-if( Titanium.Facebook.loggedIn ){
-    displayInvitedToWeddingList();
-}
+// Display the wedding list options if the user is logged into facebook
+win.addEventListener('focus',function(e)  
+{  
+    if( Titanium.Facebook.loggedIn ){
+    	displayInvitedToWeddingList();
+	}
+});  
+
 
 function displayInvitedToWeddingList(){
 // Displays the list of weddings this user is invited to after logging into facebook
 
-    if( Titanium.Facebook.loggedIn ){    
+    if( Titanium.Facebook.loggedIn ){
     
         // Perform Ajax call to get the list this user is invited to
         // Create our HTTP Client
@@ -122,6 +127,33 @@ function displayInvitedToWeddingList(){
             });
             
             var top_alignment = 10;
+            
+            // Display button to create a new wedding
+            var createNewWedding = Titanium.UI.createButton({  
+                    title:'Create New Wedding',  
+                    top:top_alignment,  
+                    width:180,  
+                    height:35,  
+                    borderRadius:1,  
+                    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+            });  
+            scrollView1.add(createNewWedding);
+            
+            createNewWedding.addEventListener('click',function(e)  
+            {  
+                var windowCreateEvent = Titanium.UI.createWindow({
+					title:'Create Event',
+					url:'createEvent.js',
+				});
+           
+				windowCreateEvent.site_url = win.site_url;
+				windowCreateEvent.backWindow = win;
+				windowCreateEvent.loader = win.loader;
+				
+				windowCreateEvent.open();
+            }); 
+            
+            top_alignment += 40;
 
             // Loop through and display a button for each wedding this user is invited to
             for( var i = 0; i < results.length; i++ ){
