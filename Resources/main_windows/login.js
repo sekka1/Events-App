@@ -51,6 +51,20 @@ loginBtn.addEventListener('click',function(e)
     }  
 });  
 
+// ScrollView for the list of events this user is invited to
+var scrollView1 = Titanium.UI.createScrollView({
+	contentWidth:'auto',
+	contentHeight:'auto',
+	top:40,
+	left:0,
+	//width:300,
+	height:250,
+	borderRadius:0,
+	//backgroundColor:'#336699',
+	showVerticalScrollIndicator:true,
+	showHorizontalScrollIndicator:false
+});
+
 ////////////////////////////////////////////
 // Facebook login button
 ////////////////////////////////////////////
@@ -112,19 +126,6 @@ function displayInvitedToWeddingList(){
             Ti.API.info( "Invited List: " + this.responseText );
 
             results = eval('('+this.responseText+')');
-            
-            var scrollView1 = Titanium.UI.createScrollView({
-                contentWidth:'auto',
-                contentHeight:'auto',
-                top:40,
-                left:0,
-                //width:300,
-                height:300,
-                borderRadius:0,
-                //backgroundColor:'#336699',
-                showVerticalScrollIndicator:true,
-                showHorizontalScrollIndicator:false
-            });
             
             var top_alignment = 10;
             
