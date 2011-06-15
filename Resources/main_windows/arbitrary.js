@@ -83,7 +83,7 @@ win.loader.onload = function()
 		var q1 = Titanium.UI.createLabel({  
 			text:qa[0], 
 			top:10,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
 			left:10,
 			borderColor:'black',
 			backgroundColor:'white',
@@ -110,7 +110,7 @@ win.loader.onload = function()
 		var q2 = Titanium.UI.createLabel({  
 			text:qa[2], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
 			left:10,
 			borderColor:'black',
 			backgroundColor:'white',
@@ -137,7 +137,7 @@ win.loader.onload = function()
 		var q3 = Titanium.UI.createLabel({  
 			text:qa[4], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
 			left:10,
 			borderColor:'black',
 			backgroundColor:'white',
@@ -164,7 +164,7 @@ win.loader.onload = function()
 		var q4 = Titanium.UI.createLabel({  
 			text:qa[6], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
 			left:10,
 			borderColor:'black',
 			backgroundColor:'white',
@@ -202,7 +202,7 @@ win.loader.onload = function()
 		var q1 = Titanium.UI.createLabel({  
 			text:qa[0], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
 			left:10,
 			borderColor:'black',
 			backgroundColor:'white',
@@ -229,7 +229,7 @@ win.loader.onload = function()
 		var q2 = Titanium.UI.createLabel({  
 			text:qa[2], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
 			left:10,
 			borderColor:'black',
 			backgroundColor:'white',

@@ -46,13 +46,13 @@ btnBack.addEventListener('click', function()
 // searchTerm - is the term that will be in the value field of the type
 var data = [
 	{title:'Event Info', hasChild:true, type:'event_info'},
-	{title:'Template', hasChild:true, type:'template'},
+//	{title:'Template', hasChild:true, type:'template'},
 	{title:'About Us', hasChild:true, type:'about_us'},
 	{title:'Family', hasChild:true, type:'family'},
 	{title:'Gift Registy', hasChild:true, type:'gift_registry'},
 	{title:'Photos', hasChild:true, type:'photos'},
 	{title:'Invite Facebook Friends', hasChild:true, type:'invite_facebook_friends'},
-	{title:'Collaborate', hasChild:true, type:'Collaborate'},
+//	{title:'Collaborate', hasChild:true, type:'Collaborate'},
 
 ];
 
