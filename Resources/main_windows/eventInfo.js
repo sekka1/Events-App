@@ -47,7 +47,8 @@ var pageName = Titanium.UI.createLabel({
         left:125,  
         //width:300,
         borderRadius:0,  
-        height:'auto'
+        height:'auto',
+        color:'white'
         //backgroundColor:'#336699'  
     });  
 win.add(pageName);

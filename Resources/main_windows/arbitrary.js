@@ -260,7 +260,8 @@ win.loader.onload = function()
 			top:10,  
 			left:125,  
 			//width:300,  
-			height:'auto' 
+			height:'auto',
+			color:'white'
 		});  
 		win.add(eventName);  
 

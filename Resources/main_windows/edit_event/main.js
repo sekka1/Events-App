@@ -12,11 +12,12 @@ var nav_bar = Titanium.UI.createImageView({
 win.add(nav_bar);
 
 var titleName = Titanium.UI.createLabel({  
-        text:'Edit',  
+        text:'Edit My Wedding',  
         top:10,  
         left:125,  
         borderRadius:0,  
-        height:'auto'
+        height:'auto',
+        color:'white'
 }); 
 win.add(titleName);
 

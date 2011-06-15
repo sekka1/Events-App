@@ -34,6 +34,16 @@ var btnBack = Titanium.UI.createButton({
 });  
 win.add(btnBack);
 
+var titleName = Titanium.UI.createLabel({  
+        text:'Photos',  
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+        color:'white'
+}); 
+win.add(titleName);
+
 btnBack.addEventListener('click', function()
 {
    win.backWindow.open();

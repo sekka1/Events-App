@@ -55,6 +55,16 @@ btnBack.addEventListener('click', function()
    
 });
 
+var titleName = Titanium.UI.createLabel({  
+        text:'Photo',  
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+        color:'white'
+}); 
+win.add(titleName);
+
 /////////////////////////////////////////////////////
 //  Start of page content
 /////////////////////////////////////////////////////

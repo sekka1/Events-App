@@ -32,6 +32,16 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
+var titleName = Titanium.UI.createLabel({  
+        text:'Event Info',  
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+        color:'white'
+}); 
+win.add(titleName);
+
 // Variable to set what onload section todo.  Setting the text field info or saving
 var onloadType = 'setting_text_field';
 

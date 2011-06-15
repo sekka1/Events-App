@@ -32,6 +32,17 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
+var titleName = Titanium.UI.createLabel({  
+        text:'Facebook Invite',  
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+        color:'white'
+}); 
+win.add(titleName);
+
+
 // create table view
 var tableview = Titanium.UI.createTableView({
     top:40

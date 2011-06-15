@@ -30,6 +30,16 @@ btnBack.addEventListener('click', function()
 
 });
 
+var titleName = Titanium.UI.createLabel({  
+        text:'Comments',  
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+        color:'white'
+}); 
+win.add(titleName);
+
 
 // Replacing the / with __ so that it can be passed into the FB photo comment generator
 //var new_image_url = win.image_url.replace( /\//g, "__" );

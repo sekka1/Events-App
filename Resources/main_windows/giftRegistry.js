@@ -37,6 +37,18 @@ var actInd = Titanium.UI.createActivityIndicator({
     width:10
 });
 
+var titleName = Titanium.UI.createLabel({  
+        text:'Gift Registry',  
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+        color:'white'
+}); 
+win.add(titleName);
+
+
+
 // Create Sub window
 var windowRegistryView = Titanium.UI.createWindow({
     title:'Viewing Gift',    url:'giftRegistryViewer.js'
