@@ -1,4 +1,5 @@
 var win = Titanium.UI.currentWindow;  
+win.setBackgroundImage('../images/background.jpg');
 
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/templates/multi-color/nav-bar-blank.png',
@@ -25,6 +26,8 @@ win.add(btnBack);
 
 btnBack.addEventListener('click', function()
 {
+	win.remove( scrollView1 );
+
    win.windowHome.open();
    win.close();
 });
@@ -32,6 +35,18 @@ btnBack.addEventListener('click', function()
 var actInd = Titanium.UI.createActivityIndicator({
     height:50,
     width:10
+});
+
+var scrollView1 = Titanium.UI.createScrollView({
+	contentWidth:'auto',
+	contentHeight:'auto',
+	layout:'vertical',
+	top:40,
+	left:0,
+	width:300,
+	borderRadius:0,
+	showVerticalScrollIndicator:true,
+	showHorizontalScrollIndicator:false
 });
 
 Ti.API.info( "arbitraryWinID: " + win.arbitraryWinID  );
@@ -52,19 +67,6 @@ win.loader.onload = function()
 	Ti.API.info( this.responseText );
 	
 	results = eval('('+this.responseText+')');
-	
-	var scrollView1 = Titanium.UI.createScrollView({
-		contentWidth:'auto',
-		contentHeight:'auto',
-		top:40,
-		left:0,
-		//width:300,
-		//height:600,
-		borderRadius:0,
-		backgroundColor:'#336699',
-		showVerticalScrollIndicator:true,
-		showHorizontalScrollIndicator:false
-	});
 
 	if( win.arbitraryWinID == 0 ){
 		// About Us Section
@@ -78,45 +80,177 @@ win.loader.onload = function()
 		
 		// Question 1
 		var q1 = Titanium.UI.createLabel({  
-			text:qa[0],  
-			top:30,  
-			//left:0,  
-			//width:300,  
-			//height:'auto',
-			backgroundColor:'#336699'  
-		});  
-		scrollView1.add(q1); 
+			text:qa[0], 
+			top:10,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(q1);
 		
 		var a1 = Titanium.UI.createLabel({  
-			text:qa[1],  
-			//top:q1.height + 20,  
-			//left:0,  
-			//width:300,  
-			//height:'auto',
-			backgroundColor:'#336699'  
-		});  
-		scrollView1.add(a1); 
+			text:qa[1], 
+			top:2,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(a1);
+    	
+    	// Question 2
+		var q2 = Titanium.UI.createLabel({  
+			text:qa[2], 
+			top:20,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(q2);
 		
-		// Line 1
-		var line1 = Ti.UI.createLabel({
-			//height:2,
-			//width:300,
-			//top:q1.height + a1.height + 10,
-			//left:1,
-			backgroundColor:'#000'
-		});
-		//scrollView1.add(line1); 
+		var a2 = Titanium.UI.createLabel({  
+			text:qa[3], 
+			top:2,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(a2);
+
+    	// Question 3
+		var q3 = Titanium.UI.createLabel({  
+			text:qa[4], 
+			top:20,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(q3);
 		
-		Ti.API.info( "heights: " + q1.height + " - " + a1.height );
+		var a3 = Titanium.UI.createLabel({  
+			text:qa[5], 
+			top:2,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(a3);
 	
+    	// Question 4
+		var q4 = Titanium.UI.createLabel({  
+			text:qa[6], 
+			top:20,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(q4);
+		
+		var a4 = Titanium.UI.createLabel({  
+			text:qa[7], 
+			top:2,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(a4);
 	}
 	if( win.arbitraryWinID == 1 ){
 		// Family Section
 	
 		//Ti.API.info( "textWeddingParty: " + win.textWeddingParty  );
+		
+		var questionsAnswers = results[1].description;
+		var qa = questionsAnswers.split("+-+-+-+-+-+-");
 	
 		textName = 'Family';
-		textDescription = results[1].description;;
+		textDescription = results[1].description;
+		
+    	// Family 1
+		var q1 = Titanium.UI.createLabel({  
+			text:qa[0], 
+			top:20,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(q1);
+		
+		var a1 = Titanium.UI.createLabel({  
+			text:qa[1], 
+			top:2,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(a1);
+    	
+    	// Family 2
+		var q2 = Titanium.UI.createLabel({  
+			text:qa[2], 
+			top:20,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(q2);
+		
+		var a2 = Titanium.UI.createLabel({  
+			text:qa[3], 
+			top:2,  
+			font:{fontFamily:'Arial',fontSize:20},  
+			left:10,
+			borderColor:'black',
+			backgroundColor:'white',
+			borderWidth:1,
+			borderRadius:0,  
+			height:'auto'
+    	});  
+    	scrollView1.add(a2);
+		
 	}
 	
 
@@ -128,17 +262,7 @@ win.loader.onload = function()
 			height:'auto' 
 		});  
 		win.add(eventName);  
-/*			
-		var eventDescription = Titanium.UI.createLabel({  
-			text:textDescription,  
-			top:30,  
-			left:0,  
-			//width:300,  
-			height:'auto',
-			backgroundColor:'#336699'  
-		});  
-		scrollView1.add(eventDescription); 
-*/	
+
 		win.add( scrollView1 );
 
 }

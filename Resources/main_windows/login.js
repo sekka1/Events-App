@@ -3,7 +3,7 @@ win.setBackgroundImage('../images/background.jpg');
 
 var titlebar_logo = Titanium.UI.createImageView({
         image:'../images/wedvite_logo.png',
-        top:160,
+        top:0,
         left:72,
         width: 176,
         height:60,

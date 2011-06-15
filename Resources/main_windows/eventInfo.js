@@ -1,4 +1,5 @@
 var win = Titanium.UI.currentWindow;  
+win.setBackgroundImage('../images/background.jpg');
 
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/templates/multi-color/nav-bar-blank.png',
@@ -27,6 +28,9 @@ win.add(btnBack);
 btnBack.addEventListener('click', function()
 {
    Ti.API.info( "Event info back button pressed..." );
+   
+   win.remove( scrollView1 );
+   
    win.windowHome.open();
    win.close();
 });
@@ -34,6 +38,29 @@ btnBack.addEventListener('click', function()
 var actInd = Titanium.UI.createActivityIndicator({
     height:50,
     width:10
+});
+
+var pageName = Titanium.UI.createLabel({  
+        text:'Wedding Info', 
+        top:10,  
+        left:125,  
+        //width:300,
+        borderRadius:0,  
+        height:'auto'
+        //backgroundColor:'#336699'  
+    });  
+win.add(pageName);
+
+var scrollView1 = Titanium.UI.createScrollView({
+	contentWidth:'auto',
+	contentHeight:'auto',
+	top:40,
+	left:0,
+	width:300,
+	borderRadius:0,
+	layout:'vertical',
+	showVerticalScrollIndicator:true,
+	showHorizontalScrollIndicator:false
 });
 
 // Create our HTTP Client
@@ -49,79 +76,96 @@ win.loader.onload = function()
     Ti.API.info( "Event Info: " + this.responseText );
 
     results = eval('('+this.responseText+')');
-    
-    var scrollView1 = Titanium.UI.createScrollView({
-        contentWidth:'auto',
-        contentHeight:'auto',
-        top:40,
-        left:0,
-        //width:300,
-        //height:600,
-        borderRadius:0,
-        //backgroundColor:'#336699',
-        	backgroundGradient:{
-		type:'linear',
-		colors:[{color:'#d4d4d4',position:0.0},{color:'#c4c4c4',position:0.50},{color:'#336699',position:1.0}]
-	},
-        showVerticalScrollIndicator:true,
-        showHorizontalScrollIndicator:false
-    });
 
     var eventName = Titanium.UI.createLabel({  
-        text:results[0].name, 
+        text:'Wedding: ' + results[0].name, 
         top:10,  
-        left:125,  
+        font:{fontFamily:'Arial',fontSize:20},  
+        left:10,
         //width:300,
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
         borderRadius:0,  
         height:'auto'
         //backgroundColor:'#336699'  
     });  
-    //scrollView1.add(eventName);  
-    win.add(eventName);
-        
-    var eventDescription = Titanium.UI.createLabel({  
-        text:results[0].description,  
-    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
+    scrollView1.add(eventName);
+
+    var eventHost = Titanium.UI.createLabel({  
+        text:'Host: ' + results[0].host, 
         top:10,  
+        font:{fontFamily:'Arial',fontSize:20},  
         left:10,  
-        height:'auto',
-        //backgroundColor:'#336699'  
-                	backgroundGradient:{
-		type:'linear',
-		colors:[{color:'#d4d4d4',position:0.0},{color:'#c4c4c4',position:0.50},{color:'#b4b4b4',position:1.0}]
-	},
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:0,  
+        height:'auto'
     });  
-    scrollView1.add(eventDescription); 
-   
-    var eventLocation = Titanium.UI.createLabel({  
-        text:results[0].location,  
-    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:20,  
+    scrollView1.add(eventHost);
+
+    var eventPhone = Titanium.UI.createLabel({  
+        text:'Phone: ' + results[0].phone, 
+        top:10,  
+        font:{fontFamily:'Arial',fontSize:20},  
         left:10,  
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:0,  
+        height:'auto'
+    });  
+    scrollView1.add(eventPhone);
+    
+    var eventLocation = Titanium.UI.createLabel({  
+        text:'Address: ' + results[0].address + ', ' + results[0].city + ', ' + results[0].state + ', ' + results[0].zip,  
+    	font:{fontFamily:'Arial',fontSize:20},  
+        top:10,
+        left:10,
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:0,
         height:'auto',
-        backgroundColor:'#336699'  
     });  
     scrollView1.add(eventLocation); 
     
     var eventWhen = Titanium.UI.createLabel({  
-        text:results[0].when,  
-    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:30,  
-        left:10,  
+        text:'Date: ' + results[0].when,
+    	font:{fontFamily:'Arial',fontSize:20},  
+        top:10,  
+        left:10,
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:0,
         height:'auto',
-        backgroundColor:'#336699'  
     });  
     scrollView1.add(eventWhen); 
+    
+    var eventDescription = Titanium.UI.createLabel({  
+        text:'Description: ' + results[0].description,  
+    	font:{fontFamily:'Arial',fontSize:20},  
+        top:10,  
+        left:10,
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:0,
+        height:'auto'
+    });  
+    scrollView1.add(eventDescription); 
  
     var eventMessage = Titanium.UI.createLabel({  
-        text:results[0].message,  
-    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:40,  
-        left:10,  
+        text:results[0].message,
+    	font:{fontFamily:'Arial',fontSize:20},  
+        top:10,
+        left:10,
         height:'auto',
         backgroundColor:'#336699'  
     });  
-    scrollView1.add(eventMessage); 
+    //scrollView1.add(eventMessage); 
     
     win.add( scrollView1 );
 };

@@ -68,8 +68,8 @@ var btnRsvp = Titanium.UI.createButton({
     left:225,
     width:60,  
     height:61,
-    backgroundImage: '../images/templates/multi-color/map.png', 
-    backgroundSelectedImage: '../images/templates/multi-color/map_dwn.png', 
+    backgroundImage: '../images/templates/multi-color/rsvp.png', 
+    backgroundSelectedImage: '../images/templates/multi-color/rsvp_dwn.png', 
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  

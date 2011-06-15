@@ -33,11 +33,22 @@ btnBack.addEventListener('click', function()
 // Variable to set what onload section todo.  Setting the text field info or saving
 var onloadType = 'setting_text_field';
 
-win.arbitrary_page_id_seq = '';
-
 //////////////////////////////////////////////////////////
 // Text input fields
 //////////////////////////////////////////////////////////
+
+	var scrollView1 = Titanium.UI.createScrollView({
+		contentWidth:'auto',
+		contentHeight:'auto',
+		top:40,
+		left:0,
+		//width:300,
+		//height:600,
+		borderRadius:0,
+		backgroundColor:'#336699',
+		showVerticalScrollIndicator:true,
+		showHorizontalScrollIndicator:false
+	});
 
     var label_rsvp_response = Titanium.UI.createLabel({  
         text:'RSVP Response', 
@@ -101,9 +112,20 @@ win.arbitrary_page_id_seq = '';
 	// Save Button
 	var btnSave = Titanium.UI.createButton({  
 		title:'Save',  
-		top:380,  
+		top:340,  
 		left:10,
 		width:50,  
+		height:28,
+		borderRadius:1,  
+		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+	}); 
+
+	// Post to Facebook button
+	var btnPostToFacebook = Titanium.UI.createButton({  
+		title:'Post to Facebook',  
+		top:340,  
+		right:10,
+		width:140,  
 		height:28,
 		borderRadius:1,  
 		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
@@ -114,55 +136,105 @@ win.arbitrary_page_id_seq = '';
 // Displaying Edit Area
 //////////////////////////////////////////////////////////
 
-Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/Rsvp/method/getone/id/" + win.idKey + "/guest_id/" + Titanium.Facebook.uid );
+function showPage(){
 
-// Sets the HTTP request method, and the URL to get data from
-win.loader.open( "GET", win.site_url + "data/index/class/Rsvp/method/getone/id/" + win.idKey + "/guest_id/" + Titanium.Facebook.uid );
-
-win.loader.onload = function() 
-{
-	if( onloadType == 'setting_text_field' ){
+	Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/Rsvp/method/getone/id/" + win.idKey + "/guest_id/" + Titanium.Facebook.uid );
 	
-		Ti.API.info( "Response: " + this.responseText );
+	// Sets the HTTP request method, and the URL to get data from
+	win.loader.open( "GET", win.site_url + "data/index/class/Rsvp/method/getone/id/" + win.idKey + "/guest_id/" + Titanium.Facebook.uid );
 	
-		results = eval('('+this.responseText+')');
-
-		var scrollView1 = Titanium.UI.createScrollView({
-			contentWidth:'auto',
-			contentHeight:'auto',
-			top:40,
-			left:0,
-			//width:300,
-			//height:600,
-			borderRadius:0,
-			backgroundColor:'#336699',
-			showVerticalScrollIndicator:true,
-			showHorizontalScrollIndicator:false
-		});
+	win.loader.onload = function() 
+	{
+		if( Titanium.Facebook.loggedIn ){
+	
+			if( onloadType == 'setting_text_field' ){
+			
+				Ti.API.info( "Response: " + this.responseText );
+			
+				if( results != '' ){
+				// User has been invited to this event.  Show the RSVP input fields
+				
+					results = eval('('+this.responseText+')');
+					
+					scrollView1.add(label_rsvp_response);
+					scrollView1.add(rsvp_response);
+					scrollView1.add(label_guest_count);
+					scrollView1.add(guest_count);
+					scrollView1.add(label_message);
+					scrollView1.add(message);
+			
+					scrollView1.add(btnSave);
+					
+					rsvp_response.title = results[0].response;
+					guest_count.value = results[0].guests;
+					message.value = results[0].message;
+					
+					// Pass rsvp_id_seq to the save button
+					btnSave.rsvp_id = results[0].rsvp_id_seq;
+					
+					if( Titanium.Facebook.loggedIn ){
+					
+						scrollView1.add( btnPostToFacebook );
+					}
+			
+					win.add( scrollView1 );
+				}
+				if( results == '' ){
+				// User has not been invited to this event.  Show the repost to facebook only
+				
+					win.add( scrollView1 );
+				}
 		
-		scrollView1.add(label_rsvp_response);
-		scrollView1.add(rsvp_response);
-		scrollView1.add(label_guest_count);
-		scrollView1.add(guest_count);
-		scrollView1.add(label_message);
-		scrollView1.add(message);
-
-		scrollView1.add(btnSave);
+			}
+			if( onloadType == 'save' ){
+				alert( 'Saved' );
+			}
+		} else {
+		// User is not logged into Facebook
 		
-		rsvp_response.title = results[0].response;
-		guest_count.value = results[0].guests;
-		message.value = results[0].message;
+			var label_login_to_facebook = Titanium.UI.createLabel({  
+				text:'Login to Facebook and Post this Wedding to your Wall!', 
+				top:100,  
+				left:10,  
+				//width:300,
+				borderRadius:0,  
+				height:'auto'
+			});  
+			scrollView1.add( label_login_to_facebook );			
 		
-		// Pass rsvp_id_seq to the save button
-		btnSave.rsvp_id = results[0].rsvp_id_seq;
+			// Show the facebook login button
+			Titanium.Facebook.appid = '197440486945083';
+			Titanium.Facebook.permissions = ['user_status,publish_stream', 'user_photos', 'friends_photos', 'friends_status', 'user_videos', 'friends_videos', 'read_stream', 'read_friendlists', 'manage_friendlists', 'read_requests']; // Permissions your app needs
+			Titanium.Facebook.addEventListener('login', function(e) {
+				if (e.success) {
+					Ti.API.info( 'Logged In as: ' + Titanium.Facebook.uid );
+					showPage();
+				} else if (e.error) {
+					alert(e.error);
+				} else if (e.cancelled) {
+					Ti.API.info( 'Cancelled Facebook Login' );
+				}
+			});
+			
+			Titanium.Facebook.addEventListener('logout', function(e) {
+				Titanium.API.log("User logged out.");
+			});
+			
+			scrollView1.add(Titanium.Facebook.createLoginButton({ top: 325, 'style': 'wide' }));
+			
+			win.add( scrollView1 );
+		
+		}
+	};
+	
+	// Send the HTTP request
+	win.loader.send();
 
-		win.add( scrollView1 );
+}
 
-	}
-	if( onloadType == 'save' ){
-		alert( 'Saved' );
-    }
-};
+////////////////////////////////////
+// Buttons Event Listeners
+////////////////////////////////////
 
 rsvp_response.addEventListener('click', function(e)
 {
@@ -200,9 +272,28 @@ btnSave.addEventListener('click', function(e)
 	
 });
 
-// Send the HTTP request
-win.loader.send();
+btnPostToFacebook.addEventListener('click', function(e)
+{
+	Ti.API.info( "Post to Facebook" );
+	
+	var windowPostToFacebook = Titanium.UI.createWindow({
+		title:'Post To Facebok',
+		url:'postToFacebook.js',
+		backgroundColor:'white'
+	});
+	
+	//window variables 
+	windowPostToFacebook.backWindow = win;
+	
+	windowPostToFacebook.open();
+});
 
-
+////////////////////////////////////
+// Windows Focus
+////////////////////////////////////
+win.addEventListener('focus',function(e)  
+{  
+	showPage();
+});  
 
 
