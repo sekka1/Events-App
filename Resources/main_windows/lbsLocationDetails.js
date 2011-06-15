@@ -1,4 +1,5 @@
 var win = Titanium.UI.currentWindow;  
+win.setBackgroundImage('../images/background.jpg');
 
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/templates/multi-color/nav-bar-blank.png',
@@ -110,9 +111,10 @@ xhr.onload = function(e){
         top:40,
         left:0,
         //width:300,
-        //height:600,
+        //height:300,
         borderRadius:0,
-        backgroundColor:'red',
+        //backgroundColor:'red',
+//        layout:'vertical',
         showVerticalScrollIndicator:true,
         showHorizontalScrollIndicator:false
     });
@@ -127,17 +129,43 @@ xhr.onload = function(e){
         //backgroundColor:'#336699'  
     });  
     scrollView1.add(locName);  
-        
+ 
+/*    var locName = Titanium.UI.createLabel({  
+        text:'Name: ' + results.properties.name,  
+        top:0,  
+        font:{fontFamily:'Arial',fontSize:20},  
+        left:10,  
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:0,  
+        height:'auto'
+    });  
+    scrollView1.add(locName);
+*/        
     var locPhone = Titanium.UI.createLabel({  
         text:'Phone: ' + results.properties.phone,  
         top:30,  
         left:0,  
         //width:300,  
         height:'auto',
-        backgroundColor:'#336699'  
+        //backgroundColor:'#336699'  
     });  
     scrollView1.add(locPhone); 
-    
+
+/*    var locPhone = Titanium.UI.createLabel({  
+        text:'Phone: ' + results.properties.phone,  
+        top:0,  
+        font:{fontFamily:'Arial',fontSize:20},  
+        left:10,  
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:0,  
+        height:'auto'
+    });  
+    scrollView1.add(locPhone);
+*/
     locPhone.phonenumber = results.properties.phone;
     
     locPhone.addEventListener('click', function(e)
@@ -146,15 +174,30 @@ xhr.onload = function(e){
    		Titanium.Platform.openURL( "tel:" + e.source.phonenumber );
 	});
     
-    var locAddress = Titanium.UI.createLabel({  
+   var locAddress = Titanium.UI.createLabel({  
         text:'Address: ' + results.properties.address + ', ' + results.properties.city + ', ' + results.properties.province + ', ' + results.properties.postcode,  
         top:50,  
         left:0,  
         //width:300,  
         height:'auto',
-        backgroundColor:'#336699'  
+        //backgroundColor:'#336699'  
     });  
     scrollView1.add(locAddress); 
+  
+/*    var locAddress = Titanium.UI.createLabel({  
+        text:'Address: ' + results.properties.address + ', ' + results.properties.city + ', ' + results.properties.province + ', ' + results.properties.postcode,  
+        top:0,  
+        font:{fontFamily:'Arial',fontSize:20},  
+        left:10,  
+        borderColor:'black',
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:0,  
+        height:'auto'
+    });  
+    scrollView1.add(locAddress);
+*/
+    
     var eventLocation = Titanium.Map.createAnnotation({
             latitude:results.geometry.coordinates[1],
             longitude:results.geometry.coordinates[0],
@@ -176,7 +219,9 @@ xhr.onload = function(e){
 
         });
  
+ 	// Setting the relative location of the mapview
    	win.mapview.top="100"; 
+   	
 	if( Titanium.Platform.name == 'iPhone OS' ){
             win.mapview.setRegion({latitude:results.geometry.coordinates[1],
 			longitude:results.geometry.coordinates[0],animate:true,latitudeDelta:0.01, longitudeDelta:0.01});
