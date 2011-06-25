@@ -130,7 +130,9 @@ win.add(lblAboutUs);
 // 2 - Family
 var btnArbitraryTwo = Titanium.UI.createButton({  
     title:'',  
-    top:140,  
+    // Moving lower b/c we moved the Gift Registry Button
+    //top:140,  
+    top:180,
     left:130,
     width:60,  
     height:62,
@@ -147,7 +149,8 @@ var lblFamily = Titanium.UI.createLabel({
 	height:'auto',
 	font:{fontFamily:'Arial',fontSize:14},
 	left:135,
-	top:205,
+	//top:205,
+	top:245,
 	color:'white',
 	shadowColor:'#aaa',
 	shadowOffset:{x:1,y:1},
