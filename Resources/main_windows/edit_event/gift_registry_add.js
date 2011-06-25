@@ -136,7 +136,7 @@ btnSave.addEventListener('click', function(e)
 	    id:win.idKey,
 	    user_id:Titanium.Facebook.uid,
 	    name:giftName.value,
-		url:giftURL.value
+		url:giftURL.value.toLowerCase()
 	};  
 	
 	// Changing onloadType so that the onload function does not run
