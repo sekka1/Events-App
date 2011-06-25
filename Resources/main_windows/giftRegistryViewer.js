@@ -1,6 +1,6 @@
 var win = Titanium.UI.currentWindow;
-Titanium.API.info("The url you wanted is: " + win.url);
-Titanium.API.info("The url you wanted is: " + win.myURL);
+Titanium.API.info("The url you wanted is 1: " + win.url);
+Titanium.API.info("The url you wanted is 2: " + win.myURL);
 var windowHome = Titanium.UI.createWindow({
     title:'Home Page',
     url:'main_windows/home.js'
@@ -8,7 +8,7 @@ var windowHome = Titanium.UI.createWindow({
 
 
 var nav_bar = Titanium.UI.createImageView({
-        image:'../images/navigation/nav-bar-blank.png',
+        image:'../images/templates/multi-color/nav-bar-blank.png',
         top:0,
         left:0,
         height:40,
@@ -20,10 +20,11 @@ var nav_bar = Titanium.UI.createImageView({
 
 var titleName = Titanium.UI.createLabel({
         text:'Gift Registry',
-        top:10,
-        left:125,
-        borderRadius:0,
-        height:'auto'
+        top:10,  
+        left:125,  
+        borderRadius:0,  
+        height:'auto',
+        color:'white'
 });
 win.add(titleName);
 //var btnBack = Titanium.UI.createButton({
@@ -45,7 +46,6 @@ btnBack.addEventListener('click', function()
 });
 
 win.add(btnBack);
-
 
 var webview = Titanium.UI.createWebView({
 	url:win.myURL,

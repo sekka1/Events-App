@@ -24,7 +24,7 @@ btnMap.addEventListener('click',function(e)
     win.close();
     
 });
-
+/*
 // RSVP
 btnRsvp.addEventListener('click',function(e)  
 {   
@@ -35,6 +35,7 @@ btnRsvp.addEventListener('click',function(e)
     win.close();
     
 });
+*/
 
 // About Us
 btnArbitraryOne.addEventListener('click',function(e)  

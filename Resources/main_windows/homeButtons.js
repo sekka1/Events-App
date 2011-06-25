@@ -61,6 +61,8 @@ var lblMap = Titanium.UI.createLabel({
 });
 win.add(lblMap);
 
+/*  Removing this functionality for now.  It is not fully implemented so for
+this first round we will take it out.
 
 var btnRsvp = Titanium.UI.createButton({  
     title:'',  
@@ -88,7 +90,7 @@ var lblRsvp = Titanium.UI.createLabel({
 	zIndex:99
 });
 win.add(lblRsvp);
-
+*/
 
 //
 // Row 2 - there are 2 other arbitrary window button in this row
@@ -215,8 +217,11 @@ win.add(lblGuestPhotos);
 
 var btnRegistry = Titanium.UI.createButton({  
     title:'',  
-    top:235,  
-    left:130,
+    // Moving up to the top right corner b/c we took out the RSVP button
+    //top:235,  
+    //left:130,
+    top:49,
+    left:225,
     width:60,  
     height:61,
     backgroundImage: '../images/templates/multi-color/registry.png', 
@@ -231,8 +236,11 @@ var lblRegistry = Titanium.UI.createLabel({
 	width:'auto',
 	height:'auto',
 	font:{fontFamily:'Arial',fontSize:14},
-	left:135,
-	top:300,
+	// Moving up to the top right corner b/c we took out the RSVP button
+	//left:135,
+	//top:300,
+	left:235,
+	top:110,
 	color:'white',
 	shadowColor:'#aaa',
 	shadowOffset:{x:1,y:1},
