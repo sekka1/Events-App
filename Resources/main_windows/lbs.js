@@ -12,7 +12,7 @@ var nav_bar = Titanium.UI.createImageView({
 win.add(nav_bar);
 
 var titleName = Titanium.UI.createLabel({  
-        text:'LBS Search',  
+        text:'Local Search',  
         top:10,  
         left:125,  
         borderRadius:0,  
