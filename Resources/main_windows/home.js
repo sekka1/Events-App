@@ -7,6 +7,9 @@ Ti.API.info( "availableMemory: " + Titanium.Platform.availableMemory );
 
 //alert( "availableMemory: " + Titanium.Platform.availableMemory );
 
+// Pin orientation
+win.orientationModes = [Titanium.UI.PORTRAIT];
+
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/templates/multi-color/nav-bar-blank.png',
         top:0,
