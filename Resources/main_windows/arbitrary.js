@@ -29,7 +29,7 @@ btnBack.addEventListener('click', function()
 {
 	win.remove( scrollView1 );
 
-   win.windowHome.open();
+   win.windowHome.show();
    win.close();
 });
 

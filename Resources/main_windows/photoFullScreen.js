@@ -44,7 +44,7 @@ btnBack.addEventListener('click', function()
     // when the back button is hit
     
     if( win.back_location == 'home' ){
-        win.windowHome.open();
+        win.windowHome.show();
         win.close();
     }
     

@@ -9,7 +9,7 @@ btnEventInfo.addEventListener('click',function(e)
     win.windowEventInfo.idKey = win.idKey;
 
     win.windowEventInfo.open();
-    win.close();
+    win.hide();
     
 });
 
@@ -21,9 +21,10 @@ btnMap.addEventListener('click',function(e)
     win.windowMap.mapview = win.mapview;
 
     win.windowMap.open();
-    win.close();
+    win.hide();
     
 });
+
 /*
 // RSVP
 btnRsvp.addEventListener('click',function(e)  
@@ -32,7 +33,7 @@ btnRsvp.addEventListener('click',function(e)
     win.windowRsvp.idKey = win.idKey;
 
     win.windowRsvp.open();
-    win.close();
+    win.hide();
     
 });
 */
@@ -48,7 +49,7 @@ btnArbitraryOne.addEventListener('click',function(e)
     //win.windowArbitrary.textAboutUs = win.textAboutUs;
 
     win.windowArbitrary.open();
-    win.close();
+    win.hide();
     
 });
 
@@ -63,7 +64,7 @@ btnArbitraryTwo.addEventListener('click',function(e)
     //win.windowArbitrary.textWeddingParty = win.textWeddingParty;
 
     win.windowArbitrary.open();
-    win.close();
+    win.hide();
     
 });
 
@@ -74,7 +75,7 @@ btnGuestPhotos.addEventListener('click',function(e)
     win.windowPhotos.idKey = win.idKey;
 
     win.windowPhotos.open();
-    win.close();
+    win.hide();
     
 });
 
@@ -85,7 +86,7 @@ btnRegistry.addEventListener('click',function(e)
     win.windowGiftRegistry.idKey = win.idKey;
 
     win.windowGiftRegistry.open();
-    win.close();
+    win.hide();
     
 });
 
@@ -94,7 +95,7 @@ btnRegistry.addEventListener('click',function(e)
 btnLBS.addEventListener('click',function(e)  
 {   
     win.windowLBS.open();
-    win.close();
+    win.hide();
     
 });
 
@@ -103,6 +104,6 @@ btnWeddingComment.addEventListener('click',function(e)
 {   
     win.windowWeddingComments.idKey = win.idKey;
     win.windowWeddingComments.open();
-    win.close();
+    win.hide();
     
 });

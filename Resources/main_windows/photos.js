@@ -38,7 +38,7 @@ win.add(btnBack);
 
 btnBack.addEventListener('click', function()
 {
-   win.windowHome.open();
+   win.windowHome.show();
    win.close();
 });
 
@@ -68,7 +68,7 @@ Ti.API.info( "Upload URL: " + Titanium.App.Properties.getString("postPhotoURL") 
 			loader.open("POST",Titanium.App.Properties.getString("postPhotoURL"));
             loader.onload = function() {
 			    Ti.API.info("success");
-                win.windowHome.open();
+                win.windowHome.show();
                 win.close();
 			};
 

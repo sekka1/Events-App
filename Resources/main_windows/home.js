@@ -3,6 +3,10 @@ win.setBackgroundImage('../images/background.jpg');
 
 Ti.API.info( "Home window loading..." );
 
+Ti.API.info( "availableMemory: " + Titanium.Platform.availableMemory );
+
+//alert( "availableMemory: " + Titanium.Platform.availableMemory );
+
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/templates/multi-color/nav-bar-blank.png',
         top:0,
@@ -25,12 +29,14 @@ var titlebar_logo = Titanium.UI.createImageView({
 });
 win.add(titlebar_logo);
 
+/*
 win.addEventListener('focus',function(e)  
 {  
     Ti.API.info( "home.js win.addEventListener - focus" );
     
     Ti.API.info( "idKey: " + win.idKey );
 });
+*/
 
 // Back button to the login screen
 var btnBack = Titanium.UI.createButton({  

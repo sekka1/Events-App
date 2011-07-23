@@ -35,7 +35,7 @@ win.add(btnBack);
 
 btnBack.addEventListener('click', function()
 {
-   win.windowHome.open();
+   win.windowHome.show();
    win.close();
 });
 

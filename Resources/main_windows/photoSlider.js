@@ -86,7 +86,7 @@ win.loader.onload = function()
             win.windowFullPhoto.server_location = e.source.server_location;
             
             win.windowFullPhoto.open();
-            win.close();
+            win.hide();
             
     
         });
