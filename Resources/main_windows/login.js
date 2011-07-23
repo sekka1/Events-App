@@ -1,6 +1,9 @@
 var win = Titanium.UI.currentWindow;
 win.setBackgroundImage('../images/background.jpg');
 
+// Pin orientation
+win.orientationModes = [Titanium.UI.PORTRAIT];
+
 var titlebar_logo = Titanium.UI.createImageView({
         image:'../images/wedvite_logo.png',
         top:0,
