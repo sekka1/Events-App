@@ -127,7 +127,7 @@ tableview.addEventListener('click', function(e)
 	
 		var windowEdit = Titanium.UI.createWindow({
 			title:'Edit Family',
-			url:'family.js',
+			url:'Family.js',
 			backgroundColor:'white'
 		});
 		//window variables 
