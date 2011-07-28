@@ -54,7 +54,7 @@ win.arbitrary_page_id_seq = '';
 
     var questionOne = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:50,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -66,10 +66,11 @@ win.arbitrary_page_id_seq = '';
 
     var questionOneAnswer = Titanium.UI.createTextArea({  
     	//font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:100,  
+        top:10,  
         left:10,  
-        height:70,
-	width:300,
+        height:180,
+		width:300,
+		borderWidth:1,
         backgroundColor:'white',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
@@ -78,7 +79,7 @@ win.arbitrary_page_id_seq = '';
 	
     var questionTwo = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:240,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -90,10 +91,11 @@ win.arbitrary_page_id_seq = '';
 
     var questionTwoAnswer = Titanium.UI.createTextArea({  
     	//font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:290,  
+        top:10,  
         left:10,  
-        height:70,
-	width:300,
+        height:180,
+		width:300,
+		borderWidth:1,
         backgroundColor:'white',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
@@ -103,7 +105,7 @@ win.arbitrary_page_id_seq = '';
 
     var questionThree = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:400,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -115,10 +117,11 @@ win.arbitrary_page_id_seq = '';
     
     var questionThreeAnswer = Titanium.UI.createTextArea({  
     	//font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:450,  
+        top:10,  
         left:10,  
-        height:70,
-	width:300,
+        height:180,
+		width:300,
+		borderWidth:1,
         backgroundColor:'white',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
@@ -127,7 +130,7 @@ win.arbitrary_page_id_seq = '';
 
     var questionFour = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:520,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -139,10 +142,11 @@ win.arbitrary_page_id_seq = '';
     
     var questionFourAnswer = Titanium.UI.createTextArea({  
     	//font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:570,  
+        top:10,  
         left:10,  
-        height:70,
-	width:300,
+        height:180,
+		width:300,
+		borderWidth:1,
         backgroundColor:'white',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
@@ -152,7 +156,7 @@ win.arbitrary_page_id_seq = '';
 	// Save Button
 	var btnSave = Titanium.UI.createButton({  
 		title:'Save',  
-		top:660,  
+		top:10,  
 		left:10,
 		width:50,  
 		height:28,
@@ -188,7 +192,8 @@ win.loader.onload = function()
 			//width:300,
 			//height:600,
 			borderRadius:0,
-			backgroundColor:'#336699',
+			layout:'vertical',
+			backgroundImage:'../../images/background.jpg',
 			showVerticalScrollIndicator:true,
 			showHorizontalScrollIndicator:false
 		});

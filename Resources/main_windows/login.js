@@ -73,7 +73,8 @@ var scrollView1 = Titanium.UI.createScrollView({
 ////////////////////////////////////////////
 
 Titanium.Facebook.appid = '197440486945083';
-Titanium.Facebook.permissions = ['user_status,publish_stream', 'user_photos', 'friends_photos', 'friends_status', 'user_videos', 'friends_videos', 'read_stream', 'read_friendlists', 'manage_friendlists', 'read_requests']; // Permissions your app needs
+Titanium.Facebook.permissions = ['user_status' ,'publish_stream', 'user_photos', 'friends_photos', 'friends_status', 'user_videos', 'friends_videos', 'read_stream', 'read_friendlists', 'manage_friendlists', 'read_requests']; // Permissions your app needs
+Titanium.Facebook.authorize();
 Titanium.Facebook.addEventListener('login', function(e) {
     if (e.success) {
         Ti.API.info( 'Logged In as: ' + Titanium.Facebook.uid );

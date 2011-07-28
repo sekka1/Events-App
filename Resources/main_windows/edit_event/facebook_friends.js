@@ -54,12 +54,29 @@ var onloadType = 'getting_invited_list';
 // Get a list of users that is invited to this event
 var invitedList = '';
 
+// Event Info results
+var event_info_results = '';
+
 win.loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getAllInvitedUsersToThisEvent/id/" + win.idKey );
 
 win.loader.onload = function() 
 {
 	if( onloadType == 'getting_invited_list' ){
 		invitedList = eval('('+this.responseText+')');
+		
+		onloadType = 'getting_event_info_data';
+		
+		// Need to get this data so we can get the Event Info Name for posting to the user's FB Status page
+		win.loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
+		
+		win.loader.send();
+	}
+	if( onloadType == 'getting_event_info_data' ){
+	
+		event_info_results = eval('('+this.responseText+')');
+	
+		alert('got event_info data: ' + event_info_results[0].name );
+		alert('app_url: ' + event_info_results[1].app_url );
 	}
 }
 
@@ -95,7 +112,8 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
 			{
 			   
 			   if( e.row.hasCheck == true ){
-			   		
+			   // Un-inviting the user
+			   
 			   		onloadType = "check";
 			   	
 			   		win.loader.open( "GET", win.site_url + "data/index/class/Facebook/method/unInviteOneUser/new_fb_id/"+e.source.id+"/event_id/" + win.idKey );
@@ -105,6 +123,7 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
 			   		e.row.hasCheck = false;
 			   		
 			   } else {
+			   // Inviting the user
 			   
 			   		onloadType = "check";
 			   	
@@ -113,6 +132,21 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
 					win.loader.send();
 					
 			   		e.row.hasCheck = true;
+			   		
+			   		// Now create the status message after you've confirmed that authorize() succeeded
+					Titanium.Facebook.requestWithGraphPath(e.source.id+'/feed', {message: event_info_results[0].name + " has invited you to their Mobile Wedding App.  Go here " + event_info_results[1].app_url +" to download it and either login with Facebook or use ID " + win.idKey + " to view their wedding"}, "POST", function(e) {
+						if (e.success) {
+							alert("Success!  From FB: " + e.result);
+						} else {
+							if (e.error) {
+								alert(e.error);
+							} else {
+								alert("Unkown result");
+							}
+						}
+					});
+										
+			   		
 			   }
 
 			});
