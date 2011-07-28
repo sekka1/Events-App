@@ -51,7 +51,7 @@ var onloadType = 'setting_text_field';
 
 	var labelEventName = Titanium.UI.createLabel({  
         text:'Event Name', 
-        top:20,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -60,7 +60,7 @@ var onloadType = 'setting_text_field';
     
     var eventName = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:50,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -72,7 +72,7 @@ var onloadType = 'setting_text_field';
 
 	var labelEventDescription = Titanium.UI.createLabel({  
         text:'Event Description', 
-        top:100,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -81,10 +81,11 @@ var onloadType = 'setting_text_field';
     
     var eventDescription = Titanium.UI.createTextArea({  
     	//font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:130,  
+        top:10,  
         left:10,  
-        height:70,
+        height:180,
 		width:300,
+		borderWidth:1,
         backgroundColor:'white',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
@@ -93,7 +94,7 @@ var onloadType = 'setting_text_field';
 	
 	var labelEventHost = Titanium.UI.createLabel({  
         text:'Event Host', 
-        top:210,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -102,7 +103,7 @@ var onloadType = 'setting_text_field';
     
     var eventHost = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:240,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -114,7 +115,7 @@ var onloadType = 'setting_text_field';
 
 	var labelEventPhone = Titanium.UI.createLabel({  
         text:'Event Phone Number', 
-        top:290,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -123,7 +124,7 @@ var onloadType = 'setting_text_field';
     
     var eventPhone = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:320,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -136,7 +137,7 @@ var onloadType = 'setting_text_field';
 
 	var labelEventLocation = Titanium.UI.createLabel({  
         text:'Event Location', 
-        top:370,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -145,7 +146,7 @@ var onloadType = 'setting_text_field';
     
     var eventLocation = Titanium.UI.createTextField({  
     	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:400,  
+        top:10,  
         left:10, 
         height:40,
         width:300,
@@ -157,7 +158,7 @@ var onloadType = 'setting_text_field';
     
 	var labelEventAddress = Titanium.UI.createLabel({  
         text:'Address', 
-        top:450,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -166,7 +167,7 @@ var onloadType = 'setting_text_field';
     
     var eventAddress = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:480,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -178,7 +179,7 @@ var onloadType = 'setting_text_field';
 
 	var labelEventCity = Titanium.UI.createLabel({  
         text:'City', 
-        top:530,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -187,7 +188,7 @@ var onloadType = 'setting_text_field';
     
     var eventCity = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:560,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -199,7 +200,7 @@ var onloadType = 'setting_text_field';
 
 	var labelEventState = Titanium.UI.createLabel({  
         text:'State', 
-        top:610,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -208,7 +209,7 @@ var onloadType = 'setting_text_field';
     
     var eventState = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:640,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -220,7 +221,7 @@ var onloadType = 'setting_text_field';
 
 	var labelEventZip = Titanium.UI.createLabel({  
         text:'Zip', 
-        top:690,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -229,7 +230,7 @@ var onloadType = 'setting_text_field';
     
     var eventZip = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:720,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -241,7 +242,7 @@ var onloadType = 'setting_text_field';
  
 	var labelEventWhen = Titanium.UI.createLabel({  
         text:'Event Date', 
-        top:770,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -250,7 +251,7 @@ var onloadType = 'setting_text_field';
     
     var eventWhen = Titanium.UI.createTextField({  
     	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:800,  
+        top:10,  
         left:10,  
         height:40,
         width:300,
@@ -262,7 +263,7 @@ var onloadType = 'setting_text_field';
 
 	var labelEventTo = Titanium.UI.createLabel({  
         text:'Event End Date', 
-        top:850,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -271,7 +272,7 @@ var onloadType = 'setting_text_field';
     
     var eventTo = Titanium.UI.createTextField({  
 		color:'#336699',  
-		top:880,  
+		top:10,  
 		left:10,  
 		width:300,  
 		height:40,  
@@ -283,7 +284,7 @@ var onloadType = 'setting_text_field';
  
 	var labelEventMessage = Titanium.UI.createLabel({  
         text:'Event Message', 
-        top:930,  
+        top:10,  
         left:10,  
         //width:300,
         borderRadius:0,  
@@ -292,7 +293,7 @@ var onloadType = 'setting_text_field';
     
     var eventMessage = Titanium.UI.createTextField({  
     	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
-        top:960,  
+        top:10,  
         left:10,  
         height:40,
         width:300,
@@ -305,7 +306,7 @@ var onloadType = 'setting_text_field';
 	// Save Button
 	var btnSave = Titanium.UI.createButton({  
 		title:'Save',  
-		top:1010,  
+		top:10,  
 		left:10,
 		width:50,  
 		height:28,
@@ -342,7 +343,8 @@ win.loader.onload = function()
 			//width:300,
 			//height:600,
 			borderRadius:0,
-			backgroundColor:'#336699',
+			layout:'vertical',
+			backgroundImage:'../../images/background.jpg',
 			showVerticalScrollIndicator:true,
 			showHorizontalScrollIndicator:false
 		});

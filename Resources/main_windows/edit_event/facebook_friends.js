@@ -75,8 +75,9 @@ win.loader.onload = function()
 	
 		event_info_results = eval('('+this.responseText+')');
 	
-		alert('got event_info data: ' + event_info_results[0].name );
-		alert('app_url: ' + event_info_results[1].app_url );
+		//alert('got event_info data: ' + event_info_results[0].name );
+		//alert('app_url: ' + event_info_results[1].app_url );
+		
 	}
 }
 
@@ -136,12 +137,12 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
 			   		// Now create the status message after you've confirmed that authorize() succeeded
 					Titanium.Facebook.requestWithGraphPath(e.source.id+'/feed', {message: event_info_results[0].name + " has invited you to their Mobile Wedding App.  Go here " + event_info_results[1].app_url +" to download it and either login with Facebook or use ID " + win.idKey + " to view their wedding"}, "POST", function(e) {
 						if (e.success) {
-							alert("Success!  From FB: " + e.result);
+							//alert("Success!  From FB: " + e.result);
 						} else {
 							if (e.error) {
-								alert(e.error);
+								//alert(e.error);
 							} else {
-								alert("Unkown result");
+								//alert("Unkown result");
 							}
 						}
 					});

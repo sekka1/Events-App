@@ -76,7 +76,7 @@ win.arbitrary_page_id_seq = '';
     win.add(giftName);
 
 	var labelGiftURL = Titanium.UI.createLabel({  
-        text:'URL', 
+        text:'URL - Should start with http://', 
         top:120,  
         left:10,  
         //width:300,
@@ -93,10 +93,11 @@ win.arbitrary_page_id_seq = '';
         left:10,  
         height:100,
 		width:300,
+		borderWidth:1,
     	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
     	keyboardToolbarColor: '#999',   
     	keyboardToolbarHeight: 40,
-    	backgroundColor:'#336699'
+    	backgroundColor:'white'
 	});
 	win.add(giftURL);
 
