@@ -71,6 +71,7 @@ win.arbitrary_page_id_seq = '';
 		width:300,
         backgroundColor:'white',
         borderWidth:1,
+        borderRadius:4,
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -96,6 +97,7 @@ win.arbitrary_page_id_seq = '';
 		width:300,
         backgroundColor:'white',
         borderWidth:1,
+        borderRadius:4,
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
