@@ -2,6 +2,16 @@ var win = Titanium.UI.currentWindow;
 
 loader = Titanium.Network.createHTTPClient();
 
+var actInd = Titanium.UI.createActivityIndicator({
+    top:60, 
+    height:50,
+    width:10
+});
+	actInd.font = {fontFamily:'Helvetica Neue', fontSize:35,fontWeight:'bold'};
+	actInd.color = 'red';
+	actInd.message = 'Uploading...';
+	actInd.width = 210;
+
 var nav_bar = Titanium.UI.createImageView({
         image:'../images/templates/multi-color/nav-bar-blank.png',
         top:0,
@@ -56,26 +66,35 @@ var uploadButton = Titanium.UI.createButton({
 uploadButton.addEventListener('click', function()
 {
 
-Ti.API.info( "Upload URL: " + Titanium.App.Properties.getString("postPhotoURL") );
-
+	Ti.API.info( "Upload URL: " + Titanium.App.Properties.getString("postPhotoURL") );
+	
 	Titanium.Media.openPhotoGallery({
 		success: function(event) { 
 			var image = event.media;
 			var tempFile = Titanium.Filesystem.createTempFile();
 			tempFile.write(image);
 			var contents = tempFile.read();
-                    
+			
+	// Showing activity indicator and hiding the back button so the user cannot go back
+	// during the upload.
+	actInd.show();
+	btnBack.hide();
+    alert('Uploading Please Wait...');
+					
 			loader.open("POST",Titanium.App.Properties.getString("postPhotoURL"));
-            loader.onload = function() {
-			    Ti.API.info("success");
-                win.windowHome.show();
-                win.close();
+			loader.onload = function() {
+				
+				Ti.API.info("success");
+				//win.windowHome.show();
+				//win.close();
+				actInd.hide();
+				btnBack.show();
 			};
 
 			loader.send({ dataLength: tempFile.size, userfile: contents, id: win.idKey });
 		},
-		error: function() { Ti.API.info("Error Occured during upload process." + event); alert('An error occured during upload please try again!'); },
-		cancel: function() { Ti.API.info("success");}
+		error: function() { btnBack.show(); Ti.API.info("Error Occured during upload process." + event); alert('An error occured during upload please try again!'); },
+		cancel: function() { btnBack.show(); Ti.API.info("success");}
 
 	});	
 
@@ -193,7 +212,10 @@ win.loader.onload = function()
     
     win.add(btnBack);
     win.add(uploadButton);
-    
+
+	// Adding activity indicator on top of everything so it shows up
+    win.add(actInd);
+	//actInd.show();
 };
 
 
