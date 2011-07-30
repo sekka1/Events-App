@@ -86,6 +86,7 @@ var onloadType = 'setting_text_field';
         height:180,
 		width:300,
 		borderWidth:1,
+		borderRadius:4,
         backgroundColor:'white',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
