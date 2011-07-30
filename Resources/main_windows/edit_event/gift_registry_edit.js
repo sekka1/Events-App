@@ -94,6 +94,7 @@ win.arbitrary_page_id_seq = '';
         height:100,
 		width:300,
 		borderWidth:1,
+		borderRadius:4,
     	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
     	keyboardToolbarColor: '#999',   
     	keyboardToolbarHeight: 40,
