@@ -46,7 +46,7 @@ var pageName = Titanium.UI.createLabel({
         top:10,  
         left:125,  
         //width:300,
-        borderRadius:0,  
+        borderRadius:4,  
         height:'auto',
         color:'white'
         //backgroundColor:'#336699'  
@@ -59,7 +59,7 @@ var scrollView1 = Titanium.UI.createScrollView({
 	top:40,
 	left:0,
 	width:300,
-	borderRadius:0,
+	borderRadius:4,
 	layout:'vertical',
 	showVerticalScrollIndicator:true,
 	showHorizontalScrollIndicator:false
@@ -88,7 +88,7 @@ win.loader.onload = function()
         borderColor:'black',
         backgroundColor:'white',
         borderWidth:1,
-        borderRadius:0,  
+        borderRadius:4,  
         height:'auto'
         //backgroundColor:'#336699'  
     });  
@@ -102,7 +102,7 @@ win.loader.onload = function()
         borderColor:'black',
         backgroundColor:'white',
         borderWidth:1,
-        borderRadius:0,  
+        borderRadius:4,  
         height:'auto'
     });  
     scrollView1.add(eventHost);
@@ -115,7 +115,7 @@ win.loader.onload = function()
         borderColor:'black',
         backgroundColor:'white',
         borderWidth:1,
-        borderRadius:0,  
+        borderRadius:4,  
         height:'auto'
     });  
     scrollView1.add(eventPhone);
@@ -128,7 +128,7 @@ win.loader.onload = function()
         borderColor:'black',
         backgroundColor:'white',
         borderWidth:1,
-        borderRadius:0,
+        borderRadius:4,
         height:'auto',
     });  
     scrollView1.add(eventLocation); 
@@ -141,7 +141,7 @@ win.loader.onload = function()
         borderColor:'black',
         backgroundColor:'white',
         borderWidth:1,
-        borderRadius:0,
+        borderRadius:4,
         height:'auto',
     });  
     scrollView1.add(eventWhen); 
@@ -154,7 +154,7 @@ win.loader.onload = function()
         borderColor:'black',
         backgroundColor:'white',
         borderWidth:1,
-        borderRadius:0,
+        borderRadius:4,
         height:'auto'
     });  
     scrollView1.add(eventDescription); 

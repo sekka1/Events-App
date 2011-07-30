@@ -45,7 +45,7 @@ var scrollView1 = Titanium.UI.createScrollView({
 	top:40,
 	left:0,
 	width:300,
-	borderRadius:0,
+	borderRadius:4,
 	showVerticalScrollIndicator:true,
 	showHorizontalScrollIndicator:false
 });
@@ -88,7 +88,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(q1);
@@ -101,7 +101,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(a1);
@@ -115,7 +115,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(q2);
@@ -128,7 +128,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(a2);
@@ -142,7 +142,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(q3);
@@ -155,7 +155,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(a3);
@@ -169,7 +169,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(q4);
@@ -182,7 +182,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(a4);
@@ -207,7 +207,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(q1);
@@ -220,7 +220,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(a1);
@@ -234,7 +234,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(q2);
@@ -247,7 +247,7 @@ win.loader.onload = function()
 			borderColor:'black',
 			backgroundColor:'white',
 			borderWidth:1,
-			borderRadius:0,  
+			borderRadius:4,  
 			height:'auto'
     	});  
     	scrollView1.add(a2);
