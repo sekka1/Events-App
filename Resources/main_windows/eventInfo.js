@@ -88,7 +88,7 @@ win.loader.onload = function()
         borderColor:'black',
         backgroundColor:'white',
         borderWidth:1,
-        borderRadius:4,  
+        borderRadius:4,
         height:'auto'
         //backgroundColor:'#336699'  
     });  

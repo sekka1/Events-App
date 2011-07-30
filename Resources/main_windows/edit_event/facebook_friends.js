@@ -62,6 +62,13 @@ win.loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getA
 win.loader.onload = function() 
 {
 	if( onloadType == 'getting_invited_list' ){
+		var alertDialog = Titanium.UI.createAlertDialog({
+			title: 'Loading...',
+			message: 'Loading your friend\'s list might take some time depending on the number of friends you have. ',
+			buttonNames: ['OK']
+		});
+		alertDialog.show();
+	
 		invitedList = eval('('+this.responseText+')');
 		
 		onloadType = 'getting_event_info_data';
