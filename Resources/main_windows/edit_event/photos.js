@@ -50,6 +50,13 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
+var alertDialog = Titanium.UI.createAlertDialog({
+	title: 'Remove Photos',
+	message: 'Click on a photo to delete it from your wedding album.',
+	buttonNames: ['OK']
+});
+alertDialog.show();
+
 //
 // Setup Scrollable view.  Want to make the bottom portion of the
 // screen that fits thumbnails to be horizontally scrollable.
@@ -170,7 +177,12 @@ function loadPhotos(){
 			win.add(btnBack);
 		}
 		if( onloadType == 'deleting' ){
-			alert( "Deleted" );
+			var alertDialog2 = Titanium.UI.createAlertDialog({
+				title: '',
+				message: 'Photo Removed',
+				buttonNames: ['OK']
+			});
+			alertDialog2.show();
 		}
 	};
 	
