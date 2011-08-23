@@ -12,13 +12,25 @@ var titlebar_logo = Titanium.UI.createImageView({
 });
 win.add(titlebar_logo);
 
+var nav_bar = Titanium.UI.createImageView({
+        image:'../images/templates/multi-color/nav-bar-blank.png',
+        top:0,
+        left:0,
+        height:40,
+        //width:480,
+	    borderWidth: 0,
+	    borderRadius: 0
+});
+win.add(nav_bar);
+
 var btnBack = Titanium.UI.createButton({  
     title:'',  
     backgroundImage:'../images/templates/multi-color/back.png',
-    top:5,  
+    backgroundSelectedImage: '../images/templates/multi-color/back_over.png',
+    top:2,  
     left:2,
-    width:35,  
-    height:35,
+    width:65,  
+    height:40,
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -30,13 +42,25 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
+var pageName = Titanium.UI.createLabel({  
+        text:'Create a Wedding', 
+        top:10,  
+        left:125,  
+        //width:300,
+        borderRadius:4,  
+        height:'auto',
+        color:'white'
+        //backgroundColor:'#336699'  
+    });  
+win.add(pageName);
+
 var eventName = Titanium.UI.createTextField({  
     color:'#336699',  
     top:60,  
     left:10,  
     width:300,  
     height:40,  
-    hintText:'New Event Name',
+    hintText:'Wedding Name',
     keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
     returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
     borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -45,13 +69,19 @@ win.add(eventName);
   
 var btnCreate = Titanium.UI.createButton({  
     title:'Create',  
-    bottom:10,  
+    top:110, 
     width:90,  
     height:35,  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
-win.add(btnCreate);  
+win.add(btnCreate);
+
+var alertDialog = Titanium.UI.createAlertDialog({
+	title: 'Wedding Created',
+	message: 'Click on the Edit button next to your Wedding to fill in the details.',
+	buttonNames: ['OK']
+});
 
 btnCreate.addEventListener('click',function(e)  
 {  
@@ -62,7 +92,8 @@ btnCreate.addEventListener('click',function(e)
         
     win.loader.onload = function() 
     {
-		alert( 'Event Created' );
+		//alert( 'Event Created' );
+		alertDialog.show();
 		win.backWindow.open();
    		win.close();
 	};
