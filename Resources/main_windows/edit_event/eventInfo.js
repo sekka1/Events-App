@@ -64,7 +64,7 @@ var onloadType = 'setting_text_field';
 		left:10,  
 		width:300,  
 		height:40,  
-		//hintText:'ID',
+		hintText:'Name your wedding',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -108,7 +108,7 @@ var onloadType = 'setting_text_field';
 		left:10,  
 		width:300,  
 		height:40,  
-		//hintText:'ID',
+		hintText:'Father of the bride',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -152,6 +152,7 @@ var onloadType = 'setting_text_field';
         height:40,
         width:300,
         backgroundColor:'white',
+        hintText:'Saint Marry\'s Wedding Hall',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -172,7 +173,7 @@ var onloadType = 'setting_text_field';
 		left:10,  
 		width:300,  
 		height:40,  
-		//hintText:'ID',
+		hintText:'Stree address only',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -193,7 +194,7 @@ var onloadType = 'setting_text_field';
 		left:10,  
 		width:300,  
 		height:40,  
-		//hintText:'ID',
+		hintText:'City',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -214,7 +215,7 @@ var onloadType = 'setting_text_field';
 		left:10,  
 		width:300,  
 		height:40,  
-		//hintText:'ID',
+		hintText:'State',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -235,7 +236,7 @@ var onloadType = 'setting_text_field';
 		left:10,  
 		width:300,  
 		height:40,  
-		//hintText:'ID',
+		hintText:'Zip',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
@@ -256,6 +257,7 @@ var onloadType = 'setting_text_field';
         left:10,  
         height:40,
         width:300,
+        hintText:'November 12, 2011',
         backgroundColor:'white',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
@@ -355,8 +357,14 @@ win.loader.onload = function()
 		scrollView1.add(eventName);  
 		
 		scrollView1.add(labelEventDescription);
-		eventDescription.value = results[0].description;
+		if( results[0].description == '' ){
+			// Putting in default text if there is nothing there
+			eventDescription.value = 'Because you have shared in our lives by your friendship and love, we <Bride> and <Groom> together with our parents invite you to share the beginning of our new life together when we exchange marriage vows on Friday, the ninth of May two thousand eleventh';
+		} else {
+			eventDescription.value = results[0].description;
+		}
 		scrollView1.add(eventDescription);
+		
 		
 		scrollView1.add(labelEventHost);
 		eventHost.value = results[0].host;
@@ -390,13 +398,13 @@ win.loader.onload = function()
 		eventWhen.value = results[0].when;
 		scrollView1.add(eventWhen); 
 		
-		scrollView1.add(labelEventTo);
-		eventTo.value = results[0].to;
-		scrollView1.add(eventTo);
+		//scrollView1.add(labelEventTo);
+		eventTo.value = '';//results[0].to;
+		//scrollView1.add(eventTo);
 		
-		scrollView1.add(labelEventMessage);
-		eventMessage.value = results[0].message;
-		scrollView1.add(eventMessage); 
+		//scrollView1.add(labelEventMessage);
+		eventMessage.value = ''; //results[0].message;
+		//scrollView1.add(eventMessage); 
 		
 		scrollView1.add(btnSave);
 		
