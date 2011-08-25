@@ -59,13 +59,6 @@ btnAdd.addEventListener('click', function()
 	windowAdd.open();
 });
 
-
-
-win.addEventListener('focus',function(){
-
-	loadList();
-});
-
 function loadList(){
 
 	// create table view
@@ -105,7 +98,7 @@ function loadList(){
 				
 				row.addEventListener('click', function(e)
 				{
-					e.source.id
+					//e.source.id
 					Ti.API.info( "Clicked: " + e.source.gift_registry_id_seq );
 					
 					var windowAdd = Titanium.UI.createWindow({
@@ -131,13 +124,17 @@ function loadList(){
 			
 			win.add(tableview);
 		}
-	}
+	};
 	
 	// Send the HTTP request
 	win.loader.send();
 
 }
 
+win.addEventListener('focus',function(){
+
+	loadList();
+});
 
 
 

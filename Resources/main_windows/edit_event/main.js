@@ -1,5 +1,7 @@
 var win = Titanium.UI.currentWindow;  
 
+Ti.API.info( "In Edit event main window" );
+
 var nav_bar = Titanium.UI.createImageView({
         image:'../../images/templates/multi-color/nav-bar-blank.png',
         top:0,
@@ -51,7 +53,7 @@ var data = [
 	{title:'Family', hasChild:true, type:'family'},
 	{title:'Gift Registy', hasChild:true, type:'gift_registry'},
 	{title:'Photos', hasChild:true, type:'photos'},
-	{title:'Invite Facebook Friends', hasChild:true, type:'invite_facebook_friends'},
+	{title:'Invite Facebook Friends', hasChild:true, type:'invite_facebook_friends'}
 //	{title:'Collaborate', hasChild:true, type:'Collaborate'},
 
 ];
@@ -70,6 +72,8 @@ var tableview = Titanium.UI.createTableView({
 // create table view event listener
 tableview.addEventListener('click', function(e)
 {
+	Ti.API.info( "Clicking a row: " + win.idKey );
+
 	// Row Data
 	var index = e.index;
 	var section = e.section;
@@ -82,7 +86,7 @@ tableview.addEventListener('click', function(e)
 	
 		var windowEdit = Titanium.UI.createWindow({
 			title:'Edit Event',
-			url:'eventInfo.js',
+			url:'eventInfo.js'
 			//backgroundColor:'white'
 		});
 		

@@ -68,42 +68,6 @@ var scrollView1 = Titanium.UI.createScrollView({
 	showHorizontalScrollIndicator:false
 });
 
-////////////////////////////////////////////
-// Facebook login button
-////////////////////////////////////////////
-
-Titanium.Facebook.appid = '197440486945083';
-Titanium.Facebook.permissions = ['user_status' ,'publish_stream', 'user_photos', 'friends_photos', 'friends_status', 'user_videos', 'friends_videos', 'read_stream', 'read_friendlists', 'manage_friendlists', 'read_requests']; // Permissions your app needs
-Titanium.Facebook.authorize();
-Titanium.Facebook.addEventListener('login', function(e) {
-    if (e.success) {
-        Ti.API.info( 'Logged In as: ' + Titanium.Facebook.uid );
-        displayInvitedToWeddingList();
-    } else if (e.error) {
-        alert(e.error);
-    } else if (e.cancelled) {
-        Ti.API.info( 'Cancelled Facebook Login' );
-    }
-});
-
-Titanium.Facebook.addEventListener('logout', function(e) {
-    Titanium.API.log("User logged out.");
-});
-
-win.add(Titanium.Facebook.createLoginButton({ top: 325, 'style': 'wide' }));
-
-////////////////////////////////////////////
-// Facebook login button End
-////////////////////////////////////////////
-
-
-// Display the wedding list options if the user is logged into facebook
-win.addEventListener('focus',function(e)  
-{  
-    if( Titanium.Facebook.loggedIn ){
-    	displayInvitedToWeddingList();
-	}
-});  
 
 
 function displayInvitedToWeddingList(){
@@ -148,7 +112,7 @@ function displayInvitedToWeddingList(){
             {  
                 var windowCreateEvent = Titanium.UI.createWindow({
 					title:'Create Event',
-					url:'createEvent.js',
+					url:'createEvent.js'
 				});
            
 				windowCreateEvent.site_url = win.site_url;
@@ -226,9 +190,9 @@ function displayInvitedToWeddingList(){
 							});
 
 							windowEditEvent.idKey = e.source.idKey;
-							windowEditEvent.site_url = win.site_url
+							windowEditEvent.site_url = win.site_url;
 							windowEditEvent.backWindow = win;
-							windowEditEvent.loader = win.loader
+							windowEditEvent.loader = win.loader;
 							windowEditEvent.open();
 							
 							//win.close();
@@ -252,3 +216,40 @@ function displayInvitedToWeddingList(){
     }
 }
 
+////////////////////////////////////////////
+// Facebook login button
+////////////////////////////////////////////
+
+Titanium.Facebook.appid = '197440486945083';
+Titanium.Facebook.permissions = ['user_status' ,'publish_stream', 'user_photos', 'friends_photos', 'friends_status', 'user_videos', 'friends_videos', 'read_stream', 'read_friendlists', 'manage_friendlists', 'read_requests']; // Permissions your app needs
+Titanium.Facebook.authorize();
+Titanium.Facebook.addEventListener('login', function(e) {
+    if (e.success) {
+        Ti.API.info( 'Logged In as: ' + Titanium.Facebook.uid );
+        displayInvitedToWeddingList();
+    } else if (e.error) {
+        alert(e.error);
+    } else if (e.cancelled) {
+        Ti.API.info( 'Cancelled Facebook Login' );
+    }
+});
+
+Titanium.Facebook.addEventListener('logout', function(e) {
+    Titanium.API.log("User logged out.");
+});
+
+win.add(Titanium.Facebook.createLoginButton({ top: 325, 'style': 'wide' }));
+
+////////////////////////////////////////////
+// Facebook login button End
+////////////////////////////////////////////
+
+
+
+// Display the wedding list options if the user is logged into facebook
+win.addEventListener('focus',function(e)  
+{  
+    if( Titanium.Facebook.loggedIn ){
+    	displayInvitedToWeddingList();
+	}
+});  

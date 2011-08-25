@@ -42,7 +42,7 @@ function countDown(){
 
 	dateNow = new Date();									//grab current date
 	milisecs = futureDate.getTime() - dateNow.getTime();		//calc milliseconds between dates
-	delete dateNow;
+	//delete dateNow;
 
 	// time is already past
 	if(milisecs < 0){
@@ -75,7 +75,7 @@ function countDown(){
 		newDate += secs +" seconds";
 		display_cntdwn_label.text=newDate;
 
-		setInterval(function() { countDown() }, 1000);
+		//setInterval(function() { countDown() }, 1000);
 	}
 }
 

@@ -58,19 +58,7 @@ if (Titanium.Platform.name == 'iPhone OS'){
 var longitude;
 var latitude;
 var currentLocation = "";
-Titanium.Geolocation.getCurrentPosition(function(e)
-{
-	if (!e.success || e.error)
-	{
-		currentLocation.text = 'error: ' + JSON.stringify(e.error);
-		return;
-	}
 
-	longitude = e.coords.longitude;
-	latitude = e.coords.latitude;
-	altitude = e.coords.altitude;
-	runIT();
-});
 
 //
 // SimpleGeo Example working with Appcelerator
@@ -126,6 +114,22 @@ function runIT() {
             message.parameters.push([key,moreParams[key]]);
     }
 }
+
+
+Titanium.Geolocation.getCurrentPosition(function(e)
+{
+	if (!e.success || e.error)
+	{
+		currentLocation.text = 'error: ' + JSON.stringify(e.error);
+		return;
+	}
+
+	longitude = e.coords.longitude;
+	latitude = e.coords.latitude;
+	altitude = e.coords.altitude;
+	runIT();
+});
+
 
     //
     // Set OAuth Parameters and make the http request

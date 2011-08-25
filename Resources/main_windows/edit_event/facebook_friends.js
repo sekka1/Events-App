@@ -86,7 +86,7 @@ win.loader.onload = function()
 		//alert('app_url: ' + event_info_results[1].app_url );
 		
 	}
-}
+};
 
 // Send the HTTP request
 win.loader.send();

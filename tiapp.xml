@@ -7,15 +7,15 @@
         <target device="blackberry">false</target>
         <target device="android">true</target>
     </deployment-targets>
-<id>us.wedvite.wedvite</id>
+    <id>us.wedvite.wedvite</id>
     <property name="ti.facebook.appid">197440486945083</property>
-<name>Wedvite</name>
-<version>1.1</version>
-<publisher>gakan</publisher>
-<url>http://wedvite.us</url>
-<description>No description provided</description>
-<copyright>2011 by gakan</copyright>
-<icon>wedvite_icon.png</icon>
+    <name>Wedvite</name>
+    <version>1.1</version>
+    <publisher>gakan</publisher>
+    <url>http://wedvite.us</url>
+    <description>No description provided</description>
+    <copyright>2011 by gakan</copyright>
+    <icon>wedvite_icon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>

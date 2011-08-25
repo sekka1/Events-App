@@ -92,38 +92,7 @@ var httprequestCounter = 0;
 var pickerData = [];
 var pickerSelect = -99;
 var picker= Titanium.UI.createPicker();
-var selectedTemplate = -99
-
-
-/////////////////////////////////////////////
-// Since you can't make multiple GET requests with the same HTTPClient you gotta do this
-///////////////////////////////////////////
-for (var i in sites) {
-    var inline_function = function(i) {
-	var returnString ="";
-        var xhr = Ti.Network.createHTTPClient();
-        xhr.onload = function() {
-	   httprequestCounter++;
-	   var passData = [];
-            var results = eval('('+this.responseText+')');
-            Ti.API.info(results);
-            for(var j=0;j< results.length;j++) { 
-		//we gotta stuff everthing into one return since more than one onLoad() will break stuff
-		passData.push({title:results[j].description,seq:results[j].template_available_page_id_seq,user_id:results[j].user_id_seq,template_used_id:results[j].template_available_page_id_seq});
-            }
-		//parse the results
-	   receiver(passData);
-		//since the HTTPclient is the last VERY thing to execute 
-		// if you try to display data before you're DONE it breaks
-	   displayPicker();
-        };// end onLoad function
-        xhr.open("GET", sites[i]);
-        xhr.send();
-    };
-    inline_function(i);
-	
-
-}//end for loop
+var selectedTemplate = -99;
 
 
 function receiver(params) { 
@@ -186,6 +155,40 @@ function displayPicker() {
 	});
 
 }//end displayPicker function
+
+
+/////////////////////////////////////////////
+// Since you can't make multiple GET requests with the same HTTPClient you gotta do this
+///////////////////////////////////////////
+for (var i in sites) {
+    var inline_function = function(i) {
+	var returnString ="";
+        var xhr = Ti.Network.createHTTPClient();
+        xhr.onload = function() {
+	   httprequestCounter++;
+	   var passData = [];
+            var results = eval('('+this.responseText+')');
+            Ti.API.info(results);
+            for(var j=0;j< results.length;j++) { 
+		//we gotta stuff everthing into one return since more than one onLoad() will break stuff
+		passData.push({title:results[j].description,seq:results[j].template_available_page_id_seq,user_id:results[j].user_id_seq,template_used_id:results[j].template_available_page_id_seq});
+            }
+		//parse the results
+	   receiver(passData);
+		//since the HTTPclient is the last VERY thing to execute 
+		// if you try to display data before you're DONE it breaks
+	   displayPicker();
+        };// end onLoad function
+        xhr.open("GET", sites[i]);
+        xhr.send();
+    };
+    inline_function(i);
+	
+
+}//end for loop
+
+
+
 
 
 

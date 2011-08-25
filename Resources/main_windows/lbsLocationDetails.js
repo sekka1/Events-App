@@ -148,7 +148,7 @@ xhr.onload = function(e){
         top:30,  
         left:0,  
         //width:300,  
-        height:'auto',
+        height:'auto'
         //backgroundColor:'#336699'  
     });  
     scrollView1.add(locPhone); 
@@ -179,7 +179,7 @@ xhr.onload = function(e){
         top:50,  
         left:0,  
         //width:300,  
-        height:'auto',
+        height:'auto'
         //backgroundColor:'#336699'  
     });  
     scrollView1.add(locAddress); 

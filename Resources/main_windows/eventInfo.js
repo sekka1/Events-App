@@ -26,6 +26,18 @@ var btnBack = Titanium.UI.createButton({
 });  
 win.add(btnBack);
 
+var scrollView1 = Titanium.UI.createScrollView({
+	contentWidth:'auto',
+	contentHeight:'auto',
+	top:40,
+	left:0,
+	width:300,
+	borderRadius:4,
+	layout:'vertical',
+	showVerticalScrollIndicator:true,
+	showHorizontalScrollIndicator:false
+});
+
 btnBack.addEventListener('click', function()
 {
    Ti.API.info( "Event info back button pressed..." );
@@ -52,18 +64,6 @@ var pageName = Titanium.UI.createLabel({
         //backgroundColor:'#336699'  
     });  
 win.add(pageName);
-
-var scrollView1 = Titanium.UI.createScrollView({
-	contentWidth:'auto',
-	contentHeight:'auto',
-	top:40,
-	left:0,
-	width:300,
-	borderRadius:4,
-	layout:'vertical',
-	showVerticalScrollIndicator:true,
-	showHorizontalScrollIndicator:false
-});
 
 // Create our HTTP Client
 //var loader = Titanium.Network.createHTTPClient();
@@ -129,7 +129,7 @@ win.loader.onload = function()
         backgroundColor:'white',
         borderWidth:1,
         borderRadius:4,
-        height:'auto',
+        height:'auto'
     });  
     scrollView1.add(eventLocation); 
     
@@ -142,7 +142,7 @@ win.loader.onload = function()
         backgroundColor:'white',
         borderWidth:1,
         borderRadius:4,
-        height:'auto',
+        height:'auto'
     });  
     scrollView1.add(eventWhen); 
     

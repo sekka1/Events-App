@@ -78,11 +78,6 @@ var view = Titanium.UI.createScrollView({
     verticalBounce:true
 });
 
-win.addEventListener('focus',function(){
-
-	loadPhotos();
-});
-
 function loadPhotos(){
 
 	var photoList = [];
@@ -191,3 +186,8 @@ function loadPhotos(){
 	win.loader.send();
 
 }
+
+win.addEventListener('focus',function(){
+
+	loadPhotos();
+});

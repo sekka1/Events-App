@@ -25,14 +25,6 @@ var btnBack = Titanium.UI.createButton({
 });  
 win.add(btnBack);
 
-btnBack.addEventListener('click', function()
-{
-	win.remove( scrollView1 );
-
-   win.windowHome.show();
-   win.close();
-});
-
 var actInd = Titanium.UI.createActivityIndicator({
     height:50,
     width:10
@@ -48,6 +40,14 @@ var scrollView1 = Titanium.UI.createScrollView({
 	borderRadius:4,
 	showVerticalScrollIndicator:true,
 	showHorizontalScrollIndicator:false
+});
+
+btnBack.addEventListener('click', function()
+{
+	win.remove( scrollView1 );
+
+   win.windowHome.show();
+   win.close();
 });
 
 Ti.API.info( "arbitraryWinID: " + win.arbitraryWinID  );
@@ -267,7 +267,7 @@ win.loader.onload = function()
 
 		win.add( scrollView1 );
 
-}
+};
 
 // Send the HTTP request
 win.loader.send();
