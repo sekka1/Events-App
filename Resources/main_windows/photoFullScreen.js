@@ -78,7 +78,7 @@ var new_image_url = win.image_url.replace( /\//g, "__" );
     scalesPageToFit:false
 });*/
 win.webview.url = 'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url;
-win.webview.scalesPageToFit = 'false';
+win.webview.scalesPageToFit = 'true';
 win.add(win.webview);
 
 // Add button on top of the image

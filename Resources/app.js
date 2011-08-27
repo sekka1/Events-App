@@ -170,6 +170,7 @@ windowLBS.mapview = mapview;
 // Wedding Comments
 windowWeddingComments.windowHome = windowHome;
 windowWeddingComments.idKey = idKey;
+windowWeddingComments.webview = webview;
 
 /////////////////////////////////////////////
 // Open First Window
