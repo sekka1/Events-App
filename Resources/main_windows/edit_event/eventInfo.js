@@ -414,7 +414,12 @@ win.loader.onload = function()
 		
     }
     if( onloadType == 'save' ){
-		alert( 'Saved' );
+		var alertDialog = Titanium.UI.createAlertDialog({
+				title: '',
+				message: 'Saved',
+				buttonNames: ['OK']
+			});
+		alertDialog.show();
     }
 };
 

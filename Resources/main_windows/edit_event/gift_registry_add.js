@@ -101,7 +101,7 @@ win.arbitrary_page_id_seq = '';
 	// Save Button
 	var btnSave = Titanium.UI.createButton({  
 		title:'Save',  
-		top:380,  
+		top:260,  
 		left:10,
 		width:50,  
 		height:28,
@@ -120,7 +120,12 @@ Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class
 win.loader.onload = function() 
 {
 	if( onloadType == 'save' ){
-		alert( 'Saved' );
+		var alertDialog = Titanium.UI.createAlertDialog({
+				title: '',
+				message: 'Saved',
+				buttonNames: ['OK']
+		});
+		alertDialog.show();
 		win.backWindow.open();
    		win.close();
     }

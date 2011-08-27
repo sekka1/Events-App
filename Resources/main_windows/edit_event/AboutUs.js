@@ -227,7 +227,12 @@ win.loader.onload = function()
 		Ti.API.info( "arbitrary_id_seq: " + win.arbitrary_id_seq );
 	}
 	if( onloadType == 'save' ){
-		alert( 'Saved' );
+		var alertDialog = Titanium.UI.createAlertDialog({
+				title: '',
+				message: 'Saved',
+				buttonNames: ['OK']
+			});
+		alertDialog.show();
     }
 };
 
