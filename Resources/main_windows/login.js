@@ -15,25 +15,37 @@ var titlebar_logo = Titanium.UI.createImageView({
 });
 win.add(titlebar_logo);
 
+var labelOr = Titanium.UI.createLabel({  
+	text:'Or enter a Wedding ID to view it', 
+	bottom:85,  
+	left:40,
+	height:35,
+	color:'white',
+	borderRadius:0,  
+	height:'auto'
+});
+win.add(labelOr);
+
 var idKey = Titanium.UI.createTextField({  
     color:'#336699',  
-    bottom:60,  
+    bottom:40,  
     left:10,  
-    width:300,  
+    width:250,  
     height:40,  
-    hintText:'ID',
-    value: '27',  
+    hintText:'Wedding ID or 27 for Demo',
+    //value: '27',  
     keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
     returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
     borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
 });  
-win.add(idKey);  
+win.add(idKey);
   
 var loginBtn = Titanium.UI.createButton({  
-    title:'Login',  
-    bottom:10,  
-    width:90,  
-    height:35,  
+    title:'Go',  
+    bottom:40,  
+    width:40,
+    right:10,
+    height:40,  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
 });  
@@ -50,7 +62,12 @@ loginBtn.addEventListener('click',function(e)
     }  
     else  
     {  
-        alert("The ID is required");  
+        var alertDialog = Titanium.UI.createAlertDialog({
+				title: '',
+				message: 'A Wedding ID is required or login via Facebook',
+				buttonNames: ['OK']
+			});
+			alertDialog.show();
     }  
 });  
 

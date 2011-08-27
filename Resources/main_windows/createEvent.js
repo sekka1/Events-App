@@ -79,7 +79,7 @@ win.add(btnCreate);
 
 var alertDialog = Titanium.UI.createAlertDialog({
 	title: 'Wedding Created',
-	message: 'Click on the Edit button next to your Wedding to fill in the details.',
+	message: 'Click on the Edit button next to your Wedding name to fill in the details for this wedding.',
 	buttonNames: ['OK']
 });
 
