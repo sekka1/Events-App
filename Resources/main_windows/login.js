@@ -28,16 +28,11 @@ win.add(loginBtn);
 
 loginBtn.addEventListener('click',function(e)  
 {  
-	var windowAnonymousLogin = Titanium.UI.createWindow({
-		title:'Anonymous Login',
-		url:'anonymousLogin.js'
-	});
-	
-	windowAnonymousLogin.windowHome = win.windowHome;
-	windowAnonymousLogin.win_idKey = win.idKey;
-	windowAnonymousLogin.backWindow = win;
-	windowAnonymousLogin.open();
-	win.hide();
+	win.windowAnonymousLogin.windowHome = win.windowHome;
+	win.windowAnonymousLogin.win_idKey = win.idKey;
+	win.windowAnonymousLogin.backWindow = win;
+	win.windowAnonymousLogin.open();
+	win.close();
 
 });  
 
@@ -136,6 +131,7 @@ function displayInvitedToWeddingList(){
                     if ( e.source.idKey != '' )  
                     {  
                         win.idKey = e.source.idKey;
+                        win.windowHome.anonymousLogin = false;
                         win.windowHome.idKey = e.source.idKey;
                         win.windowHome.open();
                         win.close();

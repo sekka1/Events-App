@@ -94,8 +94,11 @@ loginBtn.addEventListener('click',function(e)
 {  
 	textFieldEventID.blur()
 	win.win_idKey = textFieldEventID.value;
+	//win.windowHome.anonymousLogin = true;
+	//win.windowHome.backWindow = win;
     win.windowHome.idKey = textFieldEventID.value;
     win.windowHome.open();
+    win.close();
 
 });  
 

@@ -58,8 +58,15 @@ win.add(btnBack);
 
 btnBack.addEventListener('click', function()
 {
-   win.windowLogin.open();
-   win.close();
+/*	if( win.anonymousLogin ){
+		win.backWindow.open();
+	} else {
+		win.windowLogin.open();
+	}*/
+	
+	win.windowLogin.open();
+	
+	win.close();
 });
 
 

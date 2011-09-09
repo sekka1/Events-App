@@ -35,9 +35,25 @@ var btnBack = Titanium.UI.createButton({
 
 btnBack.addEventListener('click', function()
 {
+	//win.remove( scrollView1 );
    win.previousWin.open();
    win.close();
 });
+
+var scrollView1 = Titanium.UI.createScrollView({
+	contentWidth:'auto',
+	contentHeight:'auto',
+	top:40,
+	left:0,
+	//width:300,
+	//height:300,
+	borderRadius:0,
+	//backgroundColor:'red',
+//        layout:'vertical',
+	showVerticalScrollIndicator:true,
+	showHorizontalScrollIndicator:false
+});
+    
 
 // SimpleGeo Keys
 var consumer_key='KJ7rx8BLKEdKLqP5mfKZqnegNE4uruRD';
@@ -105,20 +121,6 @@ xhr.onload = function(e){
     Ti.API.info( "Business Name: " + results.properties.name );
     Ti.API.info( "Business Phone: " + results.properties.phone );
     
-    var scrollView1 = Titanium.UI.createScrollView({
-        contentWidth:'auto',
-        contentHeight:'auto',
-        top:40,
-        left:0,
-        //width:300,
-        //height:300,
-        borderRadius:0,
-        //backgroundColor:'red',
-//        layout:'vertical',
-        showVerticalScrollIndicator:true,
-        showHorizontalScrollIndicator:false
-    });
-    
     var locName = Titanium.UI.createLabel({  
         text:'Name: ' + results.properties.name,  
         top:10,  
@@ -129,20 +131,7 @@ xhr.onload = function(e){
         //backgroundColor:'#336699'  
     });  
     scrollView1.add(locName);  
- 
-/*    var locName = Titanium.UI.createLabel({  
-        text:'Name: ' + results.properties.name,  
-        top:0,  
-        font:{fontFamily:'Arial',fontSize:20},  
-        left:10,  
-        borderColor:'black',
-        backgroundColor:'white',
-        borderWidth:1,
-        borderRadius:0,  
-        height:'auto'
-    });  
-    scrollView1.add(locName);
-*/        
+     
     var locPhone = Titanium.UI.createLabel({  
         text:'Phone: ' + results.properties.phone,  
         top:30,  
@@ -153,19 +142,6 @@ xhr.onload = function(e){
     });  
     scrollView1.add(locPhone); 
 
-/*    var locPhone = Titanium.UI.createLabel({  
-        text:'Phone: ' + results.properties.phone,  
-        top:0,  
-        font:{fontFamily:'Arial',fontSize:20},  
-        left:10,  
-        borderColor:'black',
-        backgroundColor:'white',
-        borderWidth:1,
-        borderRadius:0,  
-        height:'auto'
-    });  
-    scrollView1.add(locPhone);
-*/
     locPhone.phonenumber = results.properties.phone;
     
     locPhone.addEventListener('click', function(e)
@@ -183,20 +159,6 @@ xhr.onload = function(e){
         //backgroundColor:'#336699'  
     });  
     scrollView1.add(locAddress); 
-  
-/*    var locAddress = Titanium.UI.createLabel({  
-        text:'Address: ' + results.properties.address + ', ' + results.properties.city + ', ' + results.properties.province + ', ' + results.properties.postcode,  
-        top:0,  
-        font:{fontFamily:'Arial',fontSize:20},  
-        left:10,  
-        borderColor:'black',
-        backgroundColor:'white',
-        borderWidth:1,
-        borderRadius:0,  
-        height:'auto'
-    });  
-    scrollView1.add(locAddress);
-*/
     
     var eventLocation = Titanium.Map.createAnnotation({
             latitude:results.geometry.coordinates[1],

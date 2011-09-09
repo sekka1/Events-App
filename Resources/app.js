@@ -74,6 +74,10 @@ var windowWeddingComments = Titanium.UI.createWindow({
     url:'main_windows/weddingComments.js'
 });
 
+var windowAnonymousLogin = Titanium.UI.createWindow({
+	title:'Anonymous Login',
+	url:'main_windows/anonymousLogin.js'
+});
 /////////////////////////////////////////////
 // Creating App Objects
 /////////////////////////////////////////////
@@ -102,6 +106,7 @@ var loader = Titanium.Network.createHTTPClient();
 
 // Login Window
 windowLogin.windowHome = windowHome;
+windowLogin.windowAnonymousLogin = windowAnonymousLogin;
 windowLogin.idkey = idKey;
 windowLogin.site_url = site_url;
 windowLogin.loader = loader;
@@ -171,6 +176,9 @@ windowLBS.mapview = mapview;
 windowWeddingComments.windowHome = windowHome;
 windowWeddingComments.idKey = idKey;
 windowWeddingComments.webview = webview;
+
+// Anonymous Login Screen
+windowAnonymousLogin.windowHome = windowHome;
 
 /////////////////////////////////////////////
 // Open First Window
