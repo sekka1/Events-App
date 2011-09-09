@@ -115,7 +115,7 @@ var view = Titanium.UI.createScrollView({
 	//height:300,
 	borderRadius:0,
 	//backgroundImage:'../images/wedding.png', // Looks real busy with a background image
-    backgroundColor:'#000',
+    backgroundColor:'#FFF',
 	showVerticalScrollIndicator:true,
 	showHorizontalScrollIndicator:true,
     verticalBounce:true

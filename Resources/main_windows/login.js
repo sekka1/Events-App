@@ -26,6 +26,7 @@ var labelOr = Titanium.UI.createLabel({
 });
 win.add(labelOr);
 
+/*
 var idKey = Titanium.UI.createTextField({  
     color:'#336699',  
     bottom:40,  
@@ -39,12 +40,13 @@ var idKey = Titanium.UI.createTextField({
     borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
 });  
 win.add(idKey);
-  
+*/
+
 var loginBtn = Titanium.UI.createButton({  
-    title:'Go',  
+    title:'Login to a Wedding',  
     bottom:40,  
-    width:40,
-    right:10,
+    width:200,
+    right:100,
     height:40,  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
