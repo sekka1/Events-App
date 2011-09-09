@@ -40,6 +40,7 @@ win.addEventListener('focus',function(e)
     Ti.API.info( "idKey: " + win.idKey );
 });
 */
+Ti.API.info( "idKey: " + win.idKey );
 
 // Back button to the login screen
 var btnBack = Titanium.UI.createButton({  

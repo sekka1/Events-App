@@ -15,38 +15,11 @@ var titlebar_logo = Titanium.UI.createImageView({
 });
 win.add(titlebar_logo);
 
-var labelOr = Titanium.UI.createLabel({  
-	text:'Or enter a Wedding ID to view it', 
-	bottom:85,  
-	left:40,
-	height:35,
-	color:'white',
-	borderRadius:0,  
-	height:'auto'
-});
-win.add(labelOr);
-
-/*
-var idKey = Titanium.UI.createTextField({  
-    color:'#336699',  
-    bottom:40,  
-    left:10,  
-    width:250,  
-    height:40,  
-    hintText:'Wedding ID or 27 for Demo',
-    //value: '27',  
-    keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
-    returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
-    borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
-});  
-win.add(idKey);
-*/
-
 var loginBtn = Titanium.UI.createButton({  
-    title:'Login to a Wedding',  
+    title:'Goto a Wedding',  
     bottom:40,  
     width:200,
-    right:100,
+    right:65,
     height:40,  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
@@ -55,22 +28,17 @@ win.add(loginBtn);
 
 loginBtn.addEventListener('click',function(e)  
 {  
-    if ( idKey.value != '' )  
-    {  
-        win.idKey = idKey.value;
-        win.windowHome.idKey = idKey.value;
-        win.windowHome.open();
-        win.close();
-    }  
-    else  
-    {  
-        var alertDialog = Titanium.UI.createAlertDialog({
-				title: '',
-				message: 'A Wedding ID is required or login via Facebook',
-				buttonNames: ['OK']
-			});
-			alertDialog.show();
-    }  
+	var windowAnonymousLogin = Titanium.UI.createWindow({
+		title:'Anonymous Login',
+		url:'anonymousLogin.js'
+	});
+	
+	windowAnonymousLogin.windowHome = win.windowHome;
+	windowAnonymousLogin.win_idKey = win.idKey;
+	windowAnonymousLogin.backWindow = win;
+	windowAnonymousLogin.open();
+	win.hide();
+
 });  
 
 // ScrollView for the list of events this user is invited to
