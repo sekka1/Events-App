@@ -85,8 +85,8 @@ win.loader.onload = function()
         font:{fontFamily:'Arial',fontSize:20},  
         left:10,
         //width:300,
-        borderColor:'black',
-        backgroundColor:'white',
+        //borderColor:'black',
+        //backgroundColor:'white',
         borderWidth:1,
         borderRadius:4,
         height:'auto'
@@ -99,8 +99,8 @@ win.loader.onload = function()
         top:10,  
         font:{fontFamily:'Arial',fontSize:20},  
         left:10,  
-        borderColor:'black',
-        backgroundColor:'white',
+        //borderColor:'black',
+        //backgroundColor:'white',
         borderWidth:1,
         borderRadius:4,  
         height:'auto'
@@ -112,8 +112,8 @@ win.loader.onload = function()
         top:10,  
         font:{fontFamily:'Arial',fontSize:20},  
         left:10,  
-        borderColor:'black',
-        backgroundColor:'white',
+        //borderColor:'black',
+        //backgroundColor:'white',
         borderWidth:1,
         borderRadius:4,  
         height:'auto'
@@ -125,8 +125,8 @@ win.loader.onload = function()
     	font:{fontFamily:'Arial',fontSize:20},  
         top:10,
         left:10,
-        borderColor:'black',
-        backgroundColor:'white',
+        //borderColor:'black',
+        //backgroundColor:'white',
         borderWidth:1,
         borderRadius:4,
         height:'auto'
@@ -138,9 +138,9 @@ win.loader.onload = function()
     	font:{fontFamily:'Arial',fontSize:20},  
         top:10,  
         left:10,
-        borderColor:'black',
-        backgroundColor:'white',
-        borderWidth:1,
+        //borderColor:'black',
+        //backgroundColor:'white',
+    	borderWidth:1,
         borderRadius:4,
         height:'auto'
     });  
@@ -151,8 +151,8 @@ win.loader.onload = function()
     	font:{fontFamily:'Arial',fontSize:20},  
         top:10,  
         left:10,
-        borderColor:'black',
-        backgroundColor:'white',
+        //borderColor:'black',
+        //backgroundColor:'white',
         borderWidth:1,
         borderRadius:4,
         height:'auto'
