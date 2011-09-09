@@ -39,12 +39,6 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
-// Create Sub window
-var windowLocationList = Titanium.UI.createWindow({
-    title:'LBS Location List',
-    url:'lbsLocationList.js'
-});
-
 // create table view data object
 // type - can be either: q or category
 // searchTerm - is the term that will be in the value field of the type
@@ -103,12 +97,13 @@ tableview.addEventListener('click', function(e)
 	//e.section.headerTitle = e.section.headerTitle + ' section has been clicked';
 	//Titanium.UI.createAlertDialog({title:'Table View',message:'row ' + row + ' index ' + index + ' section ' + section  + ' row data ' + rowdata + ' type ' + row.type + ' searchTerm ' + row.searchTerm }).show();
    
-    windowLocationList.mapview = win.mapview; 
-    windowLocationList.previousWin = win;
-    windowLocationList.type = row.type;
-    windowLocationList.searchTerm = row.searchTerm;
+    win.windowLocationList.mapview = win.mapview; 
+    win.windowLocationList.previousWin = win;
+    //windowLocationList.windowHome = win.windowHome;
+    win.windowLocationList.type = row.type;
+    win.windowLocationList.searchTerm = row.searchTerm;
     
-    windowLocationList.open();
+    win.windowLocationList.open();
     
     //win.close();
     

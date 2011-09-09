@@ -39,13 +39,6 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
-
-// Create Sub window
-var windowLocationDetail = Titanium.UI.createWindow({
-    title:'LBS Location Details',
-    url:'lbsLocationDetails.js'
-});
-
 //
 // GET CURRENT POSITION - THIS FIRES ONCE
 //
@@ -169,14 +162,15 @@ function runIT() {
         
         Ti.API.info( "row.simpleGeoID: " + row.simpleGeoID );
        	
-	windowLocationDetail.mapview = win.mapview; 
-        windowLocationDetail.simpleGeoID = row.simpleGeoID;
+		win.windowLocationDetail.mapview = win.mapview; 
+        win.windowLocationDetail.simpleGeoID = row.simpleGeoID;
         
-        windowLocationDetail.previousWin = win;
+        //windowLocationDetail.previousWin = win;
+        //win.windowLocationDetail.windowHome = win.windowHome;
         
-        windowLocationDetail.open();
+        win.windowLocationDetail.open();
         
-        //win.close();
+        win.close();
         
         
     });

@@ -40,7 +40,7 @@ win.add(btnBack);
 
 btnBack.addEventListener('click', function()
 {
-   win.backWindow.show();
+   win.windowLogin.open();
    win.close();
 });
 

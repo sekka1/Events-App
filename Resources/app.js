@@ -69,6 +69,16 @@ var windowLBS = Titanium.UI.createWindow({
     url:'main_windows/lbs.js'
 });
 
+var windowLocationList = Titanium.UI.createWindow({
+    title:'LBS Location List',
+    url:'main_windows/lbsLocationList.js'
+});
+
+var windowLocationDetail = Titanium.UI.createWindow({
+    title:'LBS Location Details',
+    url:'main_windows/lbsLocationDetails.js'
+});
+
 var windowWeddingComments = Titanium.UI.createWindow({
     title:'Wedding Comments',
     url:'main_windows/weddingComments.js'
@@ -170,7 +180,14 @@ windowGiftRegistry.idKey = idKey;
 
 // LBS 
 windowLBS.windowHome = windowHome;
+windowLBS.windowLocationList = windowLocationList;
 windowLBS.mapview = mapview;
+
+// LBS -> Category List
+windowLocationList.windowLocationDetail = windowLocationDetail;
+
+// LBS -> Category List -> Detail Page with map
+windowLocationDetail.windowLBS = windowLBS;
 
 // Wedding Comments
 windowWeddingComments.windowHome = windowHome;
@@ -178,7 +195,7 @@ windowWeddingComments.idKey = idKey;
 windowWeddingComments.webview = webview;
 
 // Anonymous Login Screen
-windowAnonymousLogin.windowHome = windowHome;
+windowAnonymousLogin.windowLogin = windowLogin;
 
 /////////////////////////////////////////////
 // Open First Window

@@ -35,9 +35,9 @@ var btnBack = Titanium.UI.createButton({
 
 btnBack.addEventListener('click', function()
 {
-	//win.remove( scrollView1 );
-   win.previousWin.open();
-   win.close();
+	//win.previousWin.open();
+	win.windowLBS.open();
+	win.close();
 });
 
 var scrollView1 = Titanium.UI.createScrollView({
