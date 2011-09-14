@@ -76,8 +76,10 @@ Ti.include(
 );
 
 function runIT() {
-    var consumer_key='KJ7rx8BLKEdKLqP5mfKZqnegNE4uruRD';
-    var secret_key='ecWfQfKMc6gYSDam7mWJdTMQfmWEpw9q';
+    //var consumer_key='KJ7rx8BLKEdKLqP5mfKZqnegNE4uruRD';
+    //var secret_key='ecWfQfKMc6gYSDam7mWJdTMQfmWEpw9q';
+    var consumer_key='RBKGwTaZMSC8Xp8HLZraLeNgGmathChh';
+	var secret_key='gGkUmFAtgR8pyTvbn3RAepepp6z53Jt2';
 
     Ti.API.info( "Latitude: " + latitude + " Longitude: " + longitude );
  
