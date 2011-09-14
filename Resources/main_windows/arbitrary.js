@@ -67,6 +67,8 @@ win.loader.onload = function()
 {
 	Ti.API.info( this.responseText );
 	
+	win.actInd.hide();
+	
 	results = eval('('+this.responseText+')');
 
 	if( win.arbitraryWinID == 0 ){
@@ -272,5 +274,7 @@ win.loader.onload = function()
 // Send the HTTP request
 win.loader.send();
 
-
+// Activity Indicator
+win.add(win.actInd);
+win.actInd.show();
 

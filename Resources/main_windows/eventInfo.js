@@ -48,18 +48,6 @@ btnBack.addEventListener('click', function()
    win.close();
 });
 
-var actInd = Titanium.UI.createActivityIndicator({
-	top:50,
-	right:110,
-	height:50,
-	width:10,
-	font:{fontFamily:'Helvetica Neue', fontSize:20,fontWeight:'bold'},
-	color: 'white',
-	message:'Loading...'
-	//style:Titanium.UI.iPhone.ActivityIndicatorStyle.PLAIN
-});
-win.add(actInd);
-
 var pageName = Titanium.UI.createLabel({  
         text:'Wedding Info', 
         top:10,  
@@ -180,9 +168,12 @@ win.loader.onload = function()
     
     win.add( scrollView1 );
     
-    actInd.hide();
+    win.actInd.hide();
 };
 
 // Send the HTTP request
 win.loader.send();
-actInd.show();
+
+// Activity Indicator
+win.add(win.actInd);
+win.actInd.show();

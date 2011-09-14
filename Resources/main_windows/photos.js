@@ -1,4 +1,5 @@
 var win = Titanium.UI.currentWindow;  
+win.setBackgroundImage('../images/background.jpg');
 
 loader = Titanium.Network.createHTTPClient();
 
@@ -9,7 +10,7 @@ var actInd = Titanium.UI.createActivityIndicator({
 });
 	actInd.font = {fontFamily:'Helvetica Neue', fontSize:35,fontWeight:'bold'};
 	actInd.color = 'red';
-	actInd.message = 'Uploading...';
+	actInd.message = 'Loading...';
 	actInd.width = 210;
 
 var nav_bar = Titanium.UI.createImageView({
@@ -31,8 +32,8 @@ var titleName = Titanium.UI.createLabel({
         height:'auto',
         color:'white'
 }); 
-
 win.add(titleName);
+
 var btnBack = Titanium.UI.createButton({  
     title:'',  
     backgroundImage:'../images/templates/multi-color/back.png',
@@ -48,6 +49,7 @@ win.add(btnBack);
 
 btnBack.addEventListener('click', function()
 {
+	win.remove(view);
    win.windowHome.show();
    win.close();
 });
@@ -77,9 +79,10 @@ uploadButton.addEventListener('click', function()
 			
 	// Showing activity indicator and hiding the back button so the user cannot go back
 	// during the upload.
+	view.hide();
 	actInd.show();
 	btnBack.hide();
-    alert('Uploading Please Wait...');
+    //alert('Uploading Please Wait...');
 					
 			loader.open("POST",Titanium.App.Properties.getString("postPhotoURL"));
 			loader.onload = function() {
@@ -89,6 +92,7 @@ uploadButton.addEventListener('click', function()
 				//win.close();
 				actInd.hide();
 				btnBack.show();
+				view.show();
 			};
 
 			loader.send({ dataLength: tempFile.size, userfile: contents, id: win.idKey });
@@ -115,7 +119,7 @@ var view = Titanium.UI.createScrollView({
 	//height:300,
 	borderRadius:0,
 	//backgroundImage:'../images/wedding.png', // Looks real busy with a background image
-    backgroundColor:'#FFF',
+    //backgroundColor:'#FFF',
 	showVerticalScrollIndicator:true,
 	showHorizontalScrollIndicator:true,
     verticalBounce:true
@@ -137,7 +141,9 @@ win.loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAll
 win.loader.onload = function() 
 {
     //Ti.API.info( "Event Info: " + this.responseText );
-
+    
+    actInd.hide();
+    
     results = eval('('+this.responseText+')');
     
     var data = [];
@@ -210,15 +216,27 @@ win.loader.onload = function()
 
     win.add(view);
     
-    win.add(btnBack);
-    win.add(uploadButton);
+    //win.add(btnBack);
+    //win.add(uploadButton);
 
 	// Adding activity indicator on top of everything so it shows up
-    win.add(actInd);
+    
 	//actInd.show();
 };
 
+win.add(btnBack);
+win.add(uploadButton);
 
 // Send the HTTP request
 win.loader.send();
 
+
+actInd.top = 50;
+actInd.right = 150;
+actInd.height = 50;
+actInd.width = 10;
+actInd.color = 'white';
+actInd.message = 'Loading...';
+
+win.add(actInd);
+actInd.show();

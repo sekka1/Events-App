@@ -69,6 +69,17 @@ btnBack.addEventListener('click', function()
 	win.close();
 });
 
+// Create Activity Indicator object
+var actInd = Titanium.UI.createActivityIndicator({
+	top:50,
+	right:150,
+	height:50,
+	width:10,
+	font:{fontFamily:'Helvetica Neue', fontSize:20,fontWeight:'bold'},
+	color: 'white',
+	message:'Loading...'
+});
+
 
 Ti.include('properties.js');
 

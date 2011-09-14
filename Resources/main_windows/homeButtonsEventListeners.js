@@ -7,6 +7,7 @@ btnEventInfo.addEventListener('click',function(e)
 {   
     // Set this new window's variables
     win.windowEventInfo.idKey = win.idKey;
+    win.windowEventInfo.actInd = actInd;
 
     win.windowEventInfo.open();
     win.hide();
@@ -47,6 +48,7 @@ btnArbitraryOne.addEventListener('click',function(e)
     // Pass result to windowArbitrary
     win.windowArbitrary.arbitraryWinID = 0;
     //win.windowArbitrary.textAboutUs = win.textAboutUs;
+    win.windowArbitrary.actInd = actInd;
 
     win.windowArbitrary.open();
     win.hide();
@@ -62,6 +64,7 @@ btnArbitraryTwo.addEventListener('click',function(e)
     // Pass result to windowArbitrary
     win.windowArbitrary.arbitraryWinID = 1;
     //win.windowArbitrary.textWeddingParty = win.textWeddingParty;
+    win.windowArbitrary.actInd = actInd;
 
     win.windowArbitrary.open();
     win.hide();
@@ -73,6 +76,7 @@ btnGuestPhotos.addEventListener('click',function(e)
 {   
     // Set this new window's variables
     win.windowPhotos.idKey = win.idKey;
+    //win.windowPhotos.actInd2 = actInd;
 
     win.windowPhotos.open();
     win.hide();
@@ -84,6 +88,7 @@ btnRegistry.addEventListener('click',function(e)
 {   
     // Set this new window's variables
     win.windowGiftRegistry.idKey = win.idKey;
+    win.windowGiftRegistry.actInd = actInd;
 
     win.windowGiftRegistry.open();
     win.hide();
