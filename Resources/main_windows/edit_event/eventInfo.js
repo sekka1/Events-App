@@ -432,7 +432,7 @@ btnSave.addEventListener('click', function()
 	// Sets the HTTP request method, and the URL to get data from
 	win.loader.open( "POST", win.site_url + "data/index/class/GetEventInfo/method/edit" );
     win.loader.onload = function() {
-        	alert('in onload: ' + this.responseText );
+        	//alert('in onload: ' + this.responseText );
     		Ti.API.info( 'top search list: ' + this.responseText );
     	}
 	// Post Values
