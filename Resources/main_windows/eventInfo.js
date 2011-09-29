@@ -79,7 +79,7 @@ win.loader.onload = function()
     var eventName = Titanium.UI.createLabel({  
         text:'Wedding: ' + results[0].name, 
         top:10,  
-        font:{fontFamily:'Arial',fontSize:20},  
+        font:{fontFamily:'Baroque Script',fontSize:17},  
         left:10,
         //width:300,
         //borderColor:'black',
@@ -94,7 +94,7 @@ win.loader.onload = function()
     var eventHost = Titanium.UI.createLabel({  
         text:'Host: ' + results[0].host, 
         top:10,  
-        font:{fontFamily:'Arial',fontSize:20},  
+        font:{fontFamily:'Baroque Script',fontSize:17},  
         left:10,  
         //borderColor:'black',
         //backgroundColor:'white',
@@ -107,7 +107,7 @@ win.loader.onload = function()
     var eventPhone = Titanium.UI.createLabel({  
         text:'Phone: ' + results[0].phone, 
         top:10,  
-        font:{fontFamily:'Arial',fontSize:20},  
+        font:{fontFamily:'Baroque Script',fontSize:17},  
         left:10,  
         //borderColor:'black',
         //backgroundColor:'white',
@@ -119,7 +119,7 @@ win.loader.onload = function()
     
     var eventLocation = Titanium.UI.createLabel({  
         text:'Address: ' + results[0].address + ', ' + results[0].city + ', ' + results[0].state + ', ' + results[0].zip,  
-    	font:{fontFamily:'Arial',fontSize:20},  
+    	font:{fontFamily:'Baroque Script',fontSize:17},  
         top:10,
         left:10,
         //borderColor:'black',
@@ -132,7 +132,7 @@ win.loader.onload = function()
     
     var eventWhen = Titanium.UI.createLabel({  
         text:'Date: ' + results[0].when,
-    	font:{fontFamily:'Arial',fontSize:20},  
+    	font:{fontFamily:'Baroque Script',fontSize:17},  
         top:10,  
         left:10,
         //borderColor:'black',
@@ -145,7 +145,7 @@ win.loader.onload = function()
     
     var eventDescription = Titanium.UI.createLabel({  
         text:'Description: ' + results[0].description,  
-    	font:{fontFamily:'Arial',fontSize:20},  
+    	font:{fontFamily:'Baroque Script',fontSize:17},  
         top:10,  
         left:10,
         //borderColor:'black',
@@ -158,7 +158,7 @@ win.loader.onload = function()
  
     var eventMessage = Titanium.UI.createLabel({  
         text:results[0].message,
-    	font:{fontFamily:'Arial',fontSize:20},  
+    	font:{fontFamily:'Baroque Script',fontSize:35},  
         top:10,
         left:10,
         height:'auto',

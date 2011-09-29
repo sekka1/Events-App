@@ -49,7 +49,7 @@ btnBack.addEventListener('click', function()
 
 
 var labelDescription = Titanium.UI.createLabel({  
-	text:'You can enter a wedding ID below that someone has given to you or enter the number 27 in the text field below to goto a demo wedding that we have setup to show you what the app can do.',  
+	text:'You can enter a wedding ID below that someone has given to you:',  
 	font:{fontFamily:'Arial',fontSize:20},  
 	top:55,  
 	left:10,
@@ -64,7 +64,7 @@ win.add( labelDescription );
 
 var textFieldEventID = Titanium.UI.createTextField({  
 	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:20},  
-	top:205,  
+	top:135,  
 	left:10,  
 	height:40,
 	width:245,
@@ -76,12 +76,9 @@ var textFieldEventID = Titanium.UI.createTextField({
 });  
 win.add( textFieldEventID );
 
-
-
-
 var loginBtn = Titanium.UI.createButton({  
     title:'Go',  
-    top:205,  
+    top:135,  
     width:50,
     right:10,
     height:40,  
@@ -94,15 +91,33 @@ loginBtn.addEventListener('click',function(e)
 {  
 	textFieldEventID.blur()
 	win.win_idKey = textFieldEventID.value;
-	//win.windowHome.anonymousLogin = true;
-	//win.windowHome.backWindow = win;
     win.windowHome.idKey = textFieldEventID.value;
     win.windowHome.open();
     win.close();
 
 });  
 
+// Demo Wedding button
+var DemoBtn = Titanium.UI.createButton({  
+    title:'Or View a Demo Wedding!',  
+    top:200,  
+    width:195,
+    left:60,
+    height:40,  
+    borderRadius:1,  
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+});  
+win.add(DemoBtn);  
 
+DemoBtn.addEventListener('click',function(e)  
+{  
+	textFieldEventID.blur()
+	win.win_idKey = textFieldEventID.value;
+    win.windowHome.idKey = '27';
+    win.windowHome.open();
+    win.close();
+
+});  
 
 
 

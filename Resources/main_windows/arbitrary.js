@@ -21,7 +21,7 @@ var btnBack = Titanium.UI.createButton({
     width:65,  
     height:40,
     borderRadius:1,  
-    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:17}  
 });  
 win.add(btnBack);
 
@@ -85,7 +85,7 @@ win.loader.onload = function()
 		var q1 = Titanium.UI.createLabel({  
 			text:qa[0], 
 			top:10,  
-			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
+			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -98,7 +98,7 @@ win.loader.onload = function()
 		var a1 = Titanium.UI.createLabel({  
 			text:qa[1], 
 			top:2,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Baroque Script',fontSize:17},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -112,7 +112,7 @@ win.loader.onload = function()
 		var q2 = Titanium.UI.createLabel({  
 			text:qa[2], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
+			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -125,7 +125,7 @@ win.loader.onload = function()
 		var a2 = Titanium.UI.createLabel({  
 			text:qa[3], 
 			top:2,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Baroque Script',fontSize:17},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -139,7 +139,7 @@ win.loader.onload = function()
 		var q3 = Titanium.UI.createLabel({  
 			text:qa[4], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
+			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -152,7 +152,7 @@ win.loader.onload = function()
 		var a3 = Titanium.UI.createLabel({  
 			text:qa[5], 
 			top:2,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Baroque Script',fontSize:17},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -166,7 +166,7 @@ win.loader.onload = function()
 		var q4 = Titanium.UI.createLabel({  
 			text:qa[6], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
+			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -179,7 +179,7 @@ win.loader.onload = function()
 		var a4 = Titanium.UI.createLabel({  
 			text:qa[7], 
 			top:2,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Baroque Script',fontSize:17},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -204,7 +204,7 @@ win.loader.onload = function()
 		var q1 = Titanium.UI.createLabel({  
 			text:qa[0], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
+			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -217,7 +217,7 @@ win.loader.onload = function()
 		var a1 = Titanium.UI.createLabel({  
 			text:qa[1], 
 			top:2,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Baroque Script',fontSize:17},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -231,7 +231,7 @@ win.loader.onload = function()
 		var q2 = Titanium.UI.createLabel({  
 			text:qa[2], 
 			top:20,  
-			font:{fontFamily:'Arial',fontSize:20,fontWeight: 'bold'},  
+			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
@@ -244,7 +244,7 @@ win.loader.onload = function()
 		var a2 = Titanium.UI.createLabel({  
 			text:qa[3], 
 			top:2,  
-			font:{fontFamily:'Arial',fontSize:20},  
+			font:{fontFamily:'Baroque Script',fontSize:17},  
 			left:10,
 			//borderColor:'black',
 			//backgroundColor:'white',
