@@ -85,11 +85,9 @@ win.loader.onload = function()
 		var q1 = Titanium.UI.createLabel({  
 			text:qa[0], 
 			top:10,  
-			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -99,10 +97,8 @@ win.loader.onload = function()
 			text:qa[1], 
 			top:2,  
 			font:{fontFamily:'Baroque Script',fontSize:17},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -111,12 +107,10 @@ win.loader.onload = function()
     	// Question 2
 		var q2 = Titanium.UI.createLabel({  
 			text:qa[2], 
-			top:20,  
-			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			top:40,  
+			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -126,10 +120,8 @@ win.loader.onload = function()
 			text:qa[3], 
 			top:2,  
 			font:{fontFamily:'Baroque Script',fontSize:17},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -138,12 +130,10 @@ win.loader.onload = function()
     	// Question 3
 		var q3 = Titanium.UI.createLabel({  
 			text:qa[4], 
-			top:20,  
-			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			top:40,  
+			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -153,10 +143,8 @@ win.loader.onload = function()
 			text:qa[5], 
 			top:2,  
 			font:{fontFamily:'Baroque Script',fontSize:17},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -165,12 +153,10 @@ win.loader.onload = function()
     	// Question 4
 		var q4 = Titanium.UI.createLabel({  
 			text:qa[6], 
-			top:20,  
-			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			top:40,  
+			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -180,10 +166,8 @@ win.loader.onload = function()
 			text:qa[7], 
 			top:2,  
 			font:{fontFamily:'Baroque Script',fontSize:17},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -204,11 +188,9 @@ win.loader.onload = function()
 		var q1 = Titanium.UI.createLabel({  
 			text:qa[0], 
 			top:20,  
-			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -218,10 +200,8 @@ win.loader.onload = function()
 			text:qa[1], 
 			top:2,  
 			font:{fontFamily:'Baroque Script',fontSize:17},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -230,12 +210,10 @@ win.loader.onload = function()
     	// Family 2
 		var q2 = Titanium.UI.createLabel({  
 			text:qa[2], 
-			top:20,  
-			font:{fontFamily:'Baroque Script',fontSize:17,fontWeight: 'bold'},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			top:40,  
+			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  
@@ -245,10 +223,8 @@ win.loader.onload = function()
 			text:qa[3], 
 			top:2,  
 			font:{fontFamily:'Baroque Script',fontSize:17},  
-			left:10,
-			//borderColor:'black',
-			//backgroundColor:'white',
-			borderWidth:1,
+			textAlign: 'center',
+			borderWidth:0,
 			borderRadius:4,  
 			height:'auto'
     	});  

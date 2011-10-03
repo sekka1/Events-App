@@ -77,28 +77,22 @@ win.loader.onload = function()
     results = eval('('+this.responseText+')');
 
     var eventName = Titanium.UI.createLabel({  
-        text:'Wedding: ' + results[0].name, 
+        text:results[0].name, 
         top:10,  
-        font:{fontFamily:'Baroque Script',fontSize:17},  
-        left:10,
-        //width:300,
-        //borderColor:'black',
-        //backgroundColor:'white',
-        borderWidth:1,
+        font:{fontFamily:'Baroque Script',fontSize:25},
+        textAlign: 'center',
+        borderWidth:0,
         borderRadius:4,
         height:'auto'
-        //backgroundColor:'#336699'  
     });  
     scrollView1.add(eventName);
 
     var eventHost = Titanium.UI.createLabel({  
         text:'Host: ' + results[0].host, 
-        top:10,  
-        font:{fontFamily:'Baroque Script',fontSize:17},  
-        left:10,  
-        //borderColor:'black',
-        //backgroundColor:'white',
-        borderWidth:1,
+        top:40,  
+        font:{fontFamily:'Baroque Script',fontSize:17},
+    	textAlign: 'center',
+        borderWidth:0,
         borderRadius:4,  
         height:'auto'
     });  
@@ -106,51 +100,43 @@ win.loader.onload = function()
 
     var eventPhone = Titanium.UI.createLabel({  
         text:'Phone: ' + results[0].phone, 
-        top:10,  
+        top:30,  
         font:{fontFamily:'Baroque Script',fontSize:17},  
-        left:10,  
-        //borderColor:'black',
-        //backgroundColor:'white',
-        borderWidth:1,
+        textAlign: 'center',
+        borderWidth:0,
         borderRadius:4,  
         height:'auto'
     });  
     scrollView1.add(eventPhone);
     
     var eventLocation = Titanium.UI.createLabel({  
-        text:'Address: ' + results[0].address + ', ' + results[0].city + ', ' + results[0].state + ', ' + results[0].zip,  
+        text:results[0].address + ', ' + results[0].city + ', ' + results[0].state + ', ' + results[0].zip,  
     	font:{fontFamily:'Baroque Script',fontSize:17},  
-        top:10,
-        left:10,
-        //borderColor:'black',
-        //backgroundColor:'white',
-        borderWidth:1,
+        top:5,
+        textAlign: 'center',
+        borderWidth:0,
         borderRadius:4,
         height:'auto'
     });  
     scrollView1.add(eventLocation); 
     
     var eventWhen = Titanium.UI.createLabel({  
-        text:'Date: ' + results[0].when,
+        text:results[0].when,
     	font:{fontFamily:'Baroque Script',fontSize:17},  
-        top:10,  
-        left:10,
-        //borderColor:'black',
-        //backgroundColor:'white',
-    	borderWidth:1,
+        top:20,
+        textAlign: 'center',
+    	borderWidth:0,
         borderRadius:4,
         height:'auto'
     });  
     scrollView1.add(eventWhen); 
     
     var eventDescription = Titanium.UI.createLabel({  
-        text:'Description: ' + results[0].description,  
+        text:results[0].description,  
     	font:{fontFamily:'Baroque Script',fontSize:17},  
-        top:10,  
-        left:10,
-        //borderColor:'black',
-        //backgroundColor:'white',
-        borderWidth:1,
+        top:40,
+        textAlign: 'center',
+        borderWidth:0,
         borderRadius:4,
         height:'auto'
     });  
