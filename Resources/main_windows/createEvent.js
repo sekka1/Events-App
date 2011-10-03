@@ -86,9 +86,15 @@ var alertDialog = Titanium.UI.createAlertDialog({
 btnCreate.addEventListener('click',function(e)  
 {  
 
+	// Check the event name for eroneous characters
+	var theEventName = eventName.value.replace( / /g, "%20" );
+	theEventName = theEventName.replace( /\//g, "%2F" );
+	theEventName = theEventName.replace( /\+/g, "%2B" );
+	theEventName = theEventName.replace( /&/g, "%26" );
+
 	// Sets the HTTP request method, and the URL to get data from
-    win.loader.open( "GET", win.site_url + "data/index/class/Events/method/create/user_id/" + Titanium.Facebook.uid + "/name/" + eventName.value );
-    Ti.API.info( win.site_url + "data/index/class/Events/method/create/user_id/" + Titanium.Facebook.uid + "/name/" + eventName.value );
+    win.loader.open( "GET", win.site_url + "data/index/class/Events/method/create/user_id/" + Titanium.Facebook.uid + "/name/" + theEventName );
+    Ti.API.info( win.site_url + "data/index/class/Events/method/create/user_id/" + Titanium.Facebook.uid + "/name/" + theEventName );
         
     win.loader.onload = function() 
     {
@@ -97,6 +103,11 @@ btnCreate.addEventListener('click',function(e)
 		win.backWindow.open();
    		win.close();
 	};
+	win.loader.onerror = function(e)
+	{
+	
+		alert('error: ' + e.error );
+	}
 	
 	// Send the HTTP request
     win.loader.send();
