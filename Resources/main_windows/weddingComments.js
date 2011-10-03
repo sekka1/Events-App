@@ -31,7 +31,7 @@ btnBack.addEventListener('click', function()
 });
 
 var titleName = Titanium.UI.createLabel({  
-        text:'Comments',  
+        text:'Wedding Wall',  
         top:10,  
         left:125,  
         borderRadius:0,  

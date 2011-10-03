@@ -174,11 +174,11 @@ var btnWeddingComment = Titanium.UI.createButton({
 win.add(btnWeddingComment);
 
 var lblWeddingComment = Titanium.UI.createLabel({
-	text:'Comments',
+	text:'Wall',
 	width:'auto',
 	height:'auto',
 	font:{fontFamily:'Arial',fontSize:14},
-	left:225,
+	left:240,
 	top:205,
 	color:'white',
 	shadowColor:'#aaa',
