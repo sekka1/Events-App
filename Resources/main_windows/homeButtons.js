@@ -99,41 +99,13 @@ win.add(lblRsvp);
 
 // There are 2 arbitrary buttons
 
-// 1 - About Us
-var btnArbitraryOne = Titanium.UI.createButton({  
-    title:'',  
-    top:140,  
-    left:35,
-    width:60,  
-    height:62,
-    backgroundImage: '../images/templates/multi-color/us.png',
-    backgroundSelectedImage: '../images/templates/multi-color/us_dwn.png',  
-    borderRadius:1,  
-    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
-});
-win.add(btnArbitraryOne);
-
-var lblAboutUs = Titanium.UI.createLabel({
-	text:'About Us',
-	width:'auto',
-	height:'auto',
-	font:{fontFamily:'Arial',fontSize:14},
-	left:35,
-	top:205,
-	color:'white',
-	shadowColor:'#aaa',
-	shadowOffset:{x:1,y:1},
-	zIndex:99
-});
-win.add(lblAboutUs);
-
-// 2 - Family
+// 1 - Family
 var btnArbitraryTwo = Titanium.UI.createButton({  
     title:'',  
     // Moving lower b/c we moved the Gift Registry Button
     //top:140,  
-    top:180,
-    left:130,
+    top:140,
+    left:35,
     width:60,  
     height:62,
     backgroundImage: '../images/templates/multi-color/fam.png',
@@ -144,7 +116,7 @@ var btnArbitraryTwo = Titanium.UI.createButton({
 win.add(btnArbitraryTwo);
 
 var lblFamily = Titanium.UI.createLabel({
-	text:'Family',
+	text:'About Us',
 	width:'auto',
 	height:'auto',
 	font:{fontFamily:'Arial',fontSize:14},
@@ -157,6 +129,34 @@ var lblFamily = Titanium.UI.createLabel({
 	zIndex:99
 });
 win.add(lblFamily);
+
+// 2 - About Us
+var btnArbitraryOne = Titanium.UI.createButton({  
+    title:'',  
+    top:180,  
+    left:130,
+    width:60,  
+    height:62,
+    backgroundImage: '../images/templates/multi-color/us.png',
+    backgroundSelectedImage: '../images/templates/multi-color/us_dwn.png',  
+    borderRadius:1,  
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+});
+win.add(btnArbitraryOne);
+
+var lblAboutUs = Titanium.UI.createLabel({
+	text:'Family',
+	width:'auto',
+	height:'auto',
+	font:{fontFamily:'Arial',fontSize:14},
+	left:40,
+	top:205,
+	color:'white',
+	shadowColor:'#aaa',
+	shadowOffset:{x:1,y:1},
+	zIndex:99
+});
+win.add(lblAboutUs);
 
 // 3 - Wedding Comment Page
 var btnWeddingComment = Titanium.UI.createButton({  
