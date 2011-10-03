@@ -30,7 +30,7 @@ var scrollView1 = Titanium.UI.createScrollView({
 	contentWidth:'auto',
 	contentHeight:'auto',
 	top:40,
-	left:0,
+	left:5,
 	width:300,
 	borderRadius:4,
 	layout:'vertical',
