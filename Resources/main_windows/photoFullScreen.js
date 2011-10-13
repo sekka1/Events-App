@@ -77,7 +77,7 @@ var new_image_url = win.image_url.replace( /\//g, "__" );
     top:40,
     scalesPageToFit:false
 });*/
-win.webview.url = 'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url;
+win.webview.url = 'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url + '/session/' + Titanium.Facebook.accessToken;
 win.webview.scalesPageToFit = 'true';
 win.add(win.webview);
 
