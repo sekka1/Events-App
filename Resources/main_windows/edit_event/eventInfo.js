@@ -173,7 +173,7 @@ var onloadType = 'setting_text_field';
 		left:10,  
 		width:300,  
 		height:40,  
-		hintText:'Stree address only',
+		hintText:'Street address only',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  

@@ -93,6 +93,8 @@ uploadButton.addEventListener('click', function()
 				actInd.hide();
 				btnBack.show();
 				view.show();
+				
+				//alert('Photo Uploaded Completed');
 			};
 
 			loader.send({ dataLength: tempFile.size, userfile: contents, id: win.idKey });
