@@ -23,8 +23,7 @@ var loginBtn = Titanium.UI.createButton({
     height:40,  
     borderRadius:1,  
     font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
-});  
-win.add(loginBtn);  
+});   
 
 loginBtn.addEventListener('click',function(e)  
 {  
@@ -33,7 +32,6 @@ loginBtn.addEventListener('click',function(e)
 	win.windowAnonymousLogin.backWindow = win;
 	win.windowAnonymousLogin.open();
 	win.close();
-
 });  
 
 // ScrollView for the list of events this user is invited to
@@ -206,6 +204,8 @@ function displayInvitedToWeddingList(){
 // Facebook login button
 ////////////////////////////////////////////
 
+function displayFacebookLogin(){
+
 Titanium.Facebook.appid = '197440486945083';
 Titanium.Facebook.permissions = ['user_status' ,'publish_stream', 'user_photos', 'friends_photos', 'friends_status', 'user_videos', 'friends_videos', 'read_stream', 'read_friendlists', 'manage_friendlists', 'read_requests']; // Permissions your app needs
 //Titanium.Facebook.authorize(); // If this is uncommented the facebook login would automatically pop up
@@ -226,15 +226,52 @@ Titanium.Facebook.addEventListener('logout', function(e) {
 
 win.add(Titanium.Facebook.createLoginButton({ top: 325, 'style': 'wide' }));
 
+}
+
 ////////////////////////////////////////////
 // Facebook login button End
 ////////////////////////////////////////////
 
 
+var checkNetworkConnectivityBtn = Titanium.UI.createButton({  
+    title:'Check Internet Connectivity',  
+    bottom:40,  
+    width:200,
+    right:65,
+    height:40,  
+    borderRadius:1,  
+    font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+});   
+
+checkNetworkConnectivityBtn.addEventListener('click',function(e)  
+{  
+	if( Titanium.Network.online ){
+		displayFacebookLogin();
+		win.add(loginBtn);
+		
+		if( Titanium.Facebook.loggedIn ){
+    		displayInvitedToWeddingList();
+		}
+		
+	} else {
+		alert( 'You still do not have Internet Connectivity. Please turn it on' );
+	}
+});  
+
 
 // Display the wedding list options if the user is logged into facebook
 win.addEventListener('focus',function(e)  
 {  
+	//alert( Titanium.Network.online );
+	
+	if( Titanium.Network.online ){
+		displayFacebookLogin();
+		win.add(loginBtn);
+	} else {
+		win.add( checkNetworkConnectivityBtn );
+		win.remove( Titanium.Facebook );
+	}
+
     if( Titanium.Facebook.loggedIn ){
     	displayInvitedToWeddingList();
 	}
