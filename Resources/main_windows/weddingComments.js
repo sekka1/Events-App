@@ -45,7 +45,7 @@ win.add(titleName);
 //var new_image_url = win.image_url.replace( /\//g, "__" );
 
 var webview = Titanium.UI.createWebView({
-    url:'http://wedvite.us/photos/commentonly/width/325/location/wedvite.us/url/__comments__' + win.idKey + 'comment',
+    url:'http://wedvite.us/photos/commentonly/width/325/location/wedvite.us/url/__comments__' + win.idKey + 'comment' + '/session/' + Titanium.Facebook.accessToken,
     top:40,
     scalesPageToFit:false
 });

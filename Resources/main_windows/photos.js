@@ -82,6 +82,7 @@ uploadButton.addEventListener('click', function()
 	view.hide();
 	actInd.show();
 	btnBack.hide();
+	uploadButton.hide();
     //alert('Uploading Please Wait...');
 					
 			loader.open("POST",Titanium.App.Properties.getString("postPhotoURL"));
@@ -92,6 +93,7 @@ uploadButton.addEventListener('click', function()
 				//win.close();
 				actInd.hide();
 				btnBack.show();
+				uploadButton.show();
 				view.show();
 				
 				//alert('Photo Uploaded Completed');
