@@ -51,7 +51,7 @@ btnAdd.addEventListener('click', function()
 		backgroundColor:'white'
 	});
 	//window variables 
-	windowAdd.loader = win.loader;
+	//windowAdd.loader = win.loader;
 	windowAdd.idKey = win.idKey;
 	windowAdd.site_url = win.site_url;
 	windowAdd.backWindow = win;
@@ -72,9 +72,12 @@ function loadList(){
 	// Get a list of users that is invited to this event
 	var invitedList = '';
 	
-	win.loader.open( "GET", win.site_url + "data/index/class/GetGiftRegistry/method/getInfo/id/" + win.idKey );
+	// Create our HTTP Client
+	var loader = Titanium.Network.createHTTPClient();
 	
-	win.loader.onload = function() 
+	loader.open( "GET", win.site_url + "data/index/class/GetGiftRegistry/method/getInfo/id/" + win.idKey );
+	
+	loader.onload = function() 
 	{
 		Ti.API.info( this.responseText );
 	
@@ -107,7 +110,7 @@ function loadList(){
 						backgroundColor:'white'
 					});
 					//window variables 
-					windowAdd.loader = win.loader;
+					//windowAdd.loader = win.loader;
 					windowAdd.idKey = win.idKey;
 					windowAdd.site_url = win.site_url;
 					windowAdd.backWindow = win;
@@ -127,7 +130,7 @@ function loadList(){
 	};
 	
 	// Send the HTTP request
-	win.loader.send();
+	loader.send();
 
 }
 

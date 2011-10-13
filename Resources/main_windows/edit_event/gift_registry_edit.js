@@ -133,7 +133,10 @@ win.arbitrary_page_id_seq = '';
 
 Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey );
 
-win.loader.onload = function() 
+// Create our HTTP Client
+var loader = Titanium.Network.createHTTPClient();
+
+loader.onload = function() 
 {
 	if( onloadType == 'save' ){
 		var alertDialog = Titanium.UI.createAlertDialog({
@@ -161,7 +164,7 @@ btnSave.addEventListener('click', function(e)
 	Ti.API.info( "Saving...." );
 	
 	// Sets the HTTP request method, and the URL to get data from
-	win.loader.open( "POST" , win.site_url + "data/index/class/GetGiftRegistry/method/edit" );
+	loader.open( "POST" , win.site_url + "data/index/class/GetGiftRegistry/method/edit" );
 
 	// Post Values
 	var params = {  
@@ -176,7 +179,7 @@ btnSave.addEventListener('click', function(e)
 	onloadType = 'save';
 	
 	// Send the HTTP request
-	win.loader.send( params );
+	loader.send( params );
 	
 });
 
@@ -185,7 +188,7 @@ btnDelete.addEventListener('click', function(e)
 	Ti.API.info( "Deleting..." );
 	
 	// Sets the HTTP request method, and the URL to get data from
-	win.loader.open( "POST" , win.site_url + "data/index/class/GetGiftRegistry/method/delete" );
+	loader.open( "POST" , win.site_url + "data/index/class/GetGiftRegistry/method/delete" );
 
 	// Post Values
 	var params = {  
@@ -198,7 +201,7 @@ btnDelete.addEventListener('click', function(e)
 	onloadType = 'delete';
 	
 	// Send the HTTP request
-	win.loader.send( params );
+	loader.send( params );
 	
 });
 

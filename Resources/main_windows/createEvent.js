@@ -92,25 +92,28 @@ btnCreate.addEventListener('click',function(e)
 	theEventName = theEventName.replace( /\+/g, "%2B" );
 	theEventName = theEventName.replace( /&/g, "%26" );
 
+	// Create our HTTP Client
+	var loader = Titanium.Network.createHTTPClient();
+
 	// Sets the HTTP request method, and the URL to get data from
-    win.loader.open( "GET", win.site_url + "data/index/class/Events/method/create/user_id/" + Titanium.Facebook.uid + "/name/" + theEventName );
+    loader.open( "GET", win.site_url + "data/index/class/Events/method/create/user_id/" + Titanium.Facebook.uid + "/name/" + theEventName );
     Ti.API.info( win.site_url + "data/index/class/Events/method/create/user_id/" + Titanium.Facebook.uid + "/name/" + theEventName );
         
-    win.loader.onload = function() 
+    loader.onload = function() 
     {
 		//alert( 'Event Created' );
 		alertDialog.show();
 		win.backWindow.open();
    		win.close();
 	};
-	win.loader.onerror = function(e)
+	loader.onerror = function(e)
 	{
 	
 		alert('error: ' + e.error );
 	}
 	
 	// Send the HTTP request
-    win.loader.send();
+    loader.send();
     
 });  
 

@@ -57,9 +57,12 @@ var invitedList = '';
 // Event Info results
 var event_info_results = '';
 
-win.loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getAllInvitedUsersToThisEvent/id/" + win.idKey );
+// Create our HTTP Client
+var loader = Titanium.Network.createHTTPClient();
 
-win.loader.onload = function() 
+loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getAllInvitedUsersToThisEvent/id/" + win.idKey );
+
+loader.onload = function() 
 {
 	if( onloadType == 'getting_invited_list' ){
 		var alertDialog = Titanium.UI.createAlertDialog({
@@ -74,9 +77,9 @@ win.loader.onload = function()
 		onloadType = 'getting_event_info_data';
 		
 		// Need to get this data so we can get the Event Info Name for posting to the user's FB Status page
-		win.loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
+		loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
 		
-		win.loader.send();
+		loader.send();
 	}
 	if( onloadType == 'getting_event_info_data' ){
 	
@@ -89,7 +92,7 @@ win.loader.onload = function()
 };
 
 // Send the HTTP request
-win.loader.send();
+loader.send();
 
 Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
     if (e.success) {
@@ -124,9 +127,9 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
 			   
 			   		onloadType = "check";
 			   	
-			   		win.loader.open( "GET", win.site_url + "data/index/class/Facebook/method/unInviteOneUser/new_fb_id/"+e.source.id+"/event_id/" + win.idKey );
+			   		loader.open( "GET", win.site_url + "data/index/class/Facebook/method/unInviteOneUser/new_fb_id/"+e.source.id+"/event_id/" + win.idKey );
 
-					win.loader.send();
+					loader.send();
 					
 			   		e.row.hasCheck = false;
 			   		
@@ -135,9 +138,9 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
 			   
 			   		onloadType = "check";
 			   	
-			   		win.loader.open( "GET", win.site_url + "data/index/class/Facebook/method/inviteOneUser/new_fb_id/"+e.source.id+"/user_id/"+Titanium.Facebook.uid+"/event_id/" + win.idKey );
+			   		loader.open( "GET", win.site_url + "data/index/class/Facebook/method/inviteOneUser/new_fb_id/"+e.source.id+"/user_id/"+Titanium.Facebook.uid+"/event_id/" + win.idKey );
 
-					win.loader.send();
+					loader.send();
 					
 			   		e.row.hasCheck = true;
 			   		

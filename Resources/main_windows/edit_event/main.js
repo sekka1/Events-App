@@ -90,7 +90,7 @@ tableview.addEventListener('click', function(e)
 			//backgroundColor:'white'
 		});
 		
-		windowEdit.loader = win.loader;
+		//windowEdit.loader = win.loader;
 		windowEdit.idKey = win.idKey;
 		windowEdit.site_url = win.site_url;
 		windowEdit.backWindow = win;
@@ -105,7 +105,7 @@ tableview.addEventListener('click', function(e)
 			backgroundColor:'white'
 		});
 		//window variables 
-		windowEdit.loader = win.loader;
+		//windowEdit.loader = win.loader;
 		windowEdit.idKey = win.idKey;
 		windowEdit.site_url = win.site_url;
 		windowEdit.backWindow = win;
@@ -135,7 +135,7 @@ tableview.addEventListener('click', function(e)
 			backgroundColor:'white'
 		});
 		//window variables 
-		windowEdit.loader = win.loader;
+		//windowEdit.loader = win.loader;
 		windowEdit.idKey = win.idKey;
 		windowEdit.site_url = win.site_url;
 		windowEdit.backWindow = win;
@@ -150,7 +150,7 @@ tableview.addEventListener('click', function(e)
 			backgroundColor:'white'
 		});
 		//window variables 
-		windowEdit.loader = win.loader;
+		//windowEdit.loader = win.loader;
 		windowEdit.idKey = win.idKey;
 		windowEdit.site_url = win.site_url;
 		windowEdit.backWindow = win;
@@ -165,7 +165,7 @@ tableview.addEventListener('click', function(e)
 			backgroundColor:'white'
 		});
 		//window variables 
-		windowEdit.loader = win.loader;
+		//windowEdit.loader = win.loader;
 		windowEdit.idKey = win.idKey;
 		windowEdit.site_url = win.site_url;
 		windowEdit.backWindow = win;
@@ -180,7 +180,7 @@ tableview.addEventListener('click', function(e)
 			backgroundColor:'white'
 		});
 		//window variables 
-		windowEdit.loader = win.loader;
+		//windowEdit.loader = win.loader;
 		windowEdit.idKey = win.idKey;
 		windowEdit.site_url = win.site_url;
 		windowEdit.backWindow = win;

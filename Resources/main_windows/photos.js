@@ -136,9 +136,12 @@ var photoList = [];
 
 Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
 
-win.loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
+// Create our HTTP Client
+var loader = Titanium.Network.createHTTPClient();
 
-win.loader.onload = function() 
+loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
+
+loader.onload = function() 
 {
     //Ti.API.info( "Event Info: " + this.responseText );
     
@@ -228,7 +231,7 @@ win.add(btnBack);
 win.add(uploadButton);
 
 // Send the HTTP request
-win.loader.send();
+loader.send();
 
 
 actInd.top = 50;

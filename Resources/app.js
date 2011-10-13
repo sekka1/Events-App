@@ -108,7 +108,7 @@ var webview = Titanium.UI.createWebView({
 });
 
 // Create our HTTP Client and name it "loader"
-var loader = Titanium.Network.createHTTPClient();
+//var loader = Titanium.Network.createHTTPClient();
 
 /////////////////////////////////////////////
 // Passing Variables to Each Window
@@ -119,7 +119,7 @@ windowLogin.windowHome = windowHome;
 windowLogin.windowAnonymousLogin = windowAnonymousLogin;
 windowLogin.idkey = idKey;
 windowLogin.site_url = site_url;
-windowLogin.loader = loader;
+//windowLogin.loader = loader;
 
 // Home Screen Window
 windowHome.windowLogin = windowLogin;
@@ -135,30 +135,30 @@ windowHome.windowPhotos = windowPhotos;
 windowHome.windowGiftRegistry = windowGiftRegistry;
 windowHome.windowLBS = windowLBS;
 windowHome.windowWeddingComments = windowWeddingComments;
-windowHome.loader = loader;
+//windowHome.loader = loader;
 
 // Event Info Window
 windowEventInfo.windowHome = windowHome;
 windowEventInfo.idKey = idKey;
 windowEventInfo.site_url = site_url;
-windowEventInfo.loader = loader;
+//windowEventInfo.loader = loader;
 
 // Map Window
 windowMap.windowHome = windowHome;
 windowMap.mapview = mapview;
 windowMap.idKey = idKey;
 windowMap.site_url = site_url;
-windowMap.loader = loader;
+//windowMap.loader = loader;
 
 // RSVP Window
 windowRsvp.windowHome = windowHome;
 windowRsvp.site_url = site_url;
-windowRsvp.loader = loader;
+//windowRsvp.loader = loader;
 
 // Arbitrary Window
 windowArbitrary.windowHome = windowHome;
 windowArbitrary.site_url = site_url;
-windowArbitrary.loader = loader;
+//windowArbitrary.loader = loader;
 
 // Full Photo Window
 windowFullPhoto.windowHome = windowHome;
@@ -170,7 +170,7 @@ windowPhotos.windowHome = windowHome;
 windowPhotos.windowFullPhoto = windowFullPhoto;
 windowPhotos.site_url = site_url;
 windowPhotos.idKey = idKey;
-windowPhotos.loader = loader;
+//windowPhotos.loader = loader;
 
 
 // Gift Registry

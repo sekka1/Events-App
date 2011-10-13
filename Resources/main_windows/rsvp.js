@@ -151,10 +151,13 @@ function showPage(){
 
 	Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/Rsvp/method/getone/id/" + win.idKey + "/guest_id/" + Titanium.Facebook.uid );
 	
-	// Sets the HTTP request method, and the URL to get data from
-	win.loader.open( "GET", win.site_url + "data/index/class/Rsvp/method/getone/id/" + win.idKey + "/guest_id/" + Titanium.Facebook.uid );
+	// Create our HTTP Client
+	var loader = Titanium.Network.createHTTPClient();
 	
-	win.loader.onload = function() 
+	// Sets the HTTP request method, and the URL to get data from
+	loader.open( "GET", win.site_url + "data/index/class/Rsvp/method/getone/id/" + win.idKey + "/guest_id/" + Titanium.Facebook.uid );
+	
+	loader.onload = function() 
 	{
 		if( Titanium.Facebook.loggedIn ){
 	
@@ -239,7 +242,7 @@ function showPage(){
 	};
 	
 	// Send the HTTP request
-	win.loader.send();
+	loader.send();
 
 }
 
@@ -262,7 +265,7 @@ btnSave.addEventListener('click', function(e)
 	Ti.API.info( "Saving...." );
 	
 	// Sets the HTTP request method, and the URL to get data from
-	win.loader.open( "POST" , win.site_url + "data/index/class/Rsvp/method/edit" );
+	loader.open( "POST" , win.site_url + "data/index/class/Rsvp/method/edit" );
 	Titanium.API.info( "POST " + win.site_url + "data/index/class/Rsvp/method/edit" );
 	
 	// Post Values
@@ -279,7 +282,7 @@ btnSave.addEventListener('click', function(e)
 	onloadType = 'save';
 	
 	// Send the HTTP request
-	win.loader.send( params );
+	loader.send( params );
 	
 });
 

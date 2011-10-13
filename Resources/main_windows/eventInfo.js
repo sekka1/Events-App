@@ -61,14 +61,14 @@ var pageName = Titanium.UI.createLabel({
 win.add(pageName);
 
 // Create our HTTP Client
-//var loader = Titanium.Network.createHTTPClient();
+var loader = Titanium.Network.createHTTPClient();
 
 Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
 
 // Sets the HTTP request method, and the URL to get data from
-win.loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
+loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
 
-win.loader.onload = function() 
+loader.onload = function() 
 {
 	
     
@@ -158,7 +158,7 @@ win.loader.onload = function()
 };
 
 // Send the HTTP request
-win.loader.send();
+loader.send();
 
 // Activity Indicator
 win.add(win.actInd);

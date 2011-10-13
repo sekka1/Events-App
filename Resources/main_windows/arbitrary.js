@@ -60,10 +60,13 @@ var textDescription = '';
 
 Ti.API.info( "Fetching Arbitrary Data from: " + win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey);
 
-// Sets the HTTP request method, and the URL to get data from
-win.loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey );
+// Create our HTTP Client
+var loader = Titanium.Network.createHTTPClient();
 
-win.loader.onload = function() 
+// Sets the HTTP request method, and the URL to get data from
+loader.open( "GET", win.site_url + "data/index/class/GetArbitraryInfo/method/getInfo/id/" + win.idKey );
+
+loader.onload = function() 
 {
 	Ti.API.info( this.responseText );
 	
@@ -248,7 +251,7 @@ win.loader.onload = function()
 };
 
 // Send the HTTP request
-win.loader.send();
+loader.send();
 
 // Activity Indicator
 win.add(win.actInd);

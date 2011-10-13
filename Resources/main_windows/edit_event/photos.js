@@ -93,9 +93,12 @@ function loadPhotos(){
 	
 	Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
 	
-	win.loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
+	// Create our HTTP Client
+	var loader = Titanium.Network.createHTTPClient();
 	
-	win.loader.onload = function() 
+	loader.open( "GET", win.site_url + "data/index/class/GetPhotos/method/getAllEventPhotos/id/" + win.idKey );
+	
+	loader.onload = function() 
 	{
 	
 		if( onloadType == 'setting' ){
@@ -136,9 +139,9 @@ function loadPhotos(){
 					
 					onloadType = 'deleting';
 							
-					win.loader.open( "GET", win.site_url + "data/index/class/Photos/method/delete/id/" + win.idKey + "/photo_id/" + e.source.photos_id_seq );
+					loader.open( "GET", win.site_url + "data/index/class/Photos/method/delete/id/" + win.idKey + "/photo_id/" + e.source.photos_id_seq );
 		
-					win.loader.send();	
+					loader.send();	
 				});
 			}
 		
@@ -183,7 +186,7 @@ function loadPhotos(){
 	
 	
 	// Send the HTTP request
-	win.loader.send();
+	loader.send();
 
 }
 

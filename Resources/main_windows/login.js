@@ -65,11 +65,14 @@ function displayInvitedToWeddingList(){
         Ti.API.info( "Titanium.Facebook: " + Titanium.Facebook );
         Ti.API.info( "Invited list URL: " + win.site_url + "data/index/class/InvitedList/method/getLoginEventList/uid/" + Titanium.Facebook.uid );
         
+        // Create our HTTP Client
+		var loader = Titanium.Network.createHTTPClient();
+        
         // Sets the HTTP request method, and the URL to get data from
-        win.loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getLoginEventList/uid/" + Titanium.Facebook.uid );
+        loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getLoginEventList/uid/" + Titanium.Facebook.uid );
         
         
-        win.loader.onload = function() 
+        loader.onload = function() 
         {
             // Display that list in a scroll view
         
@@ -99,7 +102,7 @@ function displayInvitedToWeddingList(){
            
 				windowCreateEvent.site_url = win.site_url;
 				windowCreateEvent.backWindow = win;
-				windowCreateEvent.loader = win.loader;
+				windowCreateEvent.loader = loader;
 				
 				windowCreateEvent.open();
             }); 
@@ -175,7 +178,7 @@ function displayInvitedToWeddingList(){
 							windowEditEvent.idKey = e.source.idKey;
 							windowEditEvent.site_url = win.site_url;
 							windowEditEvent.backWindow = win;
-							windowEditEvent.loader = win.loader;
+							windowEditEvent.loader = loader;
 							windowEditEvent.open();
 							
 							//win.close();
@@ -194,7 +197,7 @@ function displayInvitedToWeddingList(){
         };
         
         // Send the HTTP request
-        win.loader.send();
+        loader.send();
 
     }
 }

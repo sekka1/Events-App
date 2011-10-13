@@ -328,10 +328,13 @@ var onloadType = 'setting_text_field';
 
 Ti.API.info( "Making ajax call for data to: " + win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
 
-// Sets the HTTP request method, and the URL to get data from
-win.loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
+// Create our HTTP Client
+var loader = Titanium.Network.createHTTPClient();
 
-win.loader.onload = function() 
+// Sets the HTTP request method, and the URL to get data from
+loader.open( "GET", win.site_url + "data/index/class/GetEventInfo/method/getInfo/id/" + win.idKey );
+
+loader.onload = function() 
 {
 	if( onloadType == 'setting_text_field' ){
 		Ti.API.info( "Event Info: " + this.responseText );
@@ -430,8 +433,8 @@ btnSave.addEventListener('click', function()
 	onloadType = 'save';
 	
 	// Sets the HTTP request method, and the URL to get data from
-	win.loader.open( "POST", win.site_url + "data/index/class/GetEventInfo/method/edit" );
-    win.loader.onload = function() {
+	loader.open( "POST", win.site_url + "data/index/class/GetEventInfo/method/edit" );
+    loader.onload = function() {
         	//alert('in onload: ' + this.responseText );
     		Ti.API.info( 'top search list: ' + this.responseText );
     	}
@@ -454,11 +457,11 @@ btnSave.addEventListener('click', function()
 	};  
 	
 	// Send the HTTP request
-	win.loader.send( params );
+	loader.send( params );
 });
 
 // Send the HTTP request
-win.loader.send();
+loader.send();
 
 
 
