@@ -133,50 +133,7 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
 			}
 			
 			row.id = results.data[i].id;
-			
-			row.addEventListener('click', function(e)
-			{
-			   
-			   if( e.row.hasCheck == true ){
-			   // Un-inviting the user
-			   
-			   		onloadType = "check";
-			   	
-			   		loader.open( "GET", win.site_url + "data/index/class/Facebook/method/unInviteOneUser/new_fb_id/"+e.source.id+"/event_id/" + win.idKey );
 
-					loader.send();
-					
-			   		e.row.hasCheck = false;
-			   		
-			   } else {
-			   // Inviting the user
-			   
-			   		onloadType = "check";
-			   	
-			   		loader.open( "GET", win.site_url + "data/index/class/Facebook/method/inviteOneUser/new_fb_id/"+e.source.id+"/user_id/"+Titanium.Facebook.uid+"/event_id/" + win.idKey );
-
-					loader.send();
-					
-			   		e.row.hasCheck = true;
-			   		
-			   		// Now create the status message after you've confirmed that authorize() succeeded
-					Titanium.Facebook.requestWithGraphPath(e.source.id+'/feed', {message: event_info_results[0].name + " has invited you to their Mobile Wedding App.  Go here " + event_info_results[1].app_url +" to download it and either login with Facebook or use ID " + win.idKey + " to view their wedding"}, "POST", function(e) {
-						if (e.success) {
-							//alert("Success!  From FB: " + e.result);
-						} else {
-							if (e.error) {
-								//alert(e.error);
-							} else {
-								//alert("Unkown result");
-							}
-						}
-					});
-										
-			   		
-			   }
-
-			});
-			
 			tableview.appendRow( row );
         }
         
@@ -191,6 +148,47 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
 });
 
 
+tableview.addEventListener('click', function(e){
 
+	//alert( 'in tableview click event listener' + e.row.id );
+	
+	if( e.row.hasCheck == true ){
+	// Un-inviting the user
+
+		onloadType = "check";
+	
+		loader.open( "GET", win.site_url + "data/index/class/Facebook/method/unInviteOneUser/new_fb_id/"+e.source.id+"/event_id/" + win.idKey );
+	
+		loader.send();
+		
+		e.row.hasCheck = false;
+		
+	} else {
+	// Inviting the user
+
+		onloadType = "check";
+	
+		loader.open( "GET", win.site_url + "data/index/class/Facebook/method/inviteOneUser/new_fb_id/"+e.source.id+"/user_id/"+Titanium.Facebook.uid+"/event_id/" + win.idKey );
+	
+		loader.send();
+		
+		e.row.hasCheck = true;
+		
+		// Now create the status message after you've confirmed that authorize() succeeded
+		Titanium.Facebook.requestWithGraphPath(e.source.id+'/feed', {message: event_info_results[0].name + " has invited you to their WedVite mobile wedding app.  Go here " + event_info_results[1].app_url +" to download it and either login with Facebook or use their wedding id " + win.idKey + " to view their wedding"}, "POST", function(e) {
+			if (e.success) {
+				//alert("Success!  From FB: " + e.result);
+			} else {
+				if (e.error) {
+					//alert(e.error);
+				} else {
+					//alert("Unkown result");
+				}
+			}
+		});
+							
+		
+	}
+});
 
 
