@@ -1,4 +1,5 @@
 var win = Titanium.UI.currentWindow;  
+win.setBackgroundImage('../../images/background.jpg');
 
 var nav_bar = Titanium.UI.createImageView({
         image:'../../images/templates/multi-color/nav-bar-blank.png',
@@ -42,10 +43,27 @@ var titleName = Titanium.UI.createLabel({
 }); 
 win.add(titleName);
 
+// Create Activity Indicator object
+var actInd = Titanium.UI.createActivityIndicator({
+	top:50,
+	right:150,
+	height:50,
+	width:10,
+	font:{fontFamily:'Helvetica Neue', fontSize:20,fontWeight:'bold'},
+	color: 'white',
+	message:'Loading...'
+});
+
+// Search bar on top of the table view
+var search = Titanium.UI.createSearchBar({
+	showCancel:false
+});
 
 // create table view
 var tableview = Titanium.UI.createTableView({
-    top:40
+    top:40,
+    search:search,
+    filterAttribute:'title'
 });
 
 // Variable to set what onload section todo.  Setting the text field info or saving
@@ -65,12 +83,6 @@ loader.open( "GET", win.site_url + "data/index/class/InvitedList/method/getAllIn
 loader.onload = function() 
 {
 	if( onloadType == 'getting_invited_list' ){
-		var alertDialog = Titanium.UI.createAlertDialog({
-			title: 'Loading...',
-			message: 'Loading your friend\'s list might take some time depending on the number of friends you have. ',
-			buttonNames: ['OK']
-		});
-		alertDialog.show();
 	
 		invitedList = eval('('+this.responseText+')');
 		
@@ -93,6 +105,9 @@ loader.onload = function()
 
 // Send the HTTP request
 loader.send();
+
+win.add(actInd);
+actInd.show();
 
 Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
     if (e.success) {
@@ -166,6 +181,7 @@ Titanium.Facebook.requestWithGraphPath('me/friends', {}, 'GET', function(e) {
         }
         
         win.add(tableview);
+        actInd.hide();
         
     } else if (e.error) {
         alert(e.error);

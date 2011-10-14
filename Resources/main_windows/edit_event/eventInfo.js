@@ -416,14 +416,6 @@ loader.onload = function()
 		win.add( scrollView1 );
 		
     }
-    if( onloadType == 'save' ){
-		var alertDialog = Titanium.UI.createAlertDialog({
-				title: '',
-				message: 'Saved',
-				buttonNames: ['OK']
-			});
-		alertDialog.show();
-    }
 };
 
 btnSave.addEventListener('click', function()
@@ -435,7 +427,12 @@ btnSave.addEventListener('click', function()
 	// Sets the HTTP request method, and the URL to get data from
 	loader.open( "POST", win.site_url + "data/index/class/GetEventInfo/method/edit" );
     loader.onload = function() {
-        	//alert('in onload: ' + this.responseText );
+        	var alertDialog = Titanium.UI.createAlertDialog({
+				title: '',
+				message: 'Saved',
+				buttonNames: ['OK']
+			});
+			alertDialog.show();
     		Ti.API.info( 'top search list: ' + this.responseText );
     	}
 	// Post Values
