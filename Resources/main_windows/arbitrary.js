@@ -88,7 +88,7 @@ loader.onload = function()
 		var q1 = Titanium.UI.createLabel({  
 			text:qa[0], 
 			top:10,  
-			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			font:{fontFamily:'HenryMorganHand',fontSize:60,fontWeight: 'bold'},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -99,7 +99,7 @@ loader.onload = function()
 		var a1 = Titanium.UI.createLabel({  
 			text:qa[1], 
 			top:2,  
-			font:{fontFamily:'Baroque Script',fontSize:17},  
+			font:{fontFamily:'Daisy Script',fontSize:40},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -111,7 +111,7 @@ loader.onload = function()
 		var q2 = Titanium.UI.createLabel({  
 			text:qa[2], 
 			top:40,  
-			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			font:{fontFamily:'HenryMorganHand',fontSize:60,fontWeight: 'bold'},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -122,7 +122,7 @@ loader.onload = function()
 		var a2 = Titanium.UI.createLabel({  
 			text:qa[3], 
 			top:2,  
-			font:{fontFamily:'Baroque Script',fontSize:17},  
+			font:{fontFamily:'Daisy Script',fontSize:50},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -134,7 +134,7 @@ loader.onload = function()
 		var q3 = Titanium.UI.createLabel({  
 			text:qa[4], 
 			top:40,  
-			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			font:{fontFamily:'HenryMorganHand',fontSize:60,fontWeight: 'bold'},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -145,7 +145,7 @@ loader.onload = function()
 		var a3 = Titanium.UI.createLabel({  
 			text:qa[5], 
 			top:2,  
-			font:{fontFamily:'Baroque Script',fontSize:17},  
+			font:{fontFamily:'Daisy Script',fontSize:40},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -157,7 +157,7 @@ loader.onload = function()
 		var q4 = Titanium.UI.createLabel({  
 			text:qa[6], 
 			top:40,  
-			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			font:{fontFamily:'HenryMorganHand',fontSize:60,fontWeight: 'bold'},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -168,7 +168,7 @@ loader.onload = function()
 		var a4 = Titanium.UI.createLabel({  
 			text:qa[7], 
 			top:2,  
-			font:{fontFamily:'Baroque Script',fontSize:17},  
+			font:{fontFamily:'Daisy Script',fontSize:40},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -191,7 +191,7 @@ loader.onload = function()
 		var q1 = Titanium.UI.createLabel({  
 			text:qa[0], 
 			top:20,  
-			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			font:{fontFamily:'HenryMorganHand',fontSize:60,fontWeight: 'bold'},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -202,7 +202,7 @@ loader.onload = function()
 		var a1 = Titanium.UI.createLabel({  
 			text:qa[1], 
 			top:2,  
-			font:{fontFamily:'Baroque Script',fontSize:17},  
+			font:{fontFamily:'Daisy Script',fontSize:40},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -214,7 +214,7 @@ loader.onload = function()
 		var q2 = Titanium.UI.createLabel({  
 			text:qa[2], 
 			top:40,  
-			font:{fontFamily:'Baroque Script',fontSize:25,fontWeight: 'bold'},  
+			font:{fontFamily:'HenryMorganHand',fontSize:60,fontWeight: 'bold'},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  
@@ -225,7 +225,7 @@ loader.onload = function()
 		var a2 = Titanium.UI.createLabel({  
 			text:qa[3], 
 			top:2,  
-			font:{fontFamily:'Baroque Script',fontSize:17},  
+			font:{fontFamily:'Daisy Script',fontSize:40},  
 			textAlign: 'center',
 			borderWidth:0,
 			borderRadius:4,  

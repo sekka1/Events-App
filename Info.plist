@@ -56,6 +56,9 @@
 	<string>UIStatusBarStyleDefault</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>daisy.ttf</string>
+		<string>gisele.ttf</string>
+		<string>HenryMorganHand.ttf</string>
 		<string>BaroqueScript.ttf</string>
 	</array>
 </dict>
