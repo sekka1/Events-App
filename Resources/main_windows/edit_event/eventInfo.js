@@ -135,9 +135,12 @@ var onloadType = 'setting_text_field';
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
     });  
 
+	///////////////////////////////////
+	// Ceremony Location Details
+	///////////////////////////////////
 
 	var labelEventLocation = Titanium.UI.createLabel({  
-        text:'Location', 
+        text:'Ceremony Location Name', 
         top:10,  
         left:10,  
         //width:300,
@@ -146,7 +149,7 @@ var onloadType = 'setting_text_field';
     });
     
     var eventLocation = Titanium.UI.createTextField({  
-    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
+    	color:'#336699',
         top:10,  
         left:10, 
         height:40,
@@ -159,7 +162,7 @@ var onloadType = 'setting_text_field';
     });
     
 	var labelEventAddress = Titanium.UI.createLabel({  
-        text:'Address', 
+        text:'Ceremony Address', 
         top:10,  
         left:10,  
         //width:300,
@@ -180,7 +183,7 @@ var onloadType = 'setting_text_field';
     });  
 
 	var labelEventCity = Titanium.UI.createLabel({  
-        text:'City', 
+        text:'Ceremony City', 
         top:10,  
         left:10,  
         //width:300,
@@ -201,7 +204,7 @@ var onloadType = 'setting_text_field';
     });  
 
 	var labelEventState = Titanium.UI.createLabel({  
-        text:'State', 
+        text:'Ceremony State', 
         top:10,  
         left:10,  
         //width:300,
@@ -222,7 +225,7 @@ var onloadType = 'setting_text_field';
     });  
 
 	var labelEventZip = Titanium.UI.createLabel({  
-        text:'Zip', 
+        text:'Ceremony Zip', 
         top:10,  
         left:10,  
         //width:300,
@@ -241,6 +244,111 @@ var onloadType = 'setting_text_field';
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
     });  
+    
+    /////////////////////////////////////////////
+    // Reception Location Details
+    /////////////////////////////////////////////
+    
+    var labelEventLocation2 = Titanium.UI.createLabel({  
+        text:'Reception Location Name', 
+        top:10,  
+        left:10,  
+        //width:300,
+        borderRadius:0,  
+        height:'auto'
+    });
+    
+    var eventLocation2 = Titanium.UI.createTextField({  
+    	color:'#336699',  
+        top:10,  
+        left:10, 
+        height:40,
+        width:300,
+        backgroundColor:'white',
+        hintText:'Saint Marry\'s Wedding Hall',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
+		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
+    });
+   
+	var labelEventAddress2 = Titanium.UI.createLabel({  
+        text:'Reception Address', 
+        top:10,  
+        left:10,  
+        //width:300,
+        borderRadius:0,  
+        height:'auto'
+    });
+    
+    var eventAddress2 = Titanium.UI.createTextField({  
+		color:'#336699',  
+		top:10,  
+		left:10,  
+		width:300,  
+		height:40,  
+		hintText:'Street address only',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
+		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
+    });  
+
+	var labelEventCity2 = Titanium.UI.createLabel({  
+        text:'Reception City', 
+        top:10,  
+        left:10,  
+        //width:300,
+        borderRadius:0,  
+        height:'auto'
+    });
+    
+    var eventCity2 = Titanium.UI.createTextField({  
+		color:'#336699',  
+		top:10,  
+		left:10,  
+		width:300,  
+		height:40,  
+		hintText:'City',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
+		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
+    });  
+
+	var labelEventState2 = Titanium.UI.createLabel({  
+        text:'Reception State / Zip', 
+        top:10,  
+        left:10,  
+        //width:300,
+        borderRadius:0,  
+        height:'auto'
+    });
+    
+    var eventState2 = Titanium.UI.createTextField({  
+		color:'#336699',  
+		top:10,  
+		left:10,  
+		width:300,  
+		height:40,  
+		hintText:'State',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
+		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
+    });  
+  
+    var eventZip2 = Titanium.UI.createTextField({  
+		color:'#336699',  
+		top:10,  
+		left:10,  
+		width:300,  
+		height:40,  
+		hintText:'Zip',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
+		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  
+    });  
+
+    /////////////////////////////////////
+    //  Wedding Date Info
+    /////////////////////////////////////
  
 	var labelEventWhen = Titanium.UI.createLabel({  
         text:'Wedding Date', 
@@ -252,7 +360,7 @@ var onloadType = 'setting_text_field';
     });
     
     var eventWhen = Titanium.UI.createTextField({  
-    	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:10},  
+    	color:'#336699',  
         top:10,  
         left:10,  
         height:40,
@@ -377,8 +485,12 @@ loader.onload = function()
 		eventPhone.value = results[0].phone;
 		scrollView1.add(eventPhone);
 		
+		///////////////////////////////////
+		// Ceremony Location Details
+		///////////////////////////////////
+		
 		scrollView1.add(labelEventLocation);
-		eventLocation.value = results[0].location;
+		eventLocation.value = results[0].location_name;  // The name of the location
 		scrollView1.add(eventLocation); 
 		
 		scrollView1.add(labelEventAddress);
@@ -396,6 +508,34 @@ loader.onload = function()
 		scrollView1.add(labelEventZip);
 		eventZip.value = results[0].zip;
 		scrollView1.add(eventZip); 
+		
+		///////////////////////////////////
+		// Reception Location Details
+		///////////////////////////////////
+
+		scrollView1.add(labelEventLocation2);
+		eventLocation2.value = results[0].location_name2;  // The name of the location
+		scrollView1.add(eventLocation2); 
+		
+		scrollView1.add(labelEventAddress2);
+		eventAddress2.value = results[0].address2;
+		scrollView1.add(eventAddress2); 
+		
+		scrollView1.add(labelEventCity2);
+		eventCity2.value = results[0].city2;
+		scrollView1.add(eventCity2); 
+		
+		scrollView1.add(labelEventState2);
+		eventState2.value = results[0].state2;
+		scrollView1.add(eventState2); 
+		
+//		scrollView1.add(labelEventZip2);
+		eventZip2.value = results[0].zip2;
+		scrollView1.add(eventZip2); 
+
+		///////////////////////////////////
+		// Wedding Date Details
+		///////////////////////////////////
 		
 		scrollView1.add(labelEventWhen);
 		eventWhen.value = results[0].when;
@@ -443,11 +583,22 @@ btnSave.addEventListener('click', function()
 		description:eventDescription.value,
 		//host:eventHost.value,
 		phone:eventPhone.value,
+		
+		// Ceremony Details		
 		location_name:eventLocation.value,
 		address:eventAddress.value,
 		city:eventCity.value,
 		state:eventState.value,
 		zip:eventZip.value,
+		
+		// Reception Details
+		location_name2:eventLocation2.value,
+		address2:eventAddress2.value,
+		city2:eventCity2.value,
+		state2:eventState2.value,
+		zip2:eventZip2.value,
+		
+		// Wedding Date Details
 		when:eventWhen.value,
 		to:eventTo.value,
 		message:eventMessage.value
