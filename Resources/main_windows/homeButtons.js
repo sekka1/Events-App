@@ -21,7 +21,7 @@ var btnEventInfo = Titanium.UI.createButton({
 win.add(btnEventInfo);
 
 var lblEventInfo = Titanium.UI.createLabel({
-	text:'Event Info',
+	text:'Invitation',
 	width:'auto',
 	height:'auto',
 	font:{fontFamily:'Arial',fontSize:14},
@@ -145,11 +145,11 @@ var btnArbitraryOne = Titanium.UI.createButton({
 win.add(btnArbitraryOne);
 
 var lblAboutUs = Titanium.UI.createLabel({
-	text:'Family',
+	text:'Our Family',
 	width:'auto',
 	height:'auto',
 	font:{fontFamily:'Arial',fontSize:14},
-	left:40,
+	left:30,
 	top:205,
 	color:'white',
 	shadowColor:'#aaa',

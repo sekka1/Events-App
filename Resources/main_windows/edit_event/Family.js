@@ -33,7 +33,7 @@ btnBack.addEventListener('click', function()
 });
 
 var titleName = Titanium.UI.createLabel({  
-        text:'Family',  
+        text:'Our Family',  
         top:10,  
         left:125,  
         borderRadius:0,  

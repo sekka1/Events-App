@@ -43,7 +43,7 @@ btnBack.addEventListener('click', function()
 });
 
 var pageName = Titanium.UI.createLabel({  
-        text:'Create a Wedding', 
+        text:'Create My Wedding', 
         top:10,  
         left:125,  
         //width:300,

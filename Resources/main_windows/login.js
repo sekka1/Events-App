@@ -82,7 +82,7 @@ function displayInvitedToWeddingList(){
             
             // Display button to create a new wedding
             var createNewWedding = Titanium.UI.createButton({  
-                    title:'Create New Wedding',  
+                    title:'Create My Wedding',  
                     top:top_alignment,  
                     width:180,  
                     height:35,  

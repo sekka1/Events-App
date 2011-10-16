@@ -33,7 +33,7 @@ btnBack.addEventListener('click', function()
 });
 
 var titleName = Titanium.UI.createLabel({  
-        text:'Event Info',  
+        text:'Wedding Info',  
         top:10,  
         left:125,  
         borderRadius:0,  
@@ -50,7 +50,7 @@ var onloadType = 'setting_text_field';
 //////////////////////////////////////////////////////////
 
 	var labelEventName = Titanium.UI.createLabel({  
-        text:'Event Name', 
+        text:'Wedding Name', 
         top:10,  
         left:10,  
         //width:300,
@@ -71,7 +71,7 @@ var onloadType = 'setting_text_field';
     });  
 
 	var labelEventDescription = Titanium.UI.createLabel({  
-        text:'Event Description', 
+        text:'Description', 
         top:10,  
         left:10,  
         //width:300,
@@ -94,7 +94,7 @@ var onloadType = 'setting_text_field';
 	});
 	
 	var labelEventHost = Titanium.UI.createLabel({  
-        text:'Event Host', 
+        text:'Host', 
         top:10,  
         left:10,  
         //width:300,
@@ -115,7 +115,7 @@ var onloadType = 'setting_text_field';
     });  
 
 	var labelEventPhone = Titanium.UI.createLabel({  
-        text:'Event Phone Number', 
+        text:'Phone Number', 
         top:10,  
         left:10,  
         //width:300,
@@ -137,7 +137,7 @@ var onloadType = 'setting_text_field';
 
 
 	var labelEventLocation = Titanium.UI.createLabel({  
-        text:'Event Location', 
+        text:'Location', 
         top:10,  
         left:10,  
         //width:300,
@@ -243,7 +243,7 @@ var onloadType = 'setting_text_field';
     });  
  
 	var labelEventWhen = Titanium.UI.createLabel({  
-        text:'Event Date', 
+        text:'Wedding Date', 
         top:10,  
         left:10,  
         //width:300,
@@ -265,7 +265,7 @@ var onloadType = 'setting_text_field';
     });  
 
 	var labelEventTo = Titanium.UI.createLabel({  
-        text:'Event End Date', 
+        text:'Wedding End Date', 
         top:10,  
         left:10,  
         //width:300,
@@ -286,7 +286,7 @@ var onloadType = 'setting_text_field';
     });  
  
 	var labelEventMessage = Titanium.UI.createLabel({  
-        text:'Event Message', 
+        text:'Wedding Message', 
         top:10,  
         left:10,  
         //width:300,
@@ -369,9 +369,9 @@ loader.onload = function()
 		scrollView1.add(eventDescription);
 		
 		
-		scrollView1.add(labelEventHost);
-		eventHost.value = results[0].host;
-		scrollView1.add(eventHost);
+		//scrollView1.add(labelEventHost);
+		//eventHost.value = results[0].host;
+		//scrollView1.add(eventHost);
 		
 		scrollView1.add(labelEventPhone);
 		eventPhone.value = results[0].phone;
@@ -441,7 +441,7 @@ btnSave.addEventListener('click', function()
 	    user_id:Titanium.Facebook.uid,
 		name:eventName.value,
 		description:eventDescription.value,
-		host:eventHost.value,
+		//host:eventHost.value,
 		phone:eventPhone.value,
 		location_name:eventLocation.value,
 		address:eventAddress.value,

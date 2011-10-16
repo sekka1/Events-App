@@ -96,7 +96,7 @@ loader.onload = function()
         borderRadius:4,  
         height:'auto'
     });  
-    scrollView1.add(eventHost);
+    //scrollView1.add(eventHost);
 
     var eventPhone = Titanium.UI.createLabel({  
         text:'Phone: ' + results[0].phone, 
@@ -110,7 +110,7 @@ loader.onload = function()
     scrollView1.add(eventPhone);
     
     var eventLocation = Titanium.UI.createLabel({  
-        text:results[0].address + ', ' + results[0].city + ', ' + results[0].state + ', ' + results[0].zip,  
+        text:results[0].address + ', ' + results[0].city + ', ' + results[0].state, // + ', ' + results[0].zip,  
     	font:{fontFamily:'Baroque Script',fontSize:17},  
         top:5,
         textAlign: 'center',

@@ -47,13 +47,13 @@ btnBack.addEventListener('click', function()
 // type - can be either: q or category
 // searchTerm - is the term that will be in the value field of the type
 var data = [
-	{title:'Event Info', hasChild:true, type:'event_info'},
+	{title:'Wedding Info', hasChild:true, type:'event_info'},
 //	{title:'Template', hasChild:true, type:'template'},
 	{title:'About Us', hasChild:true, type:'about_us'},
-	{title:'Family', hasChild:true, type:'family'},
-	{title:'Gift Registy', hasChild:true, type:'gift_registry'},
+	{title:'Our Family', hasChild:true, type:'family'},
+	{title:'Our Gift Registry', hasChild:true, type:'gift_registry'},
 	{title:'Photos', hasChild:true, type:'photos'},
-	{title:'Invite Facebook Friends', hasChild:true, type:'invite_facebook_friends'}
+	{title:'Invite Friends', hasChild:true, type:'invite_facebook_friends'}
 //	{title:'Collaborate', hasChild:true, type:'Collaborate'},
 
 ];
@@ -85,7 +85,7 @@ tableview.addEventListener('click', function(e)
 		Ti.API.info( "Event Edit Event Info: " + win.idKey );
 	
 		var windowEdit = Titanium.UI.createWindow({
-			title:'Edit Event',
+			title:'Edit Wedding Info',
 			url:'eventInfo.js'
 			//backgroundColor:'white'
 		});

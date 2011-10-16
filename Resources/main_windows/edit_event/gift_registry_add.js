@@ -32,7 +32,7 @@ btnBack.addEventListener('click', function()
 });
 
 var titleName = Titanium.UI.createLabel({  
-        text:'Gift Registry',  
+        text:'Our Gift Registry',  
         top:10,  
         left:125,  
         borderRadius:0,  
