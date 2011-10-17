@@ -58,27 +58,67 @@ btnBack.addEventListener('click', function()
         
         var results = eval('('+this.responseText+')');
         
-        var eventLocation = Titanium.Map.createAnnotation({
+        var points = [];
+        
+        ///////////////////////////////////////////////
+        // Ceromony Details
+        ///////////////////////////////////////////////
+        points[0] = Titanium.Map.createAnnotation({
             latitude:results[0].location_geo_lat,
             longitude:results[0].location_geo_long,
-            title:results[0].name,
+            title:results[0].location_name,
             subtitle:results[0].location,
             pincolor:Titanium.Map.ANNOTATION_RED,
             animate:true,
-            //leftButton: '../images/png/Bouquet.png',
+            rightButton: '../images/templates/multi-color/back.png',
             //rightView:btnAnnotationRight,
             myid:1 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
         });
         
         // Pass to event listener
-        eventLocation.location = results[0].location;
+        points[0].location = results[0].location;
         
-        eventLocation.addEventListener('click',function(e)  
+        points[0].addEventListener('click',function(e)  
         {   
-            Ti.API.info( "Map button clicked" );
-            Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
-    
+        	Ti.API.info( "e.clickSource: " + e.clickSource );
+        
+        	//if( e.clickSource == 'rightButton' ){
+            	Ti.API.info( "Map button clicked" );
+            	Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
+    		//}
         });
+        
+        ///////////////////////////////////////////////
+        // Reception Details
+        ///////////////////////////////////////////////
+        
+        points[1] = Titanium.Map.createAnnotation({
+            latitude:results[0].location_geo_lat2,
+            longitude:results[0].location_geo_long2,
+            title:results[0].location_name2,
+            subtitle:results[0].location2,
+            pincolor:Titanium.Map.ANNOTATION_RED,
+            animate:true,
+            leftButton: '../images/templates/multi-color/back.png',
+            //rightView:btnAnnotationRight,
+            myid:2 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
+        });
+        
+        // Pass to event listener
+        points[1].location = results[0].location2;
+        
+        points[1].addEventListener('click',function(e)  
+        {   
+        	Ti.API.info( "e.clickSource: " + e.clickSource );
+        
+        	//if( e.clickSource == 'rightButton' ){
+            	Ti.API.info( "Map button clicked" );
+            	Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
+    		//}
+        });
+        ///////////////////////////////////////////////
+        // Map Details
+        ///////////////////////////////////////////////
 
 		win.mapview.top="40";
         if( Titanium.Platform.name == 'iPhone OS' ){
@@ -88,7 +128,8 @@ btnBack.addEventListener('click', function()
             win.mapview.setLocation({latitude:results[0].location_geo_lat,longitude:results[0].location_geo_long,animate:true,latitudeDelta:0.01, longitudeDelta:0.01});
         }
         
-        win.mapview.addAnnotation( eventLocation );
+        //win.mapview.addAnnotation( eventLocation );
+        win.mapview.addAnnotations( points );
         
         win.add(win.mapview);
         win.add(btnBack);
