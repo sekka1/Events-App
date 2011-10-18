@@ -6,7 +6,7 @@ Ti.API.info( "Platform: " + Titanium.Platform.name );
 /////////////////////////////////////////////
 // Global Variables
 /////////////////////////////////////////////
-var site_url = 'http://wedvite.us/';
+var site_url = 'http://www.wedvite.us/';
 var idKey = ''; // This is the event_id_seq
 
 // Arbitrary Windows
@@ -199,9 +199,11 @@ windowLocationDetail.windowLBS = windowLBS;
 windowWeddingComments.windowHome = windowHome;
 windowWeddingComments.idKey = idKey;
 windowWeddingComments.webview = webview;
+windowWeddingComments.site_url = site_url;
 
 // Comment Anything Page
 windowComments.webview = webview;
+windowComments.site_url = site_url;
 
 // Anonymous Login Screen
 windowAnonymousLogin.windowLogin = windowLogin;

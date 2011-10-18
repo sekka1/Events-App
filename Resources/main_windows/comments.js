@@ -55,10 +55,10 @@ var webview = Titanium.UI.createWebView({
 });
 */
 
-Ti.API.info( 'webview url: ' + 'http://wedvite.us/photos/commentonly/width/325/location/wedvite.us/url/'+new_image_url );
+Ti.API.info( 'webview url: ' + 'http://'+win.site_url+'/photos/commentonly/width/325/location/s3.amazonaws.com_wedvite-photos/url/'+new_image_url );
 
 //win.webview.url = 'http://'+win.server_location+'/photos/fb/width/300/location/'+win.server_location+'/url/' + new_image_url;
-win.webview.url = 'http://wedvite.us/photos/commentonly/width/325/location/s3.amazonaws.com_wedvite-photos/url/'+new_image_url;
+win.webview.url = win.site_url+'photos/commentonly/width/325/location/s3.amazonaws.com_wedvite-photos/url/'+new_image_url;
 win.webview.scalesPageToFit = 'false';
 
 

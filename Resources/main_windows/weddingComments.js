@@ -44,8 +44,10 @@ win.add(titleName);
 // Replacing the / with __ so that it can be passed into the FB photo comment generator
 //var new_image_url = win.image_url.replace( /\//g, "__" );
 
+Ti.API.info( win.site_url+'photos/commentonly/width/325/location/wedvite.us/url/__comments__' + win.idKey + 'comment' + '/session/' + Titanium.Facebook.accessToken );
+
 var webview = Titanium.UI.createWebView({
-    url:'http://wedvite.us/photos/commentonly/width/325/location/wedvite.us/url/__comments__' + win.idKey + 'comment' + '/session/' + Titanium.Facebook.accessToken,
+    url:win.site_url+'photos/commentonly/width/325/location/wedvite.us/url/__comments__' + win.idKey + 'comment' + '/session/' + Titanium.Facebook.accessToken,
     top:40,
     scalesPageToFit:false
 });
