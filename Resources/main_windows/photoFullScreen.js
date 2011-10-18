@@ -214,6 +214,9 @@ btnOptions.addEventListener('click', function()
 /////////////////////////////////////////////////////
 btnComment.addEventListener('click', function()
 {
+	if( didAddScrollView )
+    	win.remove( scrollView );
+
 	win.windowComments.image_url = win.image_url;
 	win.windowComments.server_location = win.server_location;
 	win.windowComments.lastWindow = win;
