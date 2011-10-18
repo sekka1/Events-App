@@ -71,7 +71,7 @@ var data = [
     {title:'Transportation', hasChild:true, type:'category', searchTerm:'Transportation', header:'T'},
     {title:'Tuxedos', hasChild:true, type:'q', searchTerm:'Tuxedos'},
 	{title:'Videographers', hasChild:true, type:'q', searchTerm:'Videographers', header:'V'},
-    {title:'Wedding Planners', hasChild:true, type:'q', searchTerm:'Wedding Planner', header:'W'}
+    {title:'Wedding Planners', hasChild:true, type:'q', searchTerm:'Wedding coordinator', header:'W'}
 ];
 
 var search = Titanium.UI.createSearchBar({

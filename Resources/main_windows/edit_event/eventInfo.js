@@ -366,7 +366,7 @@ var onloadType = 'setting_text_field';
         height:40,
         width:300,
         hintText:'November 12, 2011',
-        backgroundColor:'white',
+        //backgroundColor:'white',
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,  
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,  
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED  

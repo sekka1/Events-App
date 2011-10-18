@@ -84,6 +84,11 @@ var windowWeddingComments = Titanium.UI.createWindow({
     url:'main_windows/weddingComments.js'
 });
 
+var windowComments = Titanium.UI.createWindow({
+    title:'Comment Anything Page',
+    url:'main_windows/comments.js'
+});
+
 var windowAnonymousLogin = Titanium.UI.createWindow({
 	title:'Anonymous Login',
 	url:'main_windows/anonymousLogin.js'
@@ -163,7 +168,8 @@ windowArbitrary.site_url = site_url;
 // Full Photo Window
 windowFullPhoto.windowHome = windowHome;
 windowFullPhoto.windowPhotos = windowPhotos;
-windowFullPhoto.webview = webview;
+//windowFullPhoto.webview = webview;
+windowFullPhoto.windowComments = windowComments;
 
 // Photos
 windowPhotos.windowHome = windowHome;
@@ -193,6 +199,9 @@ windowLocationDetail.windowLBS = windowLBS;
 windowWeddingComments.windowHome = windowHome;
 windowWeddingComments.idKey = idKey;
 windowWeddingComments.webview = webview;
+
+// Comment Anything Page
+windowComments.webview = webview;
 
 // Anonymous Login Screen
 windowAnonymousLogin.windowLogin = windowLogin;

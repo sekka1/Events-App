@@ -37,6 +37,9 @@ win.add(btnBack);
 
 btnBack.addEventListener('click', function()
 {
+	// Remove all annotations on the map
+	win.mapview.removeAllAnnotations();
+
    win.windowHome.show();
    win.close();
 });
@@ -70,7 +73,7 @@ btnBack.addEventListener('click', function()
             subtitle:results[0].location,
             pincolor:Titanium.Map.ANNOTATION_RED,
             animate:true,
-            rightButton: '../images/templates/multi-color/back.png',
+            //rightButton: '../images/templates/multi-color/back.png',
             //rightView:btnAnnotationRight,
             myid:1 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
         });
@@ -84,7 +87,8 @@ btnBack.addEventListener('click', function()
         
         	//if( e.clickSource == 'rightButton' ){
             	Ti.API.info( "Map button clicked" );
-            	Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
+            	//Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
+            	Ti.Platform.openURL('http://maps.google.com/maps?daddr='+e.source.location+'&ie=UTF8&t=h&z=16');
     		//}
         });
         
@@ -99,7 +103,7 @@ btnBack.addEventListener('click', function()
             subtitle:results[0].location2,
             pincolor:Titanium.Map.ANNOTATION_RED,
             animate:true,
-            leftButton: '../images/templates/multi-color/back.png',
+            //leftButton: '../images/templates/multi-color/back.png',
             //rightView:btnAnnotationRight,
             myid:2 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
         });
@@ -113,7 +117,8 @@ btnBack.addEventListener('click', function()
         
         	//if( e.clickSource == 'rightButton' ){
             	Ti.API.info( "Map button clicked" );
-            	Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
+            	//Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
+            	Ti.Platform.openURL('http://maps.google.com/maps?daddr='+e.source.location+'&ie=UTF8&t=h&z=16');
     		//}
         });
         ///////////////////////////////////////////////

@@ -35,6 +35,9 @@ var btnBack = Titanium.UI.createButton({
 
 btnBack.addEventListener('click', function()
 {
+	// Remove all annotations on the map
+	win.mapview.removeAllAnnotations();
+
 	//win.previousWin.open();
 	win.windowLBS.open();
 	win.close();
