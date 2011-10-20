@@ -86,6 +86,7 @@ loader.onload = function()
             win.windowFullPhoto.photo_url = e.source.photo_url;
             win.windowFullPhoto.image_url = e.source.image_url;
             win.windowFullPhoto.server_location = e.source.server_location;
+            win.windowFullPhoto.templateUsed = templateUsed;
             
             win.windowFullPhoto.open();
             win.hide();

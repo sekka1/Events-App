@@ -48,7 +48,7 @@ btnBack.addEventListener('click', function()
 // searchTerm - is the term that will be in the value field of the type
 var data = [
 	{title:'Wedding Info', hasChild:true, type:'event_info'},
-//	{title:'Template', hasChild:true, type:'template'},
+	{title:'Template', hasChild:true, type:'template'},
 	{title:'About Us', hasChild:true, type:'about_us'},
 	{title:'Our Family', hasChild:true, type:'family'},
 	{title:'Our Gift Registry', hasChild:true, type:'gift_registry'},

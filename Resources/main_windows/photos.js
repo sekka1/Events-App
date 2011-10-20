@@ -14,7 +14,7 @@ var actInd = Titanium.UI.createActivityIndicator({
 	actInd.width = 210;
 
 var nav_bar = Titanium.UI.createImageView({
-        image:'../images/templates/multi-color/nav-bar-blank.png',
+        image:'../images/templates/'+win.templateUsed+'/nav-bar-blank.png',
         top:0,
         left:0,
         height:40,
@@ -36,8 +36,8 @@ win.add(titleName);
 
 var btnBack = Titanium.UI.createButton({  
     title:'',  
-    backgroundImage:'../images/templates/multi-color/back.png',
-    backgroundSelectedImage: '../images/templates/multi-color/back_over.png',
+    backgroundImage:'../images/templates/'+win.templateUsed+'/back.png',
+    backgroundSelectedImage: '../images/templates/'+win.templateUsed+'/back_over.png',
     top:2,  
     left:2,
     width:65,  
@@ -188,6 +188,7 @@ loader.onload = function()
             win.windowFullPhoto.photo_url = e.source.photo_url;
             win.windowFullPhoto.image_url = e.source.image_url;
             win.windowFullPhoto.server_location = e.source.server_location;
+            win.windowFullPhoto.templateUsed = win.templateUsed;
             
             win.windowFullPhoto.open();
             win.close();

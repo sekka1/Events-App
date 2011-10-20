@@ -8,6 +8,7 @@ btnEventInfo.addEventListener('click',function(e)
     // Set this new window's variables
     win.windowEventInfo.idKey = win.idKey;
     win.windowEventInfo.actInd = actInd;
+    win.windowEventInfo.templateUsed = templateUsed;
 
     win.windowEventInfo.open();
     win.hide();
@@ -20,6 +21,7 @@ btnMap.addEventListener('click',function(e)
     // Set this new window's variables
     win.windowMap.idKey = win.idKey;
     win.windowMap.mapview = win.mapview;
+    win.windowMap.templateUsed = templateUsed;
 
     win.windowMap.open();
     win.hide();
@@ -49,6 +51,7 @@ btnArbitraryOne.addEventListener('click',function(e)
     win.windowArbitrary.arbitraryWinID = 0;
     //win.windowArbitrary.textAboutUs = win.textAboutUs;
     win.windowArbitrary.actInd = actInd;
+    win.windowArbitrary.templateUsed = templateUsed;
 
     win.windowArbitrary.open();
     win.hide();
@@ -65,6 +68,7 @@ btnArbitraryTwo.addEventListener('click',function(e)
     win.windowArbitrary.arbitraryWinID = 1;
     //win.windowArbitrary.textWeddingParty = win.textWeddingParty;
     win.windowArbitrary.actInd = actInd;
+    win.windowArbitrary.templateUsed = templateUsed;
 
     win.windowArbitrary.open();
     win.hide();
@@ -77,6 +81,7 @@ btnGuestPhotos.addEventListener('click',function(e)
     // Set this new window's variables
     win.windowPhotos.idKey = win.idKey;
     //win.windowPhotos.actInd2 = actInd;
+    win.windowPhotos.templateUsed = templateUsed;
 
     win.windowPhotos.open();
     win.hide();
@@ -89,6 +94,7 @@ btnRegistry.addEventListener('click',function(e)
     // Set this new window's variables
     win.windowGiftRegistry.idKey = win.idKey;
     win.windowGiftRegistry.actInd = actInd;
+    win.windowGiftRegistry.templateUsed = templateUsed;
 
     win.windowGiftRegistry.open();
     win.hide();
@@ -99,6 +105,8 @@ btnRegistry.addEventListener('click',function(e)
 // LBS
 btnLBS.addEventListener('click',function(e)  
 {   
+	win.windowLBS.templateUsed = templateUsed;
+	
     win.windowLBS.open();
     win.hide();
     
@@ -107,6 +115,7 @@ btnLBS.addEventListener('click',function(e)
 // Wedding Comments
 btnWeddingComment.addEventListener('click',function(e)  
 {   
+	win.windowWeddingComments.templateUsed = templateUsed;
     win.windowWeddingComments.idKey = win.idKey;
     win.windowWeddingComments.open();
     win.hide();

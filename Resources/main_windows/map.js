@@ -1,7 +1,7 @@
 var win = Titanium.UI.currentWindow;
 
 var nav_bar = Titanium.UI.createImageView({
-        image:'../images/templates/multi-color/nav-bar-blank.png',
+        image:'../images/templates/'+win.templateUsed+'/nav-bar-blank.png',
         top:0,
         left:0,
         height:40,
@@ -23,8 +23,8 @@ win.add(titleName);
 
 var btnBack = Titanium.UI.createButton({  
     title:'',  
-    backgroundImage:'../images/templates/multi-color/back.png',
-    backgroundSelectedImage: '../images/templates/multi-color/back_over.png',
+    backgroundImage:'../images/templates/'+win.templateUsed+'/back.png',
+    backgroundSelectedImage: '../images/templates/'+win.templateUsed+'/back_over.png',
     top:2,  
     left:2,
     width:65,  
@@ -73,7 +73,7 @@ btnBack.addEventListener('click', function()
             subtitle:results[0].location,
             pincolor:Titanium.Map.ANNOTATION_RED,
             animate:true,
-            //rightButton: '../images/templates/multi-color/back.png',
+            //rightButton: '../images/templates/'+win.templateUsed+'/back.png',
             //rightView:btnAnnotationRight,
             myid:1 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
         });
@@ -103,7 +103,7 @@ btnBack.addEventListener('click', function()
             subtitle:results[0].location2,
             pincolor:Titanium.Map.ANNOTATION_RED,
             animate:true,
-            //leftButton: '../images/templates/multi-color/back.png',
+            //leftButton: '../images/templates/'+win.templateUsed+'/back.png',
             //rightView:btnAnnotationRight,
             myid:2 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
         });
