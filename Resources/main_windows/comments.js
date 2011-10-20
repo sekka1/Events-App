@@ -1,7 +1,7 @@
 var win = Titanium.UI.currentWindow;  
 
 var nav_bar = Titanium.UI.createImageView({
-        image:'../images/templates/multi-color/nav-bar-blank.png',
+        image:'../images/templates/'+win.templateUsed+'/nav-bar-blank.png',
         top:0,
         left:0,
         height:40,
@@ -22,8 +22,8 @@ var titleName = Titanium.UI.createLabel({
 win.add(titleName);
 
 var btnBack = Titanium.UI.createButton({  
-    backgroundImage:'../images/templates/multi-color/back.png',
-    backgroundSelectedImage: '../images/templates/multi-color/back_over.png',
+    backgroundImage:'../images/templates/'+win.templateUsed+'/back.png',
+    backgroundSelectedImage: '../images/templates/'+win.templateUsed+'/back_over.png',
     top:2,  
     left:2,
     width:65,  
