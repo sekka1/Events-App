@@ -176,6 +176,8 @@ loader.onload = function()
         item.server_location = results[c].server_location;
         item.image_url = results[c].image_url;
         item.back_location = 'photos';
+        item.results = results;
+        item.currentLocation = c;
         
         // Event listener when the user clicks on the photo in the slider
         item.addEventListener('click',function(e)  
@@ -189,7 +191,9 @@ loader.onload = function()
             win.windowFullPhoto.image_url = e.source.image_url;
             win.windowFullPhoto.server_location = e.source.server_location;
             win.windowFullPhoto.templateUsed = win.templateUsed;
-            
+            win.windowFullPhoto.results = e.source.results;
+            win.windowFullPhoto.currentLocation = e.source.currentLocation;
+
             win.windowFullPhoto.open();
             win.close();
             

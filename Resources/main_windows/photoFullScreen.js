@@ -76,17 +76,7 @@ actInd.show();
 //  Start of page content
 /////////////////////////////////////////////////////
 
-/*
-// Replacing the / with __ so that it can be passed into the FB photo comment generator
-var new_image_url = win.image_url.replace( /\//g, "__" );
 
-win.webview.url = 'http://'+win.server_location+'/photos/fb/width/325/location/'+win.server_location+'/url/' + new_image_url + '/session/' + Titanium.Facebook.accessToken;
-win.webview.scalesPageToFit = 'true';
-win.add(win.webview);
-
-// Add button on top of the image
-win.add(btnBack);
-*/
 
 /////////////////////////////////////////////////////
 //  New Native window for Photos
@@ -110,7 +100,63 @@ image.addEventListener('load', function()
 });
 win.add( image );
 
-Ti.API.info( 'a' );
+var swipeDirection = '';
+
+image.addEventListener('swipe', function(e)
+{
+	swipeDirection = e.direction;
+	
+	win.remove(actInd);
+	win.add(actInd);
+	actInd.show();
+
+});
+image.addEventListener('touchend', function(e)
+{
+	// Swipe left and right functionality to load the next/previous picture
+
+	if( swipeDirection == 'right' ){
+		// Change image to be minus 1	
+
+		if( win.currentLocation == 0 ){
+			// This is the first picture.  So goto the end
+			
+			win.currentLocation = win.results.length-1;
+			
+			image.image = 'http://'+win.results[win.currentLocation].server_location+win.results[win.currentLocation].image_url;
+			
+		} else {
+			// Not first pic.  Just subtract one and show that
+		
+			win.currentLocation -= 1;
+		
+			image.image = 'http://'+win.results[win.currentLocation].server_location+win.results[win.currentLocation].image_url;
+		}
+		
+		win.image_url = win.results[win.currentLocation].image_url;
+	}
+	if( swipeDirection == 'left' ){
+		// Change image to be plus 1
+	
+		if( win.currentLocation == win.results.length-1 ){
+			// This is the last picture.  So goto the first
+			
+			win.currentLocation = 0;
+			
+			image.image = 'http://'+win.results[win.currentLocation].server_location+win.results[win.currentLocation].image_url;
+			
+		} else {
+			// Not first pic.  Just subtract one and show that
+		
+			win.currentLocation += 1;
+		
+			image.image = 'http://'+win.results[win.currentLocation].server_location+win.results[win.currentLocation].image_url;
+		}
+		
+		win.image_url = win.results[win.currentLocation].image_url;	
+	}
+});
+
 /////////////////////////////////////////////////////
 //  Options to perform on this picture
 /////////////////////////////////////////////////////
@@ -188,8 +234,12 @@ btnCancel.addEventListener('click', function()
 {
 	scrollView.hide();
 	btnOptions.show();
+	
+	// Add back swipe eventlisteners
+	// ....
+	
 });
-Ti.API.info( 'b' );
+
 // Add all buttons to the scrollview
 scrollView.add( btnComment );
 //scrollView.add( btnSavePhoto );
@@ -221,6 +271,10 @@ btnComment.addEventListener('click', function()
 	win.windowComments.server_location = win.server_location;
 	win.windowComments.lastWindow = win;
 	win.windowComments.templateUsed = win.templateUsed;
+	
+	// Remove swipe event listener
+	//image.removeEventListener('swipe',function(){});
+	//image.removeEventListener('touchend',function(){});
 	
 	win.windowComments.open();
 });
