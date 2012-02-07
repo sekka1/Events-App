@@ -224,7 +224,7 @@ Titanium.Facebook.addEventListener('logout', function(e) {
     Titanium.API.log("User logged out.");
 });
 
-win.add(Titanium.Facebook.createLoginButton({ top: 325, 'style': 'wide' }));
+win.add(Titanium.Facebook.createLoginButton({ top: 325, 'style': Ti.Facebook.BUTTON_STYLE_WIDE }));
 
 }
 

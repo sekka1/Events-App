@@ -9,7 +9,7 @@
     </deployment-targets>
 <id>us.wedvite.wedvite</id>
     <property name="ti.facebook.appid">197440486945083</property>
-<name>Wedvite</name>
+<name>smurf</name>
 <version>1.1</version>
 <publisher>gakan</publisher>
 <url>http://wedvite.us</url>

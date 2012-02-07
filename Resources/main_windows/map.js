@@ -88,7 +88,8 @@ btnBack.addEventListener('click', function()
         	//if( e.clickSource == 'rightButton' ){
             	Ti.API.info( "Map button clicked" );
             	//Ti.Platform.openURL('http://maps.google.com/maps?daddr={'+e.source.location+'}&ie=UTF8&t=h&z=16');
-            	Ti.Platform.openURL('http://maps.google.com/maps?daddr='+e.source.location+'&ie=UTF8&t=h&z=16');
+            	//Ti.Platform.openURL('http://maps.google.com/maps?daddr='+e.source.location+'&ie=UTF8&t=h&z=16');
+            	
     		//}
         });
         
@@ -138,7 +139,55 @@ btnBack.addEventListener('click', function()
         
         win.add(win.mapview);
         win.add(btnBack);
+        
+ 		// Passing lat and long to the navigation buttions
+		btnNavToCeromony.location_geo_lat = results[0].location_geo_lat;
+		btnNavToCeromony.location_geo_long = results[0].location_geo_long;
+		btnNavToReception.location_geo_lat = results[0].location_geo_lat2;
+		btnNavToReception.location_geo_long = results[0].location_geo_long2;
+		
+		win.add(btnNavToCeromony);
+		win.add(btnNavToReception);
+		
+
     };
     
     // Send the HTTP request
 	loader.send();
+
+
+
+///////////////////////////////////////////////
+// Navigate Buttons
+///////////////////////////////////////////////
+var btnNavToCeromony = Titanium.UI.createButton({  
+	title:'To Ceromony',
+	bottom:2,  
+	left:2,
+	width:100,  
+	height:40,
+	borderRadius:1,  
+	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+}); 
+
+btnNavToCeromony.addEventListener('click', function(e)
+{
+	Ti.API.info( "Nav Ceromony button clicked:" + e.source.location_geo_lat );
+	Ti.Platform.openURL('http://tne.telenav.com/ad/driveto?dt=@'+e.source.location_geo_lat+','+e.source.location_geo_long+'&apiKey=AQAAATUV88oof/////////8AAAABAAAAAQEAAAAQ4EH0GEJncXoYD9I5EwzR0wEAAAAOAwAAAJgAAADQAAAAAQA=&name=Marriott%20Hotel');
+});
+
+var btnNavToReception = Titanium.UI.createButton({  
+	title:'To Reception',
+	bottom:2,  
+	right:2,
+	width:100,  
+	height:40,
+	borderRadius:1,  
+	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}  
+}); 
+
+btnNavToReception.addEventListener('click', function(e)
+{
+	Ti.API.info( "Nav Reception button clicked:" + e.source.location_geo_lat );
+	Ti.Platform.openURL('http://tne.telenav.com/ad/driveto?dt=@'+e.source.location_geo_lat+','+e.source.location_geo_long+'&apiKey=AQAAATUV88oof/////////8AAAABAAAAAQEAAAAQ4EH0GEJncXoYD9I5EwzR0wEAAAAOAwAAAJgAAADQAAAAAQA=&name=Marriott%20Hotel');
+});
